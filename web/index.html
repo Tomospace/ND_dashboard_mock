@@ -6399,65 +6399,86 @@ async function loadCrossArt(source) {
 
 function renderCrossArt(data, activeSource) {
     const container = document.getElementById('crossArtContent');
-    const st = data.stats;
+    const st = data.stats || {};
     const groups = data.group_list || [];
     window._crossArtActiveSource = activeSource || '';
-
-    // Stats bar
-    let html = `<div class="flex items-center gap-4 mb-4">
-        <span class="text-slate-100 font-semibold text-base">Cross-ART Dependencies</span>
-        <div class="flex gap-3 text-xs">
-            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-400">${st.total || 0} impacts</span>
-            <span class="px-2 py-0.5 rounded bg-blue-900/40 text-blue-300">${st.cross_art || 0} cross-ART</span>
-            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-400">${st.nd_count || 0} NDs${activeSource ? ' (' + activeSource + ')' : ''}</span>
-        </div>
-    </div>`;
-
-    // Sub-view toggle: Impact Matrix | Team View
     const caView = window._crossArtView || 'matrix';
-    html += `<div class="flex items-center gap-2 mb-4">
-        <div class="flex rounded-lg overflow-hidden border border-slate-700/50">
-            <button onclick="window._crossArtView='matrix'; renderCrossArt(_crossArtData, '${activeSource || ''}')" class="px-3 py-1.5 text-xs cursor-pointer transition ${caView === 'matrix' ? 'bg-indigo-600 text-white' : 'bg-slate-800/80 text-slate-400 hover:bg-slate-700'}">🗂 Impact Matrix</button>
-            <button onclick="window._crossArtView='team'; renderCrossArt(_crossArtData, '${activeSource || ''}')" class="px-3 py-1.5 text-xs cursor-pointer transition ${caView === 'team' ? 'bg-emerald-600 text-white' : 'bg-slate-800/80 text-slate-400 hover:bg-slate-700'}">📊 Team View</button>
-        </div>
-        <div class="w-px h-5 bg-slate-700/50 mx-1"></div>`;
 
-    // Source filter buttons (Level 1 — ART ownership)
-    html += `<span class="text-[11px] text-slate-500 font-medium">ART:</span>`;
-    const allCls = !activeSource
-        ? 'bg-white/10 text-white border-white/30 shadow-lg shadow-white/5'
-        : 'bg-slate-800/60 text-slate-400 border-slate-700/50 hover:bg-slate-700/80 hover:text-slate-200';
-    html += `<button onclick="loadCrossArt()" class="px-4 py-2 rounded-xl text-sm font-semibold cursor-pointer transition-all border ${allCls}">Všechny</button>`;
+    // ─── Page hero (header + KPIs) ──────────────────────────────
+    let html = `
+    <div class="nd-shell">
+        <div class="nd-page-hero">
+            <div class="nd-page-hero__left">
+                <div class="nd-page-hero__eyebrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8.5 6h7M8.5 18h7M6 8.5v7M18 8.5v7"/></svg>
+                    Cross-ART Dependencies
+                </div>
+                <h2 class="nd-page-hero__title">Závislosti mezi ARTy</h2>
+                <p class="nd-page-hero__desc">Mapa kdo s kým spolupracuje. <b>Heatmap</b> ukazuje hustotu závislostí <b>source → target</b>, tabulka pak per-ND plánovací stav napříč ARTy. Klikni do buňky pro filtr.</p>
+            </div>
+            <div class="nd-page-hero__right">
+                <div class="nd-page-hero__stats">
+                    <div class="nd-page-hero__stat">
+                        <div class="nd-page-hero__stat-val">${st.total || 0}</div>
+                        <div class="nd-page-hero__stat-lbl">Plánů</div>
+                    </div>
+                    <div class="nd-page-hero__stat nd-page-hero__stat--accent">
+                        <div class="nd-page-hero__stat-val">${st.cross_art || 0}</div>
+                        <div class="nd-page-hero__stat-lbl">Cross-ART</div>
+                    </div>
+                    <div class="nd-page-hero__stat">
+                        <div class="nd-page-hero__stat-val">${st.nd_count || 0}</div>
+                        <div class="nd-page-hero__stat-lbl">${activeSource ? activeSource + ' ND' : 'ND celkem'}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- View toggle + ART filter -->
+        <div class="nd-toolbar">
+            <div class="nd-sort" title="Režim zobrazení">
+                <button class="nd-sort__btn ${caView === 'matrix' ? 'is-active' : ''}"
+                        onclick="window._crossArtView='matrix'; renderCrossArt(_crossArtData, '${activeSource || ''}')">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                    Impact Matrix
+                </button>
+                <button class="nd-sort__btn ${caView === 'team' ? 'is-active' : ''}"
+                        onclick="window._crossArtView='team'; renderCrossArt(_crossArtData, '${activeSource || ''}')">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><circle cx="17" cy="10" r="2.4"/><path d="M2.5 20c.5-3.2 3.4-5 6.5-5s5.7 1.8 6.5 5"/><path d="M15 20c0-2.2 1.4-3.7 4-3.7s2.5 1.5 2.5 3.7"/></svg>
+                    Team View
+                </button>
+            </div>
+            <span class="nd-toolbar__label" style="margin-left:6px">Owner ART</span>
+            <div class="nd-chips" id="caArtChips">
+                <span class="nd-art-chip ${!activeSource ? 'is-active' : ''}" onclick="loadCrossArt()">
+                    <span class="nd-art-chip__dot"></span>Všechny
+                </span>`;
     const mainGroups = ['DC', 'IT', 'MM Art', 'B2B', 'NTW', 'FIX'];
     for (const g of mainGroups) {
-        if (groups.includes(g)) {
-            const c = _artColors[g] || {bg:'100,116,139'};
-            const isActive = activeSource === g;
-            const cls = isActive
-                ? `text-white font-bold border-transparent shadow-lg`
-                : `bg-slate-800/60 text-slate-300 border-slate-700/50 hover:border-[rgba(${c.bg},0.5)] hover:text-white`;
-            const style = isActive ? `background:rgba(${c.bg},0.55); box-shadow:0 0 20px rgba(${c.bg},0.25)` : '';
-            html += `<button onclick="loadCrossArt('${g}')" class="px-4 py-2 rounded-xl text-sm font-semibold cursor-pointer transition-all border ${cls}" ${style ? 'style="'+style+'"' : ''}>${g}</button>`;
-        }
+        if (!groups.includes(g)) continue;
+        const c = _artColors[g] || {bg:'100,116,139'};
+        const isActive = activeSource === g;
+        html += `<span class="nd-art-chip ${isActive ? 'is-active' : ''}" onclick="loadCrossArt('${g}')">
+            <span class="nd-art-chip__dot" style="background:rgb(${c.bg});box-shadow:0 0 0 3px rgba(${c.bg},0.20)"></span>${g}
+        </span>`;
     }
-    html += `</div>`;
+    html += `</div></div>`;
 
     if (caView === 'team') {
-        // Team View (Excel-like colored matrix)
-        // Pre-sort by WSJF desc when an ART source is selected
+        // Team View (Excel-like colored matrix) — keep existing renderer, just wrap in our shell
         const sortedNds = [...data.nds];
         sortedNds.sort((a, b) => (b.wsjf || 0) - (a.wsjf || 0));
         window._caTeamSortCol = 'wsjf';
         window._caTeamSortAsc = false;
         html += renderCrossArtTeamView(sortedNds, groups);
+        html += `</div>`;  // close .nd-shell
         container.innerHTML = html;
         setupCrossArtTeamSort(sortedNds);
-        // Apply any active filters after render
         setTimeout(() => applyCrossArtFilters(), 10);
     } else {
-        // Impact Matrix (default: heatmap + numeric table)
         html += renderCrossArtHeatmap(data.matrix, groups);
         html += renderCrossArtNDTable(data.nds, groups);
+        html += `</div>`;  // close .nd-shell
         container.innerHTML = html;
         setupCrossArtSort(data.nds);
     }
@@ -6472,68 +6493,83 @@ function renderCrossArtHeatmap(matrix, groups) {
         lookup[r.source_group + '|' + r.target_group] = r;
         if (r.total > maxVal) maxVal = r.total;
     }
-
     const srcGroups = [...new Set(matrix.map(r => r.source_group))].sort();
     const tgtGroups = [...new Set(matrix.map(r => r.target_group))].sort();
 
-    let html = `<div class="glass rounded-xl p-5 mb-5">
-        <div class="flex items-center gap-3 mb-4">
-            <h3 class="text-sm font-semibold text-slate-200">ART × ART Impact Heatmap</h3>
-            <span class="text-[11px] text-slate-500">(cross-ART only, excl. internal)</span>
-            <span id="heatmapFilterLabel" class="text-[11px] text-indigo-400 ml-auto hidden"></span>
-            <button id="heatmapClearBtn" class="text-[11px] text-red-400 hover:text-red-300 cursor-pointer hidden" onclick="clearCrossArtFilter()">× Zrušit filtr</button>
+    let html = `
+    <div class="nd-section">
+        <div class="nd-section__head">
+            <span class="nd-section__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="11" y="3" width="6" height="6" rx="1"/><rect x="3" y="11" width="6" height="6" rx="1"/><rect x="11" y="11" width="6" height="6" rx="1"/><rect x="11" y="15" width="6" height="6"/></svg></span>
+            <div class="nd-section__title">ART × ART Impact Heatmap</div>
+            <span class="nd-section__meta">cross-ART only · excl. internal</span>
+            <span id="heatmapFilterLabel" class="hidden" style="font-size:11px;color:var(--nd-accent-light);font-weight:600;margin-left:8px"></span>
+            <button id="heatmapClearBtn" class="nd-section__action hidden" style="color:#fca5a5" onclick="clearCrossArtFilter()">× Zrušit filtr</button>
         </div>
-        <div class="overflow-x-auto">
-        <table class="text-xs">
-            <thead><tr>
-                <th class="px-3 py-2.5 text-left text-slate-500 font-medium">Source ↓ / Target →</th>`;
+        <div class="nd-section__body">
+            <div class="nd-heatmap-wrap">
+                <table class="nd-heatmap">
+                    <thead><tr>
+                        <th class="nd-heatmap__corner">Source ↓ · Target →</th>`;
     for (const tgt of tgtGroups) {
-        html += `<th class="px-3 py-2.5 text-center text-slate-400 font-medium">${tgt}</th>`;
+        html += `<th class="nd-heatmap__axis nd-heatmap__axis--col">${tgt}</th>`;
     }
     html += `</tr></thead><tbody>`;
 
     for (const src of srcGroups) {
-        html += `<tr>`;
-        html += `<td class="px-3 py-2 text-slate-200 font-medium whitespace-nowrap border-r border-slate-800/40">${src}</td>`;
+        html += `<tr><th class="nd-heatmap__axis nd-heatmap__axis--row">${src}</th>`;
         for (const tgt of tgtGroups) {
             const r = lookup[src + '|' + tgt];
-            if (r) {
-                const intensity = Math.min(r.total / maxVal, 1);
-                // Color gradient: low=slate, mid=blue, high=indigo
-                let bg;
-                if (r.active === 0) {
-                    const a = (0.1 + intensity * 0.4).toFixed(2);
-                    bg = `rgba(100, 116, 139, ${a})`;
-                } else if (intensity < 0.33) {
-                    bg = `rgba(59, 130, 246, ${(0.15 + intensity * 0.6).toFixed(2)})`;
-                } else if (intensity < 0.66) {
-                    bg = `rgba(79, 70, 229, ${(0.25 + intensity * 0.55).toFixed(2)})`;
-                } else {
-                    bg = `rgba(99, 102, 241, ${(0.4 + intensity * 0.5).toFixed(2)})`;
-                }
-                html += `<td class="px-3 py-2 text-center heatmap-cell rounded" style="background:${bg}" onclick="filterCrossArtTable('${src}','${tgt}')" title="${src} → ${tgt}: ${r.total} plans (${r.active} active, ${r.canceled} canceled)">
-                    <span class="text-white font-bold">${r.total}</span><span class="text-white/60 text-[10px] ml-0.5">/${r.active}a</span>
-                </td>`;
-            } else {
-                html += `<td class="px-3 py-2 text-center text-slate-800">·</td>`;
+            if (!r) {
+                html += `<td><div class="nd-heatmap__cell nd-heatmap__cell--empty">·</div></td>`;
+                continue;
             }
+            const intensity = Math.min(r.total / maxVal, 1);
+            // Single-hue intensity (emerald accent for active, neutral for dead)
+            const isInactive = r.active === 0;
+            const tint = isInactive
+                ? `rgba(100,116,139,${(0.10 + intensity * 0.18).toFixed(2)})`
+                : `rgba(16,185,129,${(0.10 + intensity * 0.55).toFixed(2)})`;
+            const borderTint = isInactive
+                ? `rgba(100,116,139,${(0.25 + intensity * 0.25).toFixed(2)})`
+                : `rgba(16,185,129,${(0.30 + intensity * 0.45).toFixed(2)})`;
+            const valColor = isInactive ? 'var(--nd-text-base)' : 'var(--nd-text-bright)';
+            html += `<td>
+                <div class="nd-heatmap__cell ${isInactive ? 'nd-heatmap__cell--inactive' : ''}"
+                     style="background:${tint};border-color:${borderTint}"
+                     onclick="filterCrossArtTable('${src}','${tgt}')"
+                     title="${src} → ${tgt}: ${r.total} plans (${r.active} active, ${r.canceled} canceled)">
+                    <span class="nd-heatmap__cell-val" style="color:${valColor}">${r.total}</span>
+                    <span class="nd-heatmap__cell-sub">${r.active} active</span>
+                </div>
+            </td>`;
         }
         html += `</tr>`;
     }
 
-    // Legend
     html += `</tbody></table></div>
-        <div class="flex items-center gap-4 mt-3 text-[10px] text-slate-500">
-            <span>Klikni na buňku pro filtrování ND tabulky</span>
-            <span class="flex items-center gap-1"><span class="inline-block w-3 h-3 rounded" style="background:rgba(59,130,246,0.4)"></span> active</span>
-            <span class="flex items-center gap-1"><span class="inline-block w-3 h-3 rounded" style="background:rgba(100,116,139,0.3)"></span> all done/canceled</span>
+            <div class="nd-heatmap__legend">
+                <span>Klikni na buňku pro filtr ND tabulky</span>
+                <span style="display:inline-flex;align-items:center;gap:8px">
+                    <span style="font-size:10px;color:var(--nd-text-faint)">low</span>
+                    <span class="nd-heatmap__legend-scale">
+                        <span style="background:rgba(16,185,129,0.15)"></span>
+                        <span style="background:rgba(16,185,129,0.30)"></span>
+                        <span style="background:rgba(16,185,129,0.45)"></span>
+                        <span style="background:rgba(16,185,129,0.65)"></span>
+                    </span>
+                    <span style="font-size:10px;color:var(--nd-accent-light)">high</span>
+                </span>
+                <span style="display:inline-flex;align-items:center;gap:5px"><span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:rgba(100,116,139,0.20)"></span> all done / canceled</span>
+            </div>
         </div>
     </div>`;
     return html;
 }
 
 function renderCrossArtNDTable(nds, groups) {
-    if (!nds || nds.length === 0) return '<div class="text-slate-500 py-4">Žádné ND s cross-ART dopady.</div>';
+    if (!nds || nds.length === 0) {
+        return `<div class="nd-section" style="margin-top:16px"><div class="nd-empty">Žádné ND s cross-ART dopady.</div></div>`;
+    }
 
     // Determine visible ART columns
     const artSet = new Set();
@@ -6550,60 +6586,67 @@ function renderCrossArtNDTable(nds, groups) {
     });
     window._crossArtShownArts = shownArts;
 
-    let html = `<div class="glass rounded-xl overflow-hidden">
-        <div class="flex items-center gap-3 p-3 border-b border-slate-700/60">
-            <h3 class="text-sm font-semibold text-slate-200">ND × ART Planning Matrix</h3>
-            <span class="text-xs text-slate-500" id="crossArtRowCount">${nds.length} NDs</span>
-            <input type="text" id="crossArtSearch" placeholder="Hledat ND / klíčové slovo…" oninput="filterCrossArtByText(this.value)"
-                class="ml-auto px-3 py-1.5 rounded-lg bg-slate-800/80 text-xs text-slate-200 border border-slate-700/60 focus:border-indigo-500 outline-none w-52 transition">
+    let html = `
+    <div class="nd-section" style="margin-top:16px">
+        <div class="nd-section__head">
+            <span class="nd-section__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 4v16"/></svg></span>
+            <div class="nd-section__title">ND × ART Planning Matrix</div>
+            <span class="nd-section__meta" id="crossArtRowCount">${nds.length} ND</span>
+            <span class="nd-search" style="margin-left:auto">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-4.3-4.3"/></svg>
+                <input type="text" id="crossArtSearch" placeholder="Hledat ND / klíčové slovo…" oninput="filterCrossArtByText(this.value)">
+            </span>
         </div>
-        <div class="overflow-x-auto">
-        <table class="w-full text-xs" id="crossArtTable">
-            <thead><tr class="border-b border-slate-700/60">
-                <th class="px-3 py-2.5 text-left cursor-pointer hover:text-slate-200 transition" data-col="nd_key">ND ↕</th>
-                <th class="px-3 py-2.5 text-left cursor-pointer hover:text-slate-200 transition" data-col="summary">Summary ↕</th>
-                <th class="px-3 py-2.5 text-left cursor-pointer hover:text-slate-200 transition" data-col="nd_status">Status ↕</th>
-                <th class="px-3 py-2.5 text-left cursor-pointer hover:text-slate-200 transition" data-col="source_art">Owner ↕</th>
-                <th class="px-3 py-2.5 text-center cursor-pointer hover:text-slate-200 transition" data-col="art_count"># ↕</th>`;
+        <div class="nd-section__body nd-section__body--flush">
+            <div class="nd-mtx-wrap">
+                <table class="nd-mtx" id="crossArtTable">
+                    <thead><tr>
+                        <th data-col="nd_key">ND</th>
+                        <th data-col="summary">Summary</th>
+                        <th data-col="nd_status">Status</th>
+                        <th data-col="source_art">Owner</th>
+                        <th data-col="art_count" class="t-center">#</th>`;
     for (const a of shownArts) {
-        html += `<th class="px-2 py-2.5 text-center font-medium cursor-pointer hover:text-slate-200 transition" data-col="art_${a}" title="${a}">${a}</th>`;
+        const c = _artColors[a] || {bg:'100,116,139'};
+        html += `<th data-col="art_${a}" class="t-art" title="${a}">
+            <span style="display:inline-flex;align-items:center;gap:5px;justify-content:center">
+                <span style="width:6px;height:6px;border-radius:50%;background:rgb(${c.bg});box-shadow:0 0 0 2px rgba(${c.bg},0.20)"></span>${a}
+            </span>
+        </th>`;
     }
     html += `</tr></thead><tbody id="crossArtTableBody">`;
     for (const nd of nds) html += renderCrossArtRow(nd, shownArts);
-    html += `</tbody></table></div></div>`;
+    html += `</tbody></table></div></div></div>`;
     return html;
 }
 
 function renderCrossArtRow(nd, shownArts) {
-    const stCls = statusColor(nd.nd_status || '');
-    const summary = truncate(nd.summary || '', 60);
-    let html = `<tr class="border-b border-slate-800/40 hover:bg-indigo-950/20 crossart-row transition-colors" data-nd="${nd.nd_key}" data-src="${nd.source_group}">
-        <td class="px-3 py-2 ${stCls} cursor-pointer hover:underline font-medium whitespace-nowrap" onclick="showNDDetail('${nd.nd_key}')">${nd.nd_key}</td>
-        <td class="px-3 py-2 text-slate-300 max-w-xs truncate" title="${(nd.summary||'').replace(/"/g,'&quot;')}">${summary}</td>
-        <td class="px-3 py-2 text-slate-500 text-[11px]">${nd.nd_status || ''}</td>
-        <td class="px-3 py-2 text-slate-300 font-medium text-[11px]">${nd.source_art || ''}</td>
-        <td class="px-3 py-2 text-center text-slate-400">${nd.art_count}</td>`;
+    const summary = truncate(nd.summary || '', 70);
+    const kind = (typeof _ndStatusKind === 'function') ? _ndStatusKind(nd.nd_status) : 'neutral';
+    let html = `<tr class="crossart-row" data-nd="${nd.nd_key}" data-src="${nd.source_group}" onclick="showNDDetail && showNDDetail('${nd.nd_key}')">
+        <td><a class="nd-mtx__key" href="https://jira.cz.o2/browse/${nd.nd_key}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${nd.nd_key}</a></td>
+        <td><span class="nd-mtx__summary" title="${(nd.summary||'').replace(/"/g,'&quot;')}">${summary}</span></td>
+        <td><span class="nd-pill nd-pill--${kind}" style="font-size:10px"><span class="nd-pill__dot"></span>${nd.nd_status || '—'}</span></td>
+        <td><span class="nd-mtx__owner">${nd.source_art || ''}</span></td>
+        <td class="nd-mtx__count">${nd.art_count}</td>`;
 
     for (const a of shownArts) {
         const ap = (nd.art_plans || {})[a];
-        if (ap) {
-            let bg, text, ring = '';
-            if (ap.active > 0) {
-                bg = 'bg-blue-900/40'; text = 'text-blue-300';
-            } else if (ap.done > 0) {
-                bg = 'bg-emerald-900/30'; text = 'text-emerald-400';
-            } else if (ap.canceled > 0) {
-                bg = 'bg-slate-800/40'; text = 'text-slate-500 line-through';
-            } else {
-                bg = 'bg-slate-800/20'; text = 'text-slate-400';
-            }
-            // Mark cross-ART (different from source) with a subtle indicator
-            const isCross = nd.source_art !== a;
-            if (isCross && ap.active > 0) ring = 'ring-1 ring-indigo-500/30';
-            html += `<td class="px-2 py-2 text-center ${bg} ${text} ${ring} rounded-sm cursor-pointer hover:brightness-125 transition" title="${a}: ${ap.plans} plans (${ap.active} active, ${ap.done} done, ${ap.canceled} canceled)" onclick="openDrilldown('${nd.nd_key}','${a}')">${ap.plans}</td>`;
-        } else {
-            html += `<td class="px-2 py-2 text-center text-slate-800">·</td>`;
+        if (!ap) {
+            html += `<td class="cell"><span class="nd-mtx__plan--empty"></span></td>`;
+            continue;
         }
+        let stateCls;
+        if (ap.active > 0)        stateCls = 'nd-mtx__plan--active';
+        else if (ap.done > 0)     stateCls = 'nd-mtx__plan--done';
+        else if (ap.canceled > 0) stateCls = 'nd-mtx__plan--cancel';
+        else                      stateCls = '';
+        const crossCls = (nd.source_art !== a && ap.active > 0) ? 'nd-mtx__plan--cross' : '';
+        html += `<td class="cell">
+            <span class="nd-mtx__plan ${stateCls} ${crossCls}"
+                  title="${a}: ${ap.plans} plans · ${ap.active} active · ${ap.done} done · ${ap.canceled} canceled"
+                  onclick="event.stopPropagation(); openDrilldown && openDrilldown('${nd.nd_key}','${a}')">${ap.plans}</span>
+        </td>`;
     }
     html += `</tr>`;
     return html;
@@ -6647,11 +6690,16 @@ function filterCrossArtByText(q) {
     let vis = 0;
     document.querySelectorAll('.crossart-row').forEach(row => {
         const show = !q || row.dataset.nd.toLowerCase().includes(q) || row.textContent.toLowerCase().includes(q);
-        row.classList.toggle('hidden', !show);
+        row.classList.toggle('is-hidden', !show);
         if (show) vis++;
     });
     const counter = document.getElementById('crossArtRowCount');
-    if (counter) counter.textContent = `${vis} NDs`;
+    if (counter) counter.textContent = `${vis} ND`;
+
+    // Highlight matching heatmap cells too
+    if (q) {
+        document.querySelectorAll('.nd-heatmap__cell').forEach(c => c.classList.remove('nd-heatmap__cell--filtered'));
+    }
 }
 
 function filterCrossArtTable(src, tgt) {
@@ -6660,36 +6708,43 @@ function filterCrossArtTable(src, tgt) {
     const label = document.getElementById('heatmapFilterLabel');
     const clearBtn = document.getElementById('heatmapClearBtn');
 
+    // Reset cell highlights
+    document.querySelectorAll('.nd-heatmap__cell').forEach(c => c.classList.remove('nd-heatmap__cell--filtered'));
+
     if (!_crossArtFilter) {
-        // Clear filter - show all
         document.querySelectorAll('.crossart-row').forEach(row => {
-            row.classList.remove('hidden', 'ring-1', 'ring-indigo-500/40');
+            row.classList.remove('is-hidden', 'is-filtered');
         });
         if (label) { label.classList.add('hidden'); label.textContent = ''; }
         if (clearBtn) clearBtn.classList.add('hidden');
         const counter = document.getElementById('crossArtRowCount');
-        if (counter) counter.textContent = `${nds.length} NDs`;
+        if (counter) counter.textContent = `${nds.length} ND`;
         return;
     }
 
     if (label) { label.textContent = `Filtr: ${src} → ${tgt}`; label.classList.remove('hidden'); }
     if (clearBtn) clearBtn.classList.remove('hidden');
 
+    // Mark the active heatmap cell
+    document.querySelectorAll('.nd-heatmap__cell').forEach(cell => {
+        const onclick = cell.getAttribute('onclick') || '';
+        if (onclick.includes(`'${src}','${tgt}'`)) cell.classList.add('nd-heatmap__cell--filtered');
+    });
+
     let vis = 0;
     document.querySelectorAll('.crossart-row').forEach(row => {
         const ndKey = row.dataset.nd;
         const nd = nds.find(n => n.nd_key === ndKey);
-        if (!nd) { row.classList.add('hidden'); return; }
+        if (!nd) { row.classList.add('is-hidden'); return; }
         const srcMatch = nd.source_group === src;
         const tgtMatch = nd.art_plans && nd.art_plans[tgt];
         const show = srcMatch && tgtMatch;
-        row.classList.toggle('hidden', !show);
-        row.classList.toggle('ring-1', show);
-        row.classList.toggle('ring-indigo-500/40', show);
+        row.classList.toggle('is-hidden', !show);
+        row.classList.toggle('is-filtered', show);
         if (show) vis++;
     });
     const counter = document.getElementById('crossArtRowCount');
-    if (counter) counter.textContent = `${vis} NDs (filtered)`;
+    if (counter) counter.textContent = `${vis} ND (filtr aktivní)`;
 }
 
 function clearCrossArtFilter() {
@@ -6752,28 +6807,20 @@ function renderCrossArtTeamView(nds, groups) {
         }
     }
 
-    // ─── Expansion toolbar (Level 3) — toggle buttons ───
+    // ─── Expansion toolbar — ART expand toggles ───
     const abbrMap = _crossArtData?.team_abbr_map || {};
     const artTeamsMap = _crossArtData?.art_teams_map || {};
     let expandBar = '';
     if (shownArts.length > 0) {
-        expandBar = `<div class="flex items-center gap-1.5 px-3 py-2 border-b border-slate-700/40">
-            <span class="text-[10px] text-slate-500 font-medium uppercase tracking-wider mr-1">Rozpad týmů</span>`;
+        expandBar = `<div class="nd-toolbar-row">
+            <span class="nd-toolbar-row__label">Rozpad týmů</span>`;
         for (const art of shownArts) {
             const isExp = expanded.has(art);
             const teamCount = (artTeamsMap[art] || []).length;
-            const c = _artColors[art] || {bg:'100,116,139'};
-            if (isExp) {
-                expandBar += `<button onclick="toggleCrossArtExpand('${art}')" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-bold cursor-pointer transition-all border border-emerald-500/50 text-emerald-300" style="background:rgba(16,185,129,0.15); box-shadow:0 0 12px rgba(16,185,129,0.15)">
-                    <span>▾</span> ${art}
-                    <span class="text-[9px] px-1.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 font-semibold">${teamCount}</span>
-                </button>`;
-            } else {
-                expandBar += `<button onclick="toggleCrossArtExpand('${art}')" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-medium cursor-pointer transition-all border border-slate-700/50 bg-slate-800/50 text-slate-400 hover:border-slate-600 hover:text-slate-200">
-                    <span class="text-[9px]">▸</span> ${art}
-                    <span class="text-[9px] px-1.5 py-0.5 rounded-full bg-slate-700/40 text-slate-500">${teamCount}</span>
-                </button>`;
-            }
+            expandBar += `<span class="nd-expand-chip ${isExp ? 'is-expanded' : ''}" onclick="toggleCrossArtExpand('${art}')">
+                <span class="nd-expand-chip__caret">${isExp ? '▾' : '▸'}</span>${art}
+                <span class="nd-expand-chip__count">${teamCount}</span>
+            </span>`;
         }
         expandBar += `</div>`;
     }
@@ -6783,44 +6830,48 @@ function renderCrossArtTeamView(nds, groups) {
     const pf = window._caPlanFilter || new Set();
     const crossOnly = window._caCrossOnly || false;
 
-    const _sfBadge = (key, count, label, bg, color, ring) => {
+    const _sfBadge = (key, count, label, kind) => {
         const active = sf.has(key);
-        const ringCls = active ? `; box-shadow:0 0 8px ${ring}; border:1.5px solid ${ring}` : '';
-        return `<span class="px-1.5 py-0.5 rounded cursor-pointer select-none transition-all hover:brightness-125" style="background:${bg}; color:${color}${ringCls}" onclick="toggleCaStatusFilter('${key}')" title="Filtrovat: ${label}">${count} ${label}</span>`;
+        return `<span class="nd-stat-pill nd-stat-pill--${kind} ${active ? 'is-active' : ''}"
+            onclick="toggleCaStatusFilter('${key}')" title="Filtrovat: ${label}"><b>${count}</b> ${label}</span>`;
     };
 
-    let html = `<div class="glass rounded-xl overflow-hidden">
-        <div class="flex items-center gap-3 p-3 border-b border-slate-700/60">
-            <h3 class="text-sm font-semibold text-slate-200">ND × ART Status Matrix</h3>
-            <span class="text-xs text-slate-500" id="caTeamRowCount">${nds.length} NDs</span>
-            <div class="flex gap-2 ml-3 text-[10px]" id="caStatusBadges">
-                ${_sfBadge('ok_confirmed', totalOkConf, 'OK✔', 'rgba(37,99,235,0.2)', '#93c5fd', 'rgba(37,99,235,0.6)')}
-                ${_sfBadge('ok', totalOk, 'OK', 'rgba(22,163,74,0.2)', '#86efac', 'rgba(22,163,74,0.6)')}
-                ${_sfBadge('done', totalDone, 'Done', 'rgba(5,150,105,0.2)', '#6ee7b7', 'rgba(5,150,105,0.6)')}
-                ${_sfBadge('nok', totalNok, 'NOK', 'rgba(220,38,38,0.2)', '#fca5a5', 'rgba(220,38,38,0.6)')}
+    let html = `
+    <div class="nd-section" style="margin-top:16px">
+        <div class="nd-section__head">
+            <span class="nd-section__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 4v16M15 10v10"/></svg></span>
+            <div class="nd-section__title">ND × ART Status Matrix</div>
+            <span class="nd-section__meta" id="caTeamRowCount">${nds.length} ND</span>
+            <div style="display:flex;gap:6px;margin-left:8px" id="caStatusBadges">
+                ${_sfBadge('ok_confirmed', totalOkConf, 'OK ✔', 'okc')}
+                ${_sfBadge('ok', totalOk, 'OK', 'ok')}
+                ${_sfBadge('done', totalDone, 'Done', 'done')}
+                ${_sfBadge('nok', totalNok, 'NOK', 'nok')}
             </div>
-            <input type="text" id="caTeamSearch" placeholder="Hledat ND / klíčové slovo…" oninput="applyCrossArtFilters()"
-                class="ml-auto px-3 py-1.5 rounded-lg bg-slate-800/80 text-xs text-slate-200 border border-slate-700/60 focus:border-indigo-500 outline-none w-52 transition">
+            <span class="nd-search" style="margin-left:auto">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-4.3-4.3"/></svg>
+                <input type="text" id="caTeamSearch" placeholder="Hledat ND / klíčové slovo…" oninput="applyCrossArtFilters()">
+            </span>
         </div>
-        <div class="flex items-center gap-1.5 px-3 py-1.5 border-b border-slate-700/30 text-[10px]">
-            <span class="text-slate-600 font-medium uppercase tracking-wider mr-1">Filtr:</span>
+
+        <!-- Plan filter row -->
+        <div class="nd-toolbar-row">
+            <span class="nd-toolbar-row__label">Filtr</span>
             ${['Zaplánováno','Částečně zaplánováno','Nezaplánováno','Bez plánů'].map(ps => {
                 const short = ps === 'Částečně zaplánováno' ? 'Částečně' : ps === 'Nezaplánováno' ? 'Nezaplán.' : ps;
                 const active = pf.has(ps);
-                const cls = active
-                    ? 'bg-indigo-500/25 text-indigo-300 border-indigo-500/50 shadow-sm shadow-indigo-500/10'
-                    : 'bg-slate-800/40 text-slate-500 border-slate-700/40 hover:text-slate-300 hover:border-slate-600';
-                return `<button onclick="toggleCaPlanFilter('${ps}')" class="px-2 py-0.5 rounded-md border cursor-pointer transition-all ${cls}">${short}</button>`;
+                return `<span class="nd-fchip ${active ? 'is-active' : ''}" onclick="toggleCaPlanFilter('${ps}')">${short}</span>`;
             }).join('')}
-            <span class="w-px h-3.5 bg-slate-700/40 mx-1"></span>
-            <button onclick="toggleCaCrossOnly()" class="px-2 py-0.5 rounded-md border cursor-pointer transition-all ${crossOnly ? 'bg-amber-500/20 text-amber-300 border-amber-500/50 shadow-sm shadow-amber-500/10' : 'bg-slate-800/40 text-slate-500 border-slate-700/40 hover:text-slate-300 hover:border-slate-600'}">
+            <span class="nd-toolbar-row__sep"></span>
+            <span class="nd-fchip nd-fchip--amber ${crossOnly ? 'is-active' : ''}" onclick="toggleCaCrossOnly()">
                 ${crossOnly ? '✦ ' : ''}Jen meziartové
-            </button>
-            ${(sf.size > 0 || pf.size > 0 || crossOnly) ? `<button onclick="clearCaFilters()" class="px-2 py-0.5 rounded-md border border-slate-700/40 bg-slate-800/40 text-slate-500 cursor-pointer hover:text-red-400 hover:border-red-500/40 transition-all ml-1" title="Zrušit všechny filtry">✕ Reset</button>` : ''}
+            </span>
+            ${(sf.size > 0 || pf.size > 0 || crossOnly) ? `<span class="nd-fchip nd-fchip--danger" onclick="clearCaFilters()" title="Zrušit všechny filtry">✕ Reset</span>` : ''}
         </div>
+
         ${expandBar}
-        <div class="overflow-x-auto">
-        <table class="w-full text-xs" id="caTeamTable">`;
+        <div class="nd-team-mtx-wrap">
+        <table class="nd-team-mtx" id="caTeamTable">`;
 
     // ─── Table header ───
     const hasExpanded = expanded.size > 0;
@@ -6890,16 +6941,16 @@ function renderCrossArtTeamView(nds, groups) {
     html += `</tbody></table></div>`;
 
     // Legend
-    html += `<div class="flex items-center gap-4 p-3 border-t border-slate-700/40 text-[10px] text-slate-500">
-        <span>Legenda:</span>
-        <span class="flex items-center gap-1"><span class="inline-block w-5 h-4 rounded-sm" style="background:rgba(37,99,235,0.35)"></span><span class="text-blue-300">OK ✔</span> potvrzeno (MIRO/Done)</span>
-        <span class="flex items-center gap-1"><span class="inline-block w-5 h-4 rounded-sm" style="background:rgba(22,163,74,0.35)"></span><span class="text-emerald-300">OK</span> zaplánováno</span>
-        <span class="flex items-center gap-1"><span class="inline-block w-5 h-4 rounded-sm" style="background:rgba(5,150,105,0.3)"></span><span class="text-teal-300">Done</span> vše hotovo</span>
-        <span class="flex items-center gap-1"><span class="inline-block w-5 h-4 rounded-sm" style="background:rgba(245,158,11,0.3)"></span><span class="text-amber-300">⏳</span> nezaplánováno</span>
-        <span class="flex items-center gap-1"><span class="inline-block w-5 h-4 rounded-sm" style="background:rgba(220,38,38,0.3)"></span><span class="text-red-300">NOK</span> canceled</span>
-        <span class="flex items-center gap-1"><span class="inline-block w-5 h-4 rounded-sm bg-slate-800/40"></span> žádný plán</span>
-        <span class="mx-2">|</span>
-        <span>▸ klik na hlavičku ARTu = rozbal na týmy</span>
+    html += `<div class="nd-legend--inline">
+        <span style="font-size:10px;text-transform:uppercase;letter-spacing:0.10em;color:var(--nd-text-faint);font-weight:600">Legenda</span>
+        <span><span class="sw" style="background:rgba(37,99,235,0.35);border-color:rgba(37,99,235,0.5)"></span><b style="color:#93c5fd">OK ✔</b> potvrzeno (MIRO/Done)</span>
+        <span><span class="sw" style="background:rgba(22,163,74,0.35);border-color:rgba(22,163,74,0.5)"></span><b style="color:#86efac">OK</b> zaplánováno</span>
+        <span><span class="sw" style="background:rgba(5,150,105,0.3);border-color:rgba(5,150,105,0.45)"></span><b style="color:#6ee7b7">Done</b> hotovo</span>
+        <span><span class="sw" style="background:rgba(245,158,11,0.3);border-color:rgba(245,158,11,0.45)"></span><b style="color:#fcd9a0">⏳</b> nezaplánováno</span>
+        <span><span class="sw" style="background:rgba(220,38,38,0.3);border-color:rgba(220,38,38,0.5)"></span><b style="color:#fca5a5">NOK</b> canceled</span>
+        <span><span class="sw" style="background:rgba(51,65,85,0.2);border-color:var(--nd-border)"></span>žádný plán</span>
+        <span class="nd-toolbar-row__sep"></span>
+        <span style="color:var(--nd-accent-light);font-weight:600">▸ klik na ART v hlavičce = rozbal týmy</span>
     </div>`;
 
     html += `</div>`;
@@ -7075,7 +7126,26 @@ function toggleCaDetail(row, ndKey) {
 function renderCaDetail(data, ndKey) {
     const nd = data.nd || {};
     const plans = data.plans || [];
-    if (!plans.length) return '<div class="text-slate-500 text-sm">Žádné plány.</div>';
+    const J = 'https://jira.cz.o2/browse/';
+
+    const kindFn = (typeof _ndStatusKind === 'function') ? _ndStatusKind : () => 'neutral';
+    const summary = nd.summary || data.summary || '';
+    const status = nd.status || '';
+
+    let html = `<div class="ca-detail">
+        <div class="ca-detail__head">
+            <a class="ca-detail__key" href="${J}${ndKey}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${ndKey}</a>
+            ${status ? `<span class="nd-pill nd-pill--${kindFn(status)}"><span class="nd-pill__dot"></span>${status}</span>` : ''}
+            <span class="ca-detail__summary">${summary || '—'}</span>
+            ${nd.assignee ? `<span class="ca-detail__count">👤 ${nd.assignee}</span>` : ''}
+            <span class="ca-detail__count">${plans.length} plán${plans.length === 1 ? '' : (plans.length >= 2 && plans.length <= 4 ? 'y' : 'ů')}</span>
+            <button class="ca-detail__full" onclick="event.stopPropagation(); showNDDetail && showNDDetail('${ndKey}')">Otevřít plný detail →</button>
+        </div>`;
+
+    if (!plans.length) {
+        html += `<div class="ca-detail__empty">Žádné plány pro tento ND.</div></div>`;
+        return html;
+    }
 
     // Group plans by ART
     const byArt = {};
@@ -7085,41 +7155,32 @@ function renderCaDetail(data, ndKey) {
         byArt[art].push(p);
     }
 
-    let html = `<div class="flex items-start gap-6 flex-wrap">`;
-    // Left: ND info
-    html += `<div class="min-w-[200px] flex-shrink-0">
-        <div class="text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1">ND Detail</div>
-        <div class="text-sm text-slate-200 mb-1">${nd.summary || '—'}</div>
-        <div class="text-xs text-slate-400 mb-0.5">Status: <span class="${statusColor(nd.status || '')}">${nd.status || '—'}</span></div>
-        ${nd.assignee ? `<div class="text-xs text-slate-500">Assignee: ${nd.assignee}</div>` : ''}
-        <div class="text-xs text-slate-500 mt-1">${plans.length} plán${plans.length > 1 ? 'ů' : ''} v ${Object.keys(byArt).length} ART${Object.keys(byArt).length > 1 ? 'ech' : 'u'}</div>
-        <button class="mt-2 text-[10px] text-indigo-400 hover:text-indigo-300 hover:underline cursor-pointer" onclick="event.stopPropagation(); showNDDetail('${ndKey}')">Otevřít plný detail →</button>
-    </div>`;
-
-    // Right: plans by ART
-    html += `<div class="flex-1 min-w-[300px]">`;
+    html += `<div class="ca-detail__grid">`;
     for (const [art, artPlans] of Object.entries(byArt)) {
         const artC = _artColors[art] || {bg:'100,116,139'};
         const active = artPlans.filter(p => !['Canceled','Done'].includes(p.status)).length;
         const done = artPlans.filter(p => p.status === 'Done').length;
         const canceled = artPlans.filter(p => p.status === 'Canceled').length;
-        html += `<div class="mb-3">
-            <div class="flex items-center gap-2 mb-1">
-                <span class="px-1.5 py-0.5 rounded text-[10px] font-bold" style="background:rgba(${artC.bg},0.2); color:rgba(${artC.bg},1); border:1px solid rgba(${artC.bg},0.3)">${art}</span>
-                <span class="text-[10px] text-slate-500">${artPlans.length}p — <span class="text-emerald-400">${active} active</span>${done ? `, <span class="text-teal-400">${done} done</span>` : ''}${canceled ? `, <span class="text-red-400">${canceled} canc.</span>` : ''}</span>
-            </div>
-            <div class="grid gap-1">`;
+        const metaBits = [`<b>${artPlans.length}</b> p`];
+        if (active)   metaBits.push(`<span style="color:#93d4f8"><b>${active}</b> active</span>`);
+        if (done)     metaBits.push(`<span style="color:var(--nd-accent-light)"><b>${done}</b> done</span>`);
+        if (canceled) metaBits.push(`<span style="color:#fca5a5"><b>${canceled}</b> canc.</span>`);
+        html += `<div class="ca-art-group">
+            <div class="ca-art-group__head">
+                <span class="ca-art-group__badge" style="background:rgba(${artC.bg},0.16);color:rgb(${artC.bg});border:1px solid rgba(${artC.bg},0.32)">${art}</span>
+                <span class="ca-art-group__meta">${metaBits.join(' · ')}</span>
+            </div>`;
         for (const p of artPlans) {
-            const sCls = p.status === 'Done' ? 'text-emerald-400' : p.status === 'Canceled' ? 'text-slate-500 line-through' : ['In Progress','Implementing'].some(s => (p.status||'').includes(s)) ? 'text-sky-400' : 'text-amber-300';
-            html += `<div class="flex items-center gap-2 text-[11px] px-2 py-1 rounded bg-slate-900/60 border border-slate-700/40">
-                <a href="https://jira.cz.o2/browse/${p.key}" target="_blank" rel="noopener" class="text-blue-400 hover:underline font-mono" onclick="event.stopPropagation()">${p.key}</a>
-                <span class="${sCls} text-[10px] px-1 py-0.5 rounded bg-slate-800/60">${p.status || '—'}</span>
-                <span class="text-slate-400 truncate max-w-[300px]" title="${(p.summary||'').replace(/"/g,'&quot;')}">${truncate(p.summary || '', 45)}</span>
-                ${p.pi ? `<span class="text-[9px] text-slate-600 ml-auto">PI ${p.pi}</span>` : ''}
-                ${p.wsjf ? `<span class="text-[9px] text-violet-400 ml-1">W:${p.wsjf}</span>` : ''}
+            const pKind = kindFn(p.status);
+            html += `<div class="ca-plan">
+                <a class="ca-plan__key" href="${J}${p.key}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${p.key}</a>
+                <span class="nd-pill nd-pill--${pKind}" style="font-size:9.5px"><span class="nd-pill__dot"></span>${p.status || '—'}</span>
+                <span class="ca-plan__summary" title="${(p.summary||'').replace(/"/g,'&quot;')}">${truncate(p.summary || '', 50)}</span>
+                ${p.pi   ? `<span class="ca-plan__pi">${p.pi}</span>`     : ''}
+                ${p.wsjf ? `<span class="ca-plan__wsjf">${p.wsjf}</span>` : ''}
             </div>`;
         }
-        html += `</div></div>`;
+        html += `</div>`;
     }
     html += `</div></div>`;
     return html;
