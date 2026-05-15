@@ -1,0 +1,204 @@
+{
+  "teams": [
+    {
+      "name": "AIA",
+      "po": "Jaroslav Neubauer",
+      "sm": "Katka Blahová",
+      "members": [
+        "Denková Iveta",
+        "jakub Krejcar",
+        "Jakub Skála",
+        "Juraj Krivda",
+        "Krausová Andrea",
+        "Marek Nový",
+        "Mouric Petr",
+        "Procházková Petra",
+        "Radek Lano",
+        "Radek Vojtíšek",
+        "Rosťa Janda",
+        "Silvia Kocaníková",
+        "Skokanová Sandra",
+        "Štemberková Nikol",
+        "Trčka Miroslav",
+        "Václav Brožek",
+        "Vlček Ondřej",
+        "Winklerová Martina"
+      ]
+    },
+    {
+      "name": "APP V- BUILDERS",
+      "po": "Jan Volf",
+      "sm": "Marek Chovanec",
+      "members": [
+        "Dominik Mačejovký",
+        "Jan Čenteš",
+        "Jiří Vrzala",
+        "Juraj Beníček",
+        "Martin Vondráček",
+        "Milada Pokorová",
+        "Simona Čejková",
+        "Tomáš Najman",
+        "Tomáš Procházka",
+        "Vojtěch Bilík"
+      ]
+    },
+    {
+      "name": "CCTECH",
+      "po": "Martin Šmatlák",
+      "sm": "Katka Blahová",
+      "members": [
+        "David Kučera",
+        "Falt Lukáš",
+        "Janeček Jan",
+        "Jílková Emily Victoria",
+        "Lachout Jiří",
+        "Mastníková Jana",
+        "Ondřej Marcinko",
+        "Radek Lano",
+        "Radek Svatonský",
+        "Radek Vojtíšek",
+        "Šedivý Jindřich"
+      ]
+    },
+    {
+      "name": "D- NINE",
+      "po": "Petra Toncarová",
+      "sm": "Marek Chovanec",
+      "members": [
+        "Cichý Lukáš",
+        "Igor Vazhenin",
+        "Jana Baušteinová",
+        "Karel Bušta",
+        "Marieta Ťapušková",
+        "Nikola Novotná",
+        "Petr Kubáč",
+        "Rasťa Janetka",
+        "Saśa Tóth",
+        "Tomáš Kačer",
+        "Tomáš Procházka"
+      ]
+    },
+    {
+      "name": "DRIVE",
+      "po": "Ferda Kraus",
+      "sm": "Jana Paturová",
+      "members": [
+        "Adam Leitgeb",
+        "Blanka Hadravová",
+        "Dušan Rechtig",
+        "Lenka Kurka",
+        "Martin Čabrun",
+        "Ondřej Synák",
+        "Robert Kaločai",
+        "Šimon Matouš",
+        "Tomáš Kačer",
+        "Vojtěch Bilík"
+      ]
+    },
+    {
+      "name": "eSHOP",
+      "po": "Josef Princl",
+      "sm": "Pavel Trávníček",
+      "members": [
+        "David Vršek",
+        "Jakub Zafer",
+        "Kateřina Tyllerová Tučková",
+        "Kristýna Kulhánková",
+        "Matouš Najman",
+        "Miroslav Chlubna",
+        "Pavlína Chroboková",
+        "Petr Čížek",
+        "Petr Stuchlík",
+        "Petr Svozelík (IT)",
+        "Tomáš Fořt",
+        "Václav Doubek",
+        "Vojtěch Lysý"
+      ]
+    },
+    {
+      "name": "MO2 WEB",
+      "po": "Luboš Paroulek",
+      "sm": "Jana Paturová",
+      "members": [
+        "Aleš Gabriel",
+        "Filip Jandejsek",
+        "František Klíma",
+        "Jan Tlačil",
+        "Julius Budúcký",
+        "Markéta Štefanová",
+        "Martin Olmr",
+        "Michal Hladík",
+        "Michal Rejduga",
+        "Miroslav Holeček",
+        "Ondřej Vanča",
+        "Pavel Vondrášek",
+        "Petra Stočesová",
+        "Tomáš Nývlt",
+        "Zuzka Loumová"
+      ]
+    },
+    {
+      "name": "O2CZ",
+      "po": "David Kalina",
+      "sm": "Pavel Trávníček",
+      "members": [
+        "Adam Kalabis",
+        "Adam Šípek",
+        "Dana Adamová",
+        "Dominik Kralik",
+        "Dominik Studený",
+        "Hana Kovaříková",
+        "Irena Štácová",
+        "Iryna Pylypenko Nosová",
+        "Jakub Laštůvka",
+        "Jakub Raš",
+        "Jakub Žežule",
+        "Martin Kučera",
+        "Ondřej Sláma",
+        "Tereza Hatlapa",
+        "Tomáš Altman"
+      ]
+    },
+    {
+      "name": "OMNI",
+      "po": "Lucka Běhavá",
+      "sm": "Katka Dopitová",
+      "members": [
+        "Bui Anh Viet",
+        "Daniel Davidík",
+        "Kateřina Zuchinská",
+        "Libor Václavík",
+        "Lucie Hradská",
+        "Martin Sychrovský",
+        "Martin Szollos",
+        "Miloš Haincl",
+        "Oldřich Koutecký",
+        "Ondřej Dacer",
+        "Patrik Ballarin",
+        "Roman Šeiner",
+        "Stanislav Šnejdar",
+        "Vitalij Procházka"
+      ]
+    },
+    {
+      "name": "U- LINKERS",
+      "po": "Pavla Hubáčková",
+      "sm": "Petr Rychtář",
+      "members": [
+        "David Blažek",
+        "Hanka Ramešová",
+        "Jirka Adamec",
+        "Katka Marečková",
+        "Luboš Štťěpnička",
+        "Marie Vávrová",
+        "Martin Halíř",
+        "Pavel Vondrášek",
+        "Raab Jiří",
+        "Varha Vladislav",
+        "Vašek Mlynář"
+      ]
+    }
+  ],
+  "total_teams": 10,
+  "total_people": 148
+}

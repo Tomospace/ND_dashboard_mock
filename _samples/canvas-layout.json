@@ -1,0 +1,128 @@
+{
+  "id": 2,
+  "name": "Product Owner Dashboard",
+  "description": null,
+  "role": "po",
+  "widgets": [
+    {
+      "h": 4,
+      "w": 6,
+      "x": 0,
+      "y": 0,
+      "type": "nd-list",
+      "title": "ND Přehled",
+      "config": {}
+    },
+    {
+      "h": 4,
+      "w": 6,
+      "x": 6,
+      "y": 0,
+      "type": "deliverables",
+      "title": "Deliverables",
+      "config": {}
+    },
+    {
+      "h": 3,
+      "w": 4,
+      "x": 0,
+      "y": 4,
+      "type": "discovery-signals",
+      "title": "Discovery Readiness",
+      "config": {}
+    },
+    {
+      "h": 3,
+      "w": 4,
+      "x": 4,
+      "y": 4,
+      "type": "activity",
+      "title": "Aktivita",
+      "config": {}
+    },
+    {
+      "h": 3,
+      "w": 4,
+      "x": 8,
+      "y": 4,
+      "type": "apps",
+      "title": "Impacted Apps",
+      "config": {}
+    },
+    {
+      "h": 4,
+      "w": 6,
+      "x": 0,
+      "y": 7,
+      "type": "nd-list",
+      "title": "ND Seznam",
+      "config": {}
+    },
+    {
+      "h": 4,
+      "w": 6,
+      "x": 0,
+      "y": 11,
+      "type": "nd-list",
+      "title": "ND Seznam",
+      "config": {}
+    },
+    {
+      "h": 3,
+      "w": 4,
+      "x": 0,
+      "y": 15,
+      "type": "discovery-signals",
+      "title": "Discovery Signals",
+      "config": {}
+    },
+    {
+      "h": 4,
+      "w": 6,
+      "x": 0,
+      "y": 18,
+      "type": "nd-list",
+      "title": "ND Seznam",
+      "config": {}
+    },
+    {
+      "h": 4,
+      "w": 6,
+      "x": 0,
+      "y": 22,
+      "type": "nd-list",
+      "title": "ND Seznam",
+      "config": {}
+    },
+    {
+      "h": 4,
+      "w": 4,
+      "x": 0,
+      "y": 26,
+      "type": "activity",
+      "title": "Aktivita / Komentáře",
+      "config": {}
+    },
+    {
+      "h": 3,
+      "w": 4,
+      "x": 0,
+      "y": 30,
+      "type": "apps",
+      "title": "Impacted Apps",
+      "config": {}
+    },
+    {
+      "h": 4,
+      "w": 6,
+      "x": 0,
+      "y": 33,
+      "type": "nd-list",
+      "title": "ND Seznam",
+      "config": {}
+    }
+  ],
+  "grid_cols": 12,
+  "created_at": "2026-04-01 01:05:36.453462+02:00",
+  "updated_at": "2026-04-01 01:05:42.836593+02:00"
+}

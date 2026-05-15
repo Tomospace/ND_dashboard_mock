@@ -1,0 +1,88 @@
+{
+  "_comment": "Statické / agregované fixtures pro mock. Designer typicky neupravuje. Pro úpravu textů ND použij data/nds.md, pro ARTy data/arts.md.",
+
+  "delayed": [
+    {"nd_key": "ND-1001", "summary": "Reorganizace billingového modulu pro tarify s rodinnou slevou", "status": "Delivery", "days_delayed": 12, "art_short": "IT"},
+    {"nd_key": "ND-1005", "summary": "Optimalizace 5G pokrytí v hustých zónách Prahy", "status": "Delivery", "days_delayed": 28, "art_short": "NTW"},
+    {"nd_key": "ND-1010", "summary": "Audit a refresh privacy policy (GDPR update 2026)", "status": "Delivery", "days_delayed": 6, "art_short": "CS"},
+    {"nd_key": "ND-1018", "summary": "Refaktor doručovacích notifikací pro retail síť", "status": "Delivery", "days_delayed": 9, "art_short": "CS"},
+    {"nd_key": "ND-1023", "summary": "B2B custom invoicing pro key accounts", "status": "Delivery", "days_delayed": 18, "art_short": "B2B"},
+    {"nd_key": "ND-1028", "summary": "Migrace volání z VoLTE 1.0 na VoLTE 2.0 (CNAM, RTT)", "status": "Delivery", "days_delayed": 4, "art_short": "NTW"},
+    {"nd_key": "ND-1032", "summary": "Roll-out 5G SA v Brně a Ostravě (PI4 wave)", "status": "Delivery", "days_delayed": 14, "art_short": "NTW"}
+  ],
+
+  "portfolios": [
+    {"key": "PROJEKT-101", "summary": "Billing Modernization 2026", "status": "Active", "nd_count": 14, "owner": "Novák Jan"},
+    {"key": "PROJEKT-102", "summary": "Digital First Customer Experience", "status": "Active", "nd_count": 22, "owner": "Dvořák Petr"},
+    {"key": "PROJEKT-103", "summary": "AI Automation Initiatives", "status": "Active", "nd_count": 9, "owner": "Kučera Tomáš"},
+    {"key": "PROJEKT-104", "summary": "B2B Platform Renewal", "status": "Active", "nd_count": 11, "owner": "Veselá Klára"},
+    {"key": "PROJEKT-105", "summary": "Customer Service Transformation", "status": "Active", "nd_count": 7, "owner": "Kučera Tomáš"},
+    {"key": "PROJEKT-106", "summary": "Network 5G & VoLTE Rollout", "status": "Active", "nd_count": 8, "owner": "Horák Martin"},
+    {"key": "PROJEKT-107", "summary": "Maintenance, Hotfixes & Compliance", "status": "Active", "nd_count": 6, "owner": "Beneš Aleš"},
+    {"key": "PROJEKT-108", "summary": "Data & Analytics Platform 2027", "status": "On Hold", "nd_count": 3, "owner": "Dvořák Petr"},
+    {"key": "PROJEKT-109", "summary": "Cybersecurity Hardening Wave 2", "status": "Active", "nd_count": 4, "owner": "Novák Jan"},
+    {"key": "PROJEKT-110", "summary": "Retail POS Modernization", "status": "Discovery", "nd_count": 2, "owner": "Kučera Tomáš"}
+  ],
+
+  "changelog": [
+    {"id": 12, "timestamp": "2026-05-15T16:40:00", "user": "Horák Martin", "scope": "nd", "scope_key": "ND-1032", "action": "comment", "summary": "Drive test Brno — výsledky", "details": "RSRP medián -85 dBm, throughput 1.2 Gbps downlink. Připraveno k commercial launch."},
+    {"id": 11, "timestamp": "2026-05-15T14:22:00", "user": "Beneš Aleš", "scope": "nd", "scope_key": "ND-1019", "action": "status_change", "summary": "Status změněn na Delivery (Hotfix lane)", "details": "PI3 release blocker — fast-track schválen."},
+    {"id": 10, "timestamp": "2026-05-15T11:05:00", "user": "Procházková Lenka", "scope": "nd", "scope_key": "ND-1020", "action": "comment", "summary": "AI Chat Q3 pilot scope upřesněn", "details": "Pilot pokryje 3 use cases: faktura, tarif, technická podpora."},
+    {"id": 9, "timestamp": "2026-05-14T17:30:00", "user": "Novák Jan", "scope": "nd", "scope_key": "ND-1013", "action": "comment", "summary": "Federated SSO — bezpečnostní review", "details": "Security team review naplánován na 2026-05-23."},
+    {"id": 8, "timestamp": "2026-05-14T13:45:00", "user": "Veselá Klára", "scope": "nd", "scope_key": "ND-1023", "action": "comment", "summary": "B2B invoicing template renderer hotov", "details": "Template renderer integrace s billing core úspěšně testována."},
+    {"id": 7, "timestamp": "2026-05-14T09:30:00", "user": "Novák Jan", "scope": "nd", "scope_key": "ND-1003", "action": "status_change", "summary": "Status změněn na PreQS", "details": "Discovery → PreQS, review naplánován na 2026-05-22"},
+    {"id": 6, "timestamp": "2026-05-13T16:00:00", "user": "Horák Martin", "scope": "nd", "scope_key": "ND-1028", "action": "comment", "summary": "Interop testy VoLTE — Vodafone OK", "details": "Vodafone CZ interop pass, T-Mobile testing scheduled next week."},
+    {"id": 5, "timestamp": "2026-05-13T14:15:00", "user": "Dvořák Petr", "scope": "system", "scope_key": null, "action": "sync", "summary": "Tempo sync dokončen", "details": "Zpracováno 124 worklogů za posledních 7 dní"},
+    {"id": 4, "timestamp": "2026-05-12T11:20:00", "user": "Procházková Lenka", "scope": "nd", "scope_key": "ND-1009", "action": "comment", "summary": "Přidán komentář k DoD", "details": "PreQS review feedback zahrnut"},
+    {"id": 3, "timestamp": "2026-05-11T15:55:00", "user": "Beneš Aleš", "scope": "art", "scope_key": "TYM-107", "action": "team_update", "summary": "Nový ART FIX založen", "details": "Maintenance & Hotfixes ART aktivován pro hotfix lane v PI3/PI4."},
+    {"id": 2, "timestamp": "2026-05-10T16:45:00", "user": "Kučera Tomáš", "scope": "art", "scope_key": "TYM-104", "action": "team_update", "summary": "Přidán nový tým TYM-403", "details": "Customer Care Tier-2 zapojen do PI3"},
+    {"id": 1, "timestamp": "2026-05-08T08:10:00", "user": "Novák Jan", "scope": "nd", "scope_key": "ND-1001", "action": "status_change", "summary": "Status změněn na Delivery", "details": "QS schválen, Delivery start 2026-04-28"}
+  ],
+
+  "dca_teams": [
+    {"team_key": "TYM-211", "team_name": "R.U.R. Backend", "art_short": "IT", "members": 8, "lead": "Novák Jan", "type": "delivery", "roles": ["Vývojář", "Architekt", "Systémový analytik", "Tester"]},
+    {"team_key": "TYM-212", "team_name": "U-Linkers", "art_short": "IT", "members": 7, "lead": "Dvořák Petr", "type": "delivery", "roles": ["Vývojář", "Business analytik", "Tester"]},
+    {"team_key": "TYM-213", "team_name": "Identity & Access", "art_short": "IT", "members": 5, "lead": "Svoboda Petr", "type": "delivery", "roles": ["Architekt", "Vývojář", "Tester"]},
+    {"team_key": "TYM-301", "team_name": "Frontend Champions", "art_short": "DC", "members": 6, "lead": "Procházková Lenka", "type": "delivery", "roles": ["Vývojář", "UX/WF", "Tester"]},
+    {"team_key": "TYM-302", "team_name": "Mobile App Squad", "art_short": "DC", "members": 5, "lead": "Veselá Klára", "type": "delivery", "roles": ["Vývojář", "UX/WF", "Tester"]},
+    {"team_key": "TYM-303", "team_name": "Cross-sell & Personalization", "art_short": "MM", "members": 4, "lead": "Procházková Lenka", "type": "delivery", "roles": ["Business analytik", "UX/WF", "Vývojář"]},
+    {"team_key": "TYM-401", "team_name": "Customer Care Tools", "art_short": "CS", "members": 6, "lead": "Kučera Tomáš", "type": "support", "roles": ["Business analytik", "Vývojář", "Tester"]},
+    {"team_key": "TYM-402", "team_name": "IVR & Voice", "art_short": "CS", "members": 4, "lead": "Černá Petra", "type": "support", "roles": ["Architekt", "Vývojář"]},
+    {"team_key": "TYM-403", "team_name": "Care Tier-2", "art_short": "CS", "members": 3, "lead": "Kučera Tomáš", "type": "support", "roles": ["Business analytik", "Tester"]},
+    {"team_key": "TYM-501", "team_name": "B2B Platform", "art_short": "B2B", "members": 4, "lead": "Veselá Klára", "type": "delivery", "roles": ["Vývojář", "Business analytik", "Tester"]},
+    {"team_key": "TYM-502", "team_name": "B2B Invoicing", "art_short": "B2B", "members": 4, "lead": "Nováková Eva", "type": "delivery", "roles": ["Business analytik", "Vývojář"]},
+    {"team_key": "TYM-503", "team_name": "B2B Self-care", "art_short": "B2B", "members": 3, "lead": "Veselá Klára", "type": "delivery", "roles": ["UX/WF", "Vývojář"]},
+    {"team_key": "TYM-601", "team_name": "Network Engineering", "art_short": "NTW", "members": 5, "lead": "Horák Martin", "type": "delivery", "roles": ["Architekt", "Vývojář", "Tester"]},
+    {"team_key": "TYM-602", "team_name": "Core Voice & IMS", "art_short": "NTW", "members": 4, "lead": "Beran Jakub", "type": "delivery", "roles": ["Architekt", "Vývojář"]},
+    {"team_key": "TYM-603", "team_name": "IP Backbone", "art_short": "NTW", "members": 3, "lead": "Horák Martin", "type": "delivery", "roles": ["Architekt", "Systémový analytik"]},
+    {"team_key": "TYM-701", "team_name": "Hotfix Squad", "art_short": "FIX", "members": 4, "lead": "Beneš Aleš", "type": "support", "roles": ["Vývojář", "Tester"]},
+    {"team_key": "TYM-702", "team_name": "Architecture Guild", "art_short": "IT", "members": 4, "lead": "Novák Jan", "type": "support", "roles": ["Architekt", "Systémový analytik"]}
+  ],
+
+  "widget_registry": [
+    {"type": "nd-list", "label": "ND Seznam", "icon": "📋", "description": "Přehled ND s filtry a stavem", "default_size": {"w": 6, "h": 4}, "min_size": {"w": 4, "h": 3}, "data_endpoint": "/api/overview", "config_fields": ["art_filter"]},
+    {"type": "discovery-signals", "label": "Discovery Signals", "icon": "🔍", "description": "Readiness metriky pro discovery fázi", "default_size": {"w": 4, "h": 3}, "min_size": {"w": 3, "h": 2}, "data_endpoint": "/api/nd-dod/{nd_key}", "config_fields": ["nd_key"]},
+    {"type": "deliverables", "label": "Deliverables", "icon": "📦", "description": "Role-by-role progress dodávek", "default_size": {"w": 6, "h": 4}, "min_size": {"w": 4, "h": 3}, "data_endpoint": "/api/nd-dod/{nd_key}", "config_fields": ["nd_key"]},
+    {"type": "tempo", "label": "Tempo Hodiny", "icon": "⏱️", "description": "Časové záznamy dle ART/ND", "default_size": {"w": 4, "h": 3}, "min_size": {"w": 3, "h": 2}, "data_endpoint": "/api/tempo/{art_key}", "config_fields": ["art_key", "days"]},
+    {"type": "apps", "label": "Impacted Apps", "icon": "🖥️", "description": "Dotčené aplikace a systémy", "default_size": {"w": 4, "h": 3}, "min_size": {"w": 3, "h": 2}, "data_endpoint": "/api/nd-apps/{nd_key}", "config_fields": ["nd_key"]},
+    {"type": "activity", "label": "Aktivita / Komentáře", "icon": "💬", "description": "Poslední komentáře a aktivita na ND", "default_size": {"w": 4, "h": 4}, "min_size": {"w": 3, "h": 3}, "data_endpoint": "/api/nd-activity/{nd_key}", "config_fields": ["nd_key", "limit"]},
+    {"type": "wiki", "label": "Wiki / Dokumenty", "icon": "📖", "description": "Přílohy, linky a dokumenty ND", "default_size": {"w": 4, "h": 3}, "min_size": {"w": 3, "h": 2}, "data_endpoint": "/api/nd-wiki/{nd_key}", "config_fields": ["nd_key"]},
+    {"type": "cross-art", "label": "Cross-ART Matrix", "icon": "🔗", "description": "Heatmapa závislostí mezi ARTy", "default_size": {"w": 6, "h": 4}, "min_size": {"w": 4, "h": 3}, "data_endpoint": "/api/cross-art", "config_fields": ["source_group"]}
+  ],
+
+  "canvas_layouts": [
+    {"id": 1, "name": "Default Overview", "description": "Hlavní přehledový layout pro mock", "created_at": "2026-05-01T10:00:00", "updated_at": "2026-05-14T12:00:00", "widgets_count": 4}
+  ],
+
+  "canvas_layout_default": {
+    "id": 1,
+    "name": "Default Overview",
+    "description": "Hlavní přehledový layout pro mock",
+    "widgets": [
+      {"id": "w1", "type": "nd-list", "x": 0, "y": 0, "w": 6, "h": 4, "config": {}},
+      {"id": "w2", "type": "tempo", "x": 6, "y": 0, "w": 6, "h": 3, "config": {"art_key": "TYM-101", "days": 90}},
+      {"id": "w3", "type": "discovery-signals", "x": 6, "y": 3, "w": 6, "h": 3, "config": {"nd_key": "ND-1001"}},
+      {"id": "w4", "type": "cross-art", "x": 0, "y": 4, "w": 12, "h": 4, "config": {}}
+    ]
+  }
+}

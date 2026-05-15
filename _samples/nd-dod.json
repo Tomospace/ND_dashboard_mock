@@ -1,0 +1,71 @@
+{
+  "nd_key": "ND-12839",
+  "summary": "Split billing - Historie plateb",
+  "status": "Canceled",
+  "description_length": 20,
+  "plans": [
+    {
+      "key": "ROLE-31907",
+      "summary": "ND-12839 Split billing - Historie plateb | ART Implementation Plan | ART - DC",
+      "status": "Canceled",
+      "assignee": "Mňuk Lukáš",
+      "art_key": "TYM-240",
+      "art_name": "[ART - DC] Digital Channels | Rezek Martin",
+      "pi": "PI 2",
+      "funnel_status": null,
+      "wsjf": 0.0
+    },
+    {
+      "key": "ROLE-32500",
+      "summary": "ND-12839 Split billing - Historie plateb | ART Implementation Plan | ART - IT",
+      "status": "Canceled",
+      "assignee": "Černý Jan",
+      "art_key": "TYM-152",
+      "art_name": "[ART - IT] IT Platform | Boháč Zdeněk",
+      "pi": null,
+      "funnel_status": null,
+      "wsjf": 0.0
+    }
+  ],
+  "ban": [],
+  "lean_bc": [],
+  "apps": [],
+  "discovery": {
+    "arch": {
+      "children": [],
+      "has_excalidraw": false,
+      "has_figma": false,
+      "figma_url": null,
+      "done": false
+    },
+    "qs": []
+  },
+  "discovery_signals": {
+    "description_filled": false,
+    "has_excalidraw": false,
+    "has_figma": false,
+    "figma_url": null,
+    "impacted_apps_exist": false,
+    "arch_qs_exist": false,
+    "ban_rm_exist": false,
+    "discovery_tempo_hours": 0.0,
+    "score": 0
+  },
+  "delivery_teams": [],
+  "testing": [],
+  "release": [],
+  "impl_by_project": {},
+  "deliverables": [],
+  "children_total": 0,
+  "tempo": {
+    "total_hours": 0.0,
+    "discovery_hours": 0.0,
+    "delivery_hours": 0.0,
+    "roles": [],
+    "teams": [],
+    "unassigned": {
+      "hours": 0.0,
+      "authors": 0
+    }
+  }
+}

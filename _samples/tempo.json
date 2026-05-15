@@ -1,0 +1,3914 @@
+[
+  {
+    "week": "2026-109",
+    "author_key": "x0550391",
+    "author_name": "Mikulík Jaromír",
+    "hours": 20.0
+  },
+  {
+    "week": "2026-109",
+    "author_key": "JIRAUSER83500",
+    "author_name": "Holeček Miroslav",
+    "hours": 0.5
+  },
+  {
+    "week": "2026-110",
+    "author_key": "ja063268",
+    "author_name": "Súkeník Jakub",
+    "hours": 40.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "x0543734",
+    "author_name": "Jelének Marek",
+    "hours": 40.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "pe073544",
+    "author_name": "Papp Peter",
+    "hours": 40.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER107786",
+    "author_name": "Pastorčák Miroslav",
+    "hours": 40.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER107703",
+    "author_name": "Lvova Alexandra",
+    "hours": 40.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER90010",
+    "author_name": "Mráček Ladislav",
+    "hours": 40.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "mi055075",
+    "author_name": "Purš Miroslav",
+    "hours": 33.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER102863",
+    "author_name": "Štěpán Michal",
+    "hours": 32.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "x0557971",
+    "author_name": "Stryk Lubomír",
+    "hours": 30.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER100795",
+    "author_name": "Roman Dominik",
+    "hours": 29.5
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER85010",
+    "author_name": "Ubr Roman",
+    "hours": 29.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "lu077479",
+    "author_name": "Fanta Lukáš",
+    "hours": 29.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER103178",
+    "author_name": "Janda Lukáš",
+    "hours": 28.083333333333332
+  },
+  {
+    "week": "2026-110",
+    "author_key": "x0509629",
+    "author_name": "Jandejsek Filip",
+    "hours": 28.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER84351",
+    "author_name": "Straňák Jiří",
+    "hours": 27.5
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER88047",
+    "author_name": "Farkaš Eduard",
+    "hours": 27.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER81900",
+    "author_name": "Filip Petr",
+    "hours": 26.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER94242",
+    "author_name": "Marečková Kateřina",
+    "hours": 25.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "x0556340",
+    "author_name": "Habrda Lubor",
+    "hours": 24.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "an070137",
+    "author_name": "Kříž Antonín",
+    "hours": 24.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "pe068941",
+    "author_name": "Slezák Petr",
+    "hours": 22.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "ro044185",
+    "author_name": "Štědronský Roman",
+    "hours": 22.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "pe036856",
+    "author_name": "Vinduška Petr",
+    "hours": 22.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "pe036752",
+    "author_name": "Jiřík Petr",
+    "hours": 21.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "pa005180",
+    "author_name": "Barák Pavel",
+    "hours": 20.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "x0558745",
+    "author_name": "Daněk František",
+    "hours": 20.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER81933",
+    "author_name": "Musil Vilém",
+    "hours": 20.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER82166",
+    "author_name": "Najman Tomáš",
+    "hours": 19.25
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER99692",
+    "author_name": "Kačer Tomáš",
+    "hours": 19.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "lu071735",
+    "author_name": "Rejl Lukáš",
+    "hours": 19.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "da042769",
+    "author_name": "Ležák Daniel",
+    "hours": 18.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "ja069346",
+    "author_name": "Bohuslavický Jan",
+    "hours": 16.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER107333",
+    "author_name": "Kodytek Jakub",
+    "hours": 16.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "mi035070",
+    "author_name": "Kašpar Milan",
+    "hours": 16.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER82772",
+    "author_name": "Šeiner Roman",
+    "hours": 16.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "ja003818",
+    "author_name": "Vrzoňová Jana",
+    "hours": 15.916666666666666
+  },
+  {
+    "week": "2026-110",
+    "author_key": "ja022513",
+    "author_name": "Mrkosová Jana",
+    "hours": 15.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "sa037938",
+    "author_name": "Krninská Šárka",
+    "hours": 15.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER100373",
+    "author_name": "Průšek Jan",
+    "hours": 15.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "ma071295",
+    "author_name": "Linhart Marek",
+    "hours": 14.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER78835",
+    "author_name": "Václavík Libor",
+    "hours": 14.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER86181",
+    "author_name": "Paliukh Kyryl",
+    "hours": 14.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "lu063198",
+    "author_name": "Paroulek Luboš",
+    "hours": 14.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER84359",
+    "author_name": "Slivková Daniela",
+    "hours": 13.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "ji048361",
+    "author_name": "Krauszová Jitka",
+    "hours": 13.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "mi069767",
+    "author_name": "Haincl Miloš",
+    "hours": 13.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "si041611",
+    "author_name": "Čejková Simona",
+    "hours": 12.5
+  },
+  {
+    "week": "2026-110",
+    "author_key": "vl003418",
+    "author_name": "Bílek Vladimír",
+    "hours": 12.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER78131",
+    "author_name": "Preisler Monika",
+    "hours": 11.5
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER87419",
+    "author_name": "Zuchnická Kateřina",
+    "hours": 11.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "le065116",
+    "author_name": "Kurková Lenka",
+    "hours": 10.5
+  },
+  {
+    "week": "2026-110",
+    "author_key": "ja057023",
+    "author_name": "Brudna Jan",
+    "hours": 10.5
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER79744",
+    "author_name": "Popovičová Romana",
+    "hours": 10.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "ma000381",
+    "author_name": "Ječný Martin",
+    "hours": 10.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "ma027851",
+    "author_name": "Štefanová Markéta",
+    "hours": 10.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "ja055330",
+    "author_name": "Černý Jan",
+    "hours": 10.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "ja072454",
+    "author_name": "Kalenská Jana",
+    "hours": 9.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "ja066435",
+    "author_name": "Mareš Jakub",
+    "hours": 9.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER90239",
+    "author_name": "Palivec Tomáš",
+    "hours": 9.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "bl004385",
+    "author_name": "Hadravová Blanka",
+    "hours": 9.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "x0556106",
+    "author_name": "Štěpnička Luboš",
+    "hours": 8.083333333333334
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER83882",
+    "author_name": "Vrzala Jiří",
+    "hours": 8.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "pa062576",
+    "author_name": "Ševeček Pavel",
+    "hours": 8.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER93950",
+    "author_name": "Blažek David",
+    "hours": 8.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER91205",
+    "author_name": "Kula David",
+    "hours": 7.166666666666667
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER98548",
+    "author_name": "Pokorný Jakub",
+    "hours": 7.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER104850",
+    "author_name": "Ballarin Patrik",
+    "hours": 7.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER107048",
+    "author_name": "Dědek Marek",
+    "hours": 6.833333333333333
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER102788",
+    "author_name": "Dvořák Dominik",
+    "hours": 6.75
+  },
+  {
+    "week": "2026-110",
+    "author_key": "pe000701",
+    "author_name": "Kolenatý Petr",
+    "hours": 6.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER100936",
+    "author_name": "Fořt Tomáš",
+    "hours": 6.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER82746",
+    "author_name": "Vondrášek Pavel",
+    "hours": 5.5
+  },
+  {
+    "week": "2026-110",
+    "author_key": "al036827",
+    "author_name": "Dumek Aleš",
+    "hours": 5.5
+  },
+  {
+    "week": "2026-110",
+    "author_key": "pa066999",
+    "author_name": "Švejk Pavel",
+    "hours": 5.5
+  },
+  {
+    "week": "2026-110",
+    "author_key": "x0551522",
+    "author_name": "Miltová Petra",
+    "hours": 5.5
+  },
+  {
+    "week": "2026-110",
+    "author_key": "to069152",
+    "author_name": "Candra Tomáš",
+    "hours": 5.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "zu058886",
+    "author_name": "Loumová Zuzana",
+    "hours": 4.5
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER99956",
+    "author_name": "Vajanský Pavol",
+    "hours": 4.5
+  },
+  {
+    "week": "2026-110",
+    "author_key": "ma059279",
+    "author_name": "Glogar Martin",
+    "hours": 4.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "lu066632",
+    "author_name": "Hradská Lucie",
+    "hours": 4.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "pa066246",
+    "author_name": "Přikryl Pavel",
+    "hours": 4.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "ja058703",
+    "author_name": "Kaulfuss Randáková Jana",
+    "hours": 4.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "ma007826",
+    "author_name": "Šmatlák Martin",
+    "hours": 3.75
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER94796",
+    "author_name": "Halíř Martin",
+    "hours": 3.5
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER100789",
+    "author_name": "Kaločai Robert",
+    "hours": 3.5
+  },
+  {
+    "week": "2026-110",
+    "author_key": "pa069272",
+    "author_name": "Barbořík Pavel",
+    "hours": 3.5
+  },
+  {
+    "week": "2026-110",
+    "author_key": "lu068304",
+    "author_name": "Hanusová Lucie",
+    "hours": 3.5
+  },
+  {
+    "week": "2026-110",
+    "author_key": "mi005150",
+    "author_name": "Vondráček Milan",
+    "hours": 3.5
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER93475",
+    "author_name": "Medvec Miroslav",
+    "hours": 3.5
+  },
+  {
+    "week": "2026-110",
+    "author_key": "pa077470",
+    "author_name": "Hubáčková Pavla",
+    "hours": 3.5
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER93702",
+    "author_name": "Nývlt Tomáš",
+    "hours": 3.0833333333333335
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER78205",
+    "author_name": "Szollos Martin",
+    "hours": 3.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER83519",
+    "author_name": "Olmr Martin",
+    "hours": 3.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "x0555001",
+    "author_name": "Komárek Petr",
+    "hours": 2.5
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER88958",
+    "author_name": "Kalenský Pavel",
+    "hours": 2.5
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER93916",
+    "author_name": "Rejduga Michal",
+    "hours": 2.25
+  },
+  {
+    "week": "2026-110",
+    "author_key": "da002792",
+    "author_name": "Havránek David",
+    "hours": 2.1666666666666665
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER101543",
+    "author_name": "Tóth Alexandr",
+    "hours": 2.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "x0551040",
+    "author_name": "Jurášek Martin",
+    "hours": 2.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER89719",
+    "author_name": "Votruba František",
+    "hours": 2.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER104829",
+    "author_name": "Raab Jiří",
+    "hours": 2.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "fr036880",
+    "author_name": "Liška František",
+    "hours": 2.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "to068507",
+    "author_name": "Chmelař Tomáš",
+    "hours": 2.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER98282",
+    "author_name": "Jirásek Milan",
+    "hours": 2.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "st068101",
+    "author_name": "Šnejdar Stanislav",
+    "hours": 2.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "vi068624",
+    "author_name": "Pospíšil Vít",
+    "hours": 2.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "al015818",
+    "author_name": "Večeřová Alena",
+    "hours": 2.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER94105",
+    "author_name": "Cichý Lukáš",
+    "hours": 2.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "mi071443",
+    "author_name": "Chlubna Miroslav",
+    "hours": 2.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "mi070217",
+    "author_name": "Černý Michal",
+    "hours": 1.7
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER99465",
+    "author_name": "Dacer Ondřej",
+    "hours": 1.5
+  },
+  {
+    "week": "2026-110",
+    "author_key": "zd039930",
+    "author_name": "Kalina Zdeněk",
+    "hours": 1.5
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER106751",
+    "author_name": "Vršek David",
+    "hours": 1.5
+  },
+  {
+    "week": "2026-110",
+    "author_key": "lu046976",
+    "author_name": "Anděl Lukáš",
+    "hours": 1.5
+  },
+  {
+    "week": "2026-110",
+    "author_key": "x0559937",
+    "author_name": "Doubek Václav",
+    "hours": 1.25
+  },
+  {
+    "week": "2026-110",
+    "author_key": "ja058871",
+    "author_name": "Klívar Jan",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER84781",
+    "author_name": "Bělina Petr",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "x0560008",
+    "author_name": "Šart David",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER100701",
+    "author_name": "Vejvoda Štěpán",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "lu804124",
+    "author_name": "Běhavá Lucie",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER87831",
+    "author_name": "Davidík Daniel",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "ja004224",
+    "author_name": "Sobotka Jakub",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "mi071892",
+    "author_name": "Mordovanec Michal",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "ad061960",
+    "author_name": "Vančová Adéla",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "bl070144",
+    "author_name": "Zemanová Blanka",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "pe009094",
+    "author_name": "Dobrotka Peter",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "ma001168",
+    "author_name": "Bučková Martina",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-110",
+    "author_key": "ja002515",
+    "author_name": "Vostrý Jan",
+    "hours": 0.75
+  },
+  {
+    "week": "2026-110",
+    "author_key": "ju073893",
+    "author_name": "Budúcky Július",
+    "hours": 0.5
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER88636",
+    "author_name": "Vondráček Martin",
+    "hours": 0.5
+  },
+  {
+    "week": "2026-110",
+    "author_key": "JIRAUSER83500",
+    "author_name": "Holeček Miroslav",
+    "hours": 0.25
+  },
+  {
+    "week": "2026-211",
+    "author_key": "JIRAUSER102863",
+    "author_name": "Štěpán Michal",
+    "hours": 40.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "JIRAUSER90010",
+    "author_name": "Mráček Ladislav",
+    "hours": 40.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "JIRAUSER98942",
+    "author_name": "Eremiáš Miroslav",
+    "hours": 40.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "JIRAUSER107786",
+    "author_name": "Pastorčák Miroslav",
+    "hours": 40.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "JIRAUSER107703",
+    "author_name": "Lvova Alexandra",
+    "hours": 40.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "pe073544",
+    "author_name": "Papp Peter",
+    "hours": 40.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "ma059279",
+    "author_name": "Glogar Martin",
+    "hours": 40.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "lu077479",
+    "author_name": "Fanta Lukáš",
+    "hours": 35.5
+  },
+  {
+    "week": "2026-211",
+    "author_key": "JIRAUSER100373",
+    "author_name": "Průšek Jan",
+    "hours": 34.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "JIRAUSER99461",
+    "author_name": "Náhliková Magdaléna",
+    "hours": 32.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "ja069346",
+    "author_name": "Bohuslavický Jan",
+    "hours": 32.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "ja066435",
+    "author_name": "Mareš Jakub",
+    "hours": 31.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "pe045436",
+    "author_name": "Mácha Petr",
+    "hours": 30.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "pe068941",
+    "author_name": "Slezák Petr",
+    "hours": 29.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "lu071735",
+    "author_name": "Rejl Lukáš",
+    "hours": 28.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "JIRAUSER84781",
+    "author_name": "Bělina Petr",
+    "hours": 28.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "JIRAUSER93475",
+    "author_name": "Medvec Miroslav",
+    "hours": 27.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "JIRAUSER103178",
+    "author_name": "Janda Lukáš",
+    "hours": 26.25
+  },
+  {
+    "week": "2026-211",
+    "author_key": "mi055075",
+    "author_name": "Purš Miroslav",
+    "hours": 25.5
+  },
+  {
+    "week": "2026-211",
+    "author_key": "pe036752",
+    "author_name": "Jiřík Petr",
+    "hours": 25.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "x0509629",
+    "author_name": "Jandejsek Filip",
+    "hours": 25.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "JIRAUSER81900",
+    "author_name": "Filip Petr",
+    "hours": 25.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "x0543734",
+    "author_name": "Jelének Marek",
+    "hours": 24.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "ja063268",
+    "author_name": "Súkeník Jakub",
+    "hours": 24.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "JIRAUSER88047",
+    "author_name": "Farkaš Eduard",
+    "hours": 21.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "ja072454",
+    "author_name": "Kalenská Jana",
+    "hours": 21.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "vl003418",
+    "author_name": "Bílek Vladimír",
+    "hours": 20.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "da042769",
+    "author_name": "Ležák Daniel",
+    "hours": 20.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "x0555001",
+    "author_name": "Komárek Petr",
+    "hours": 19.5
+  },
+  {
+    "week": "2026-211",
+    "author_key": "ja003818",
+    "author_name": "Vrzoňová Jana",
+    "hours": 16.5
+  },
+  {
+    "week": "2026-211",
+    "author_key": "lu069186",
+    "author_name": "Sedláček Luboš",
+    "hours": 16.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "JIRAUSER107333",
+    "author_name": "Kodytek Jakub",
+    "hours": 16.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "pa005180",
+    "author_name": "Barák Pavel",
+    "hours": 15.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "x0557971",
+    "author_name": "Stryk Lubomír",
+    "hours": 14.5
+  },
+  {
+    "week": "2026-211",
+    "author_key": "ma071295",
+    "author_name": "Linhart Marek",
+    "hours": 14.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "JIRAUSER98282",
+    "author_name": "Jirásek Milan",
+    "hours": 13.5
+  },
+  {
+    "week": "2026-211",
+    "author_key": "ji048361",
+    "author_name": "Krauszová Jitka",
+    "hours": 12.25
+  },
+  {
+    "week": "2026-211",
+    "author_key": "pe036856",
+    "author_name": "Vinduška Petr",
+    "hours": 12.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "ro044185",
+    "author_name": "Štědronský Roman",
+    "hours": 11.75
+  },
+  {
+    "week": "2026-211",
+    "author_key": "JIRAUSER100936",
+    "author_name": "Fořt Tomáš",
+    "hours": 11.5
+  },
+  {
+    "week": "2026-211",
+    "author_key": "ma000381",
+    "author_name": "Ječný Martin",
+    "hours": 11.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "sa037938",
+    "author_name": "Krninská Šárka",
+    "hours": 11.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "mi069465",
+    "author_name": "Syrový Michal",
+    "hours": 10.5
+  },
+  {
+    "week": "2026-211",
+    "author_key": "JIRAUSER86181",
+    "author_name": "Paliukh Kyryl",
+    "hours": 10.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "x0556106",
+    "author_name": "Štěpnička Luboš",
+    "hours": 9.75
+  },
+  {
+    "week": "2026-211",
+    "author_key": "JIRAUSER78835",
+    "author_name": "Václavík Libor",
+    "hours": 9.5
+  },
+  {
+    "week": "2026-211",
+    "author_key": "ja022513",
+    "author_name": "Mrkosová Jana",
+    "hours": 9.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "ma027851",
+    "author_name": "Štefanová Markéta",
+    "hours": 9.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "zu058886",
+    "author_name": "Loumová Zuzana",
+    "hours": 9.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "mi069767",
+    "author_name": "Haincl Miloš",
+    "hours": 9.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "pe062817",
+    "author_name": "Lukeš Petr",
+    "hours": 8.5
+  },
+  {
+    "week": "2026-211",
+    "author_key": "JIRAUSER83882",
+    "author_name": "Vrzala Jiří",
+    "hours": 8.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "mi005865",
+    "author_name": "Baláš Milan",
+    "hours": 8.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "JIRAUSER84351",
+    "author_name": "Straňák Jiří",
+    "hours": 8.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "x0551522",
+    "author_name": "Miltová Petra",
+    "hours": 8.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "JIRAUSER90239",
+    "author_name": "Palivec Tomáš",
+    "hours": 8.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "to069152",
+    "author_name": "Candra Tomáš",
+    "hours": 8.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "JIRAUSER82166",
+    "author_name": "Najman Tomáš",
+    "hours": 7.25
+  },
+  {
+    "week": "2026-211",
+    "author_key": "lu068304",
+    "author_name": "Hanusová Lucie",
+    "hours": 7.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "bl004385",
+    "author_name": "Hadravová Blanka",
+    "hours": 7.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "JIRAUSER94242",
+    "author_name": "Marečková Kateřina",
+    "hours": 7.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "JIRAUSER81933",
+    "author_name": "Musil Vilém",
+    "hours": 7.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "JIRAUSER83519",
+    "author_name": "Olmr Martin",
+    "hours": 7.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "to068507",
+    "author_name": "Chmelař Tomáš",
+    "hours": 6.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "pa066999",
+    "author_name": "Švejk Pavel",
+    "hours": 6.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "JIRAUSER79744",
+    "author_name": "Popovičová Romana",
+    "hours": 6.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "le065116",
+    "author_name": "Kurková Lenka",
+    "hours": 5.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "an070137",
+    "author_name": "Kříž Antonín",
+    "hours": 5.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "si041611",
+    "author_name": "Čejková Simona",
+    "hours": 4.5
+  },
+  {
+    "week": "2026-211",
+    "author_key": "ra059343",
+    "author_name": "Janetka Rastislav",
+    "hours": 4.5
+  },
+  {
+    "week": "2026-211",
+    "author_key": "JIRAUSER87831",
+    "author_name": "Davidík Daniel",
+    "hours": 4.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "pe028669",
+    "author_name": "Miler Petr",
+    "hours": 4.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "JIRAUSER102788",
+    "author_name": "Dvořák Dominik",
+    "hours": 4.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "x0558745",
+    "author_name": "Daněk František",
+    "hours": 4.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "ja057023",
+    "author_name": "Brudna Jan",
+    "hours": 3.5
+  },
+  {
+    "week": "2026-211",
+    "author_key": "pe000701",
+    "author_name": "Kolenatý Petr",
+    "hours": 3.5
+  },
+  {
+    "week": "2026-211",
+    "author_key": "al036827",
+    "author_name": "Dumek Aleš",
+    "hours": 3.5
+  },
+  {
+    "week": "2026-211",
+    "author_key": "JIRAUSER93702",
+    "author_name": "Nývlt Tomáš",
+    "hours": 3.25
+  },
+  {
+    "week": "2026-211",
+    "author_key": "JIRAUSER104829",
+    "author_name": "Raab Jiří",
+    "hours": 3.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "lu063198",
+    "author_name": "Paroulek Luboš",
+    "hours": 3.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "JIRAUSER84359",
+    "author_name": "Slivková Daniela",
+    "hours": 3.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "JIRAUSER87419",
+    "author_name": "Zuchnická Kateřina",
+    "hours": 3.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "JIRAUSER78131",
+    "author_name": "Preisler Monika",
+    "hours": 3.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "ja058703",
+    "author_name": "Kaulfuss Randáková Jana",
+    "hours": 3.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "pa069272",
+    "author_name": "Barbořík Pavel",
+    "hours": 3.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "JIRAUSER101605",
+    "author_name": "Koutecký Oldřich",
+    "hours": 3.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "ja004224",
+    "author_name": "Sobotka Jakub",
+    "hours": 3.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "JIRAUSER100789",
+    "author_name": "Kaločai Robert",
+    "hours": 3.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "JIRAUSER82772",
+    "author_name": "Šeiner Roman",
+    "hours": 2.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "JIRAUSER93950",
+    "author_name": "Blažek David",
+    "hours": 2.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "JIRAUSER99956",
+    "author_name": "Vajanský Pavol",
+    "hours": 2.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "ja055330",
+    "author_name": "Černý Jan",
+    "hours": 2.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "JIRAUSER84503",
+    "author_name": "Mariňák Přemysl",
+    "hours": 2.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "lu066632",
+    "author_name": "Hradská Lucie",
+    "hours": 2.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "vl804107",
+    "author_name": "Švadlenka Vladislav",
+    "hours": 1.5
+  },
+  {
+    "week": "2026-211",
+    "author_key": "JIRAUSER93916",
+    "author_name": "Rejduga Michal",
+    "hours": 1.5
+  },
+  {
+    "week": "2026-211",
+    "author_key": "ma001168",
+    "author_name": "Bučková Martina",
+    "hours": 1.25
+  },
+  {
+    "week": "2026-211",
+    "author_key": "pa077470",
+    "author_name": "Hubáčková Pavla",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "ha071548",
+    "author_name": "Ramešová Hana",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "JIRAUSER78205",
+    "author_name": "Szollos Martin",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "JIRAUSER104734",
+    "author_name": "Rechtig Dušan",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "JIRAUSER94796",
+    "author_name": "Halíř Martin",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "st068101",
+    "author_name": "Šnejdar Stanislav",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "JIRAUSER106751",
+    "author_name": "Vršek David",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "fr036880",
+    "author_name": "Liška František",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "JIRAUSER100795",
+    "author_name": "Roman Dominik",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "JIRAUSER100701",
+    "author_name": "Vejvoda Štěpán",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-211",
+    "author_key": "da056313",
+    "author_name": "Březina Daniel",
+    "hours": 0.5
+  },
+  {
+    "week": "2026-211",
+    "author_key": "JIRAUSER83500",
+    "author_name": "Holeček Miroslav",
+    "hours": 0.5
+  },
+  {
+    "week": "2026-211",
+    "author_key": "jo058601",
+    "author_name": "Písařík Josef",
+    "hours": 0.5
+  },
+  {
+    "week": "2026-211",
+    "author_key": "x0559937",
+    "author_name": "Doubek Václav",
+    "hours": 0.5
+  },
+  {
+    "week": "2026-211",
+    "author_key": "mo047433",
+    "author_name": "Mejzlíková Monika",
+    "hours": 0.5
+  },
+  {
+    "week": "2026-211",
+    "author_key": "da002792",
+    "author_name": "Havránek David",
+    "hours": 0.3333333333333333
+  },
+  {
+    "week": "2026-308",
+    "author_key": "pe073544",
+    "author_name": "Papp Peter",
+    "hours": 80.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "hy069637",
+    "author_name": "Linhart Hynek",
+    "hours": 41.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "ev059269",
+    "author_name": "Nováková Eva",
+    "hours": 40.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER100587",
+    "author_name": "Skočdopole Jiří",
+    "hours": 40.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER107703",
+    "author_name": "Lvova Alexandra",
+    "hours": 40.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER90010",
+    "author_name": "Mráček Ladislav",
+    "hours": 40.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER99461",
+    "author_name": "Náhliková Magdaléna",
+    "hours": 40.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER86895",
+    "author_name": "Stavinoha Jiří",
+    "hours": 40.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "x0559497",
+    "author_name": "Faust Jiří",
+    "hours": 40.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "ma059279",
+    "author_name": "Glogar Martin",
+    "hours": 39.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER103178",
+    "author_name": "Janda Lukáš",
+    "hours": 38.083333333333336
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER107786",
+    "author_name": "Pastorčák Miroslav",
+    "hours": 36.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "x0509629",
+    "author_name": "Jandejsek Filip",
+    "hours": 35.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER100452",
+    "author_name": "Švecová Andrea",
+    "hours": 34.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "ja070495",
+    "author_name": "Jerie Jan",
+    "hours": 34.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER100373",
+    "author_name": "Průšek Jan",
+    "hours": 33.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER88047",
+    "author_name": "Farkaš Eduard",
+    "hours": 32.5
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER84351",
+    "author_name": "Straňák Jiří",
+    "hours": 32.5
+  },
+  {
+    "week": "2026-308",
+    "author_key": "ja048984",
+    "author_name": "Srnec Jan",
+    "hours": 32.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "ja069346",
+    "author_name": "Bohuslavický Jan",
+    "hours": 32.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER105987",
+    "author_name": "Bauer Katerina",
+    "hours": 31.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "pe036856",
+    "author_name": "Vinduška Petr",
+    "hours": 30.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "pe045436",
+    "author_name": "Mácha Petr",
+    "hours": 30.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER100936",
+    "author_name": "Fořt Tomáš",
+    "hours": 26.5
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER107048",
+    "author_name": "Dědek Marek",
+    "hours": 25.75
+  },
+  {
+    "week": "2026-308",
+    "author_key": "ro044185",
+    "author_name": "Štědronský Roman",
+    "hours": 25.5
+  },
+  {
+    "week": "2026-308",
+    "author_key": "ja072454",
+    "author_name": "Kalenská Jana",
+    "hours": 25.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "pe066328",
+    "author_name": "Průša Petr",
+    "hours": 25.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "x0557971",
+    "author_name": "Stryk Lubomír",
+    "hours": 23.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "bl004385",
+    "author_name": "Hadravová Blanka",
+    "hours": 23.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "li033929",
+    "author_name": "Sojka Libor",
+    "hours": 22.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "pa005180",
+    "author_name": "Barák Pavel",
+    "hours": 21.5
+  },
+  {
+    "week": "2026-308",
+    "author_key": "pa062576",
+    "author_name": "Ševeček Pavel",
+    "hours": 20.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "x0558745",
+    "author_name": "Daněk František",
+    "hours": 19.5
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER90900",
+    "author_name": "Jungman Tomáš",
+    "hours": 18.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "ra063423",
+    "author_name": "Kalach Radoslav",
+    "hours": 17.583333333333332
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER82166",
+    "author_name": "Najman Tomáš",
+    "hours": 17.5
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER82772",
+    "author_name": "Šeiner Roman",
+    "hours": 17.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER81926",
+    "author_name": "Skřížovský Jakub",
+    "hours": 17.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER78835",
+    "author_name": "Václavík Libor",
+    "hours": 16.5
+  },
+  {
+    "week": "2026-308",
+    "author_key": "x0544934",
+    "author_name": "Procházka Tomáš",
+    "hours": 16.5
+  },
+  {
+    "week": "2026-308",
+    "author_key": "x0555001",
+    "author_name": "Komárek Petr",
+    "hours": 16.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "mi035070",
+    "author_name": "Kašpar Milan",
+    "hours": 16.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER94469",
+    "author_name": "Mlynář Václav",
+    "hours": 16.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "ma027851",
+    "author_name": "Štefanová Markéta",
+    "hours": 16.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "mi055075",
+    "author_name": "Purš Miroslav",
+    "hours": 15.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "lu063198",
+    "author_name": "Paroulek Luboš",
+    "hours": 15.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER85375",
+    "author_name": "Rajdlová Blanka",
+    "hours": 15.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER94242",
+    "author_name": "Marečková Kateřina",
+    "hours": 14.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER85010",
+    "author_name": "Ubr Roman",
+    "hours": 14.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "x0562513",
+    "author_name": "Kubáč Petr",
+    "hours": 14.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "lu077479",
+    "author_name": "Fanta Lukáš",
+    "hours": 14.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "le065116",
+    "author_name": "Kurková Lenka",
+    "hours": 14.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "ja003818",
+    "author_name": "Vrzoňová Jana",
+    "hours": 13.083333333333334
+  },
+  {
+    "week": "2026-308",
+    "author_key": "an070137",
+    "author_name": "Kříž Antonín",
+    "hours": 12.5
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER88060",
+    "author_name": "Hofman Barbora",
+    "hours": 12.5
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER91205",
+    "author_name": "Kula David",
+    "hours": 12.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "lu066632",
+    "author_name": "Hradská Lucie",
+    "hours": 12.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER87419",
+    "author_name": "Zuchnická Kateřina",
+    "hours": 11.5
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER99692",
+    "author_name": "Kačer Tomáš",
+    "hours": 11.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER103150",
+    "author_name": "Varha Vladislav",
+    "hours": 11.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "da042769",
+    "author_name": "Ležák Daniel",
+    "hours": 11.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "da059646",
+    "author_name": "Deusová Dana",
+    "hours": 11.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER100795",
+    "author_name": "Roman Dominik",
+    "hours": 11.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "pe000701",
+    "author_name": "Kolenatý Petr",
+    "hours": 10.5
+  },
+  {
+    "week": "2026-308",
+    "author_key": "ma000381",
+    "author_name": "Ječný Martin",
+    "hours": 10.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER90126",
+    "author_name": "Ries Martin",
+    "hours": 10.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "mi071443",
+    "author_name": "Chlubna Miroslav",
+    "hours": 10.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER104829",
+    "author_name": "Raab Jiří",
+    "hours": 10.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "ja022513",
+    "author_name": "Mrkosová Jana",
+    "hours": 10.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "x0551522",
+    "author_name": "Miltová Petra",
+    "hours": 9.5
+  },
+  {
+    "week": "2026-308",
+    "author_key": "ji048361",
+    "author_name": "Krauszová Jitka",
+    "hours": 9.5
+  },
+  {
+    "week": "2026-308",
+    "author_key": "mi005150",
+    "author_name": "Vondráček Milan",
+    "hours": 9.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "pa066999",
+    "author_name": "Švejk Pavel",
+    "hours": 8.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER102863",
+    "author_name": "Štěpán Michal",
+    "hours": 8.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "x0570972",
+    "author_name": "Mačejovský Dominik",
+    "hours": 8.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "sa037938",
+    "author_name": "Krninská Šárka",
+    "hours": 8.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER103406",
+    "author_name": "Bušta Karel",
+    "hours": 8.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER100836",
+    "author_name": "Dopitová Kateřina",
+    "hours": 8.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER79744",
+    "author_name": "Popovičová Romana",
+    "hours": 7.5
+  },
+  {
+    "week": "2026-308",
+    "author_key": "to068507",
+    "author_name": "Chmelař Tomáš",
+    "hours": 7.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "ra059343",
+    "author_name": "Janetka Rastislav",
+    "hours": 7.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER84359",
+    "author_name": "Slivková Daniela",
+    "hours": 7.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER101543",
+    "author_name": "Tóth Alexandr",
+    "hours": 7.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "x0559935",
+    "author_name": "Vopařil Lukáš",
+    "hours": 7.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER92229",
+    "author_name": "Synák Ondřej",
+    "hours": 6.75
+  },
+  {
+    "week": "2026-308",
+    "author_key": "st004856",
+    "author_name": "Králik Stanislav",
+    "hours": 6.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "x0559937",
+    "author_name": "Doubek Václav",
+    "hours": 6.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER82694",
+    "author_name": "Zadina Václav",
+    "hours": 6.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER81933",
+    "author_name": "Musil Vilém",
+    "hours": 6.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER87831",
+    "author_name": "Davidík Daniel",
+    "hours": 5.5
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER84781",
+    "author_name": "Bělina Petr",
+    "hours": 5.5
+  },
+  {
+    "week": "2026-308",
+    "author_key": "lu068304",
+    "author_name": "Hanusová Lucie",
+    "hours": 5.5
+  },
+  {
+    "week": "2026-308",
+    "author_key": "pe053299",
+    "author_name": "Pospíšilová Petra",
+    "hours": 5.5
+  },
+  {
+    "week": "2026-308",
+    "author_key": "zu058886",
+    "author_name": "Loumová Zuzana",
+    "hours": 5.5
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER82746",
+    "author_name": "Vondrášek Pavel",
+    "hours": 5.483333333333333
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER102788",
+    "author_name": "Dvořák Dominik",
+    "hours": 5.25
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER94506",
+    "author_name": "Janoušková Olga",
+    "hours": 5.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "to072093",
+    "author_name": "Vobořil Tomáš",
+    "hours": 5.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "lu058257",
+    "author_name": "Jedličková Lucie",
+    "hours": 5.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "st068101",
+    "author_name": "Šnejdar Stanislav",
+    "hours": 5.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "ma077838",
+    "author_name": "Sychrovský Martin",
+    "hours": 5.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "ra058644",
+    "author_name": "Svatonský Radek",
+    "hours": 5.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "ja057113",
+    "author_name": "Bezděk Jan",
+    "hours": 5.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "ba072061",
+    "author_name": "Chmelová Barbora",
+    "hours": 5.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER84503",
+    "author_name": "Mariňák Přemysl",
+    "hours": 4.5
+  },
+  {
+    "week": "2026-308",
+    "author_key": "vl003418",
+    "author_name": "Bílek Vladimír",
+    "hours": 4.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER99959",
+    "author_name": "Kraus Ferdinand",
+    "hours": 4.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "pe068941",
+    "author_name": "Slezák Petr",
+    "hours": 4.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "ja055330",
+    "author_name": "Černý Jan",
+    "hours": 4.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER94333",
+    "author_name": "Fikaisová Štěpánka",
+    "hours": 4.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER90239",
+    "author_name": "Palivec Tomáš",
+    "hours": 3.5
+  },
+  {
+    "week": "2026-308",
+    "author_key": "ju073893",
+    "author_name": "Budúcky Július",
+    "hours": 3.5
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER106751",
+    "author_name": "Vršek David",
+    "hours": 3.5
+  },
+  {
+    "week": "2026-308",
+    "author_key": "ja002115",
+    "author_name": "Rathouský Jan",
+    "hours": 3.5
+  },
+  {
+    "week": "2026-308",
+    "author_key": "ma007826",
+    "author_name": "Šmatlák Martin",
+    "hours": 3.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER82609",
+    "author_name": "Stuchlík Petr",
+    "hours": 3.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "mi069767",
+    "author_name": "Haincl Miloš",
+    "hours": 3.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "da002792",
+    "author_name": "Havránek David",
+    "hours": 2.5
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER93475",
+    "author_name": "Medvec Miroslav",
+    "hours": 2.5
+  },
+  {
+    "week": "2026-308",
+    "author_key": "ma007499",
+    "author_name": "Frýzl Martin",
+    "hours": 2.5
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER100789",
+    "author_name": "Kaločai Robert",
+    "hours": 2.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER79438",
+    "author_name": "Malynovskyi Bohdan",
+    "hours": 2.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "x0503334",
+    "author_name": "Konopka Lukáš",
+    "hours": 2.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER93702",
+    "author_name": "Nývlt Tomáš",
+    "hours": 2.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "lu804124",
+    "author_name": "Běhavá Lucie",
+    "hours": 2.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "mi071892",
+    "author_name": "Mordovanec Michal",
+    "hours": 2.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "mi005865",
+    "author_name": "Baláš Milan",
+    "hours": 2.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "ja058703",
+    "author_name": "Kaulfuss Randáková Jana",
+    "hours": 2.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER81139",
+    "author_name": "Hruška Josef",
+    "hours": 2.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "al036827",
+    "author_name": "Dumek Aleš",
+    "hours": 2.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER94105",
+    "author_name": "Cichý Lukáš",
+    "hours": 1.75
+  },
+  {
+    "week": "2026-308",
+    "author_key": "to069152",
+    "author_name": "Candra Tomáš",
+    "hours": 1.5
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER87660",
+    "author_name": "Vanča Ondřej",
+    "hours": 1.5
+  },
+  {
+    "week": "2026-308",
+    "author_key": "x0560008",
+    "author_name": "Šart David",
+    "hours": 1.5
+  },
+  {
+    "week": "2026-308",
+    "author_key": "ja058871",
+    "author_name": "Klívar Jan",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER101535",
+    "author_name": "Jahoda Martin",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "ja057023",
+    "author_name": "Brudna Jan",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER99465",
+    "author_name": "Dacer Ondřej",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "zd039930",
+    "author_name": "Kalina Zdeněk",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER81927",
+    "author_name": "Molovčák Matúš",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "x0053023",
+    "author_name": "Maděra René",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "zb005374",
+    "author_name": "Vlasák Zbyněk",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "mi070217",
+    "author_name": "Černý Michal",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "vi068624",
+    "author_name": "Pospíšil Vít",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER94424",
+    "author_name": "Alexandrov Ilja",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "ha071548",
+    "author_name": "Ramešová Hana",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER78205",
+    "author_name": "Szollos Martin",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "ad061960",
+    "author_name": "Vančová Adéla",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER87346",
+    "author_name": "Vejsada Lukáš",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-308",
+    "author_key": "ja004224",
+    "author_name": "Sobotka Jakub",
+    "hours": 0.5
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER93916",
+    "author_name": "Rejduga Michal",
+    "hours": 0.5
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER93257",
+    "author_name": "Čenteš Jan",
+    "hours": 0.5
+  },
+  {
+    "week": "2026-308",
+    "author_key": "JIRAUSER94472",
+    "author_name": "Procházka Vitalij",
+    "hours": 0.5
+  },
+  {
+    "week": "2026-308",
+    "author_key": "ma038824",
+    "author_name": "Kojecká Magda",
+    "hours": 0.5
+  },
+  {
+    "week": "2026-308",
+    "author_key": "x0539171",
+    "author_name": "Rubeš Martin",
+    "hours": 0.5
+  },
+  {
+    "week": "2026-308",
+    "author_key": "ma001168",
+    "author_name": "Bučková Martina",
+    "hours": 0.5
+  },
+  {
+    "week": "2026-308",
+    "author_key": "mo047433",
+    "author_name": "Mejzlíková Monika",
+    "hours": 0.5
+  },
+  {
+    "week": "2026-308",
+    "author_key": "x0556106",
+    "author_name": "Štěpnička Luboš",
+    "hours": 0.25
+  },
+  {
+    "week": "2026-312",
+    "author_key": "JIRAUSER99461",
+    "author_name": "Náhliková Magdaléna",
+    "hours": 40.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "pe073544",
+    "author_name": "Papp Peter",
+    "hours": 40.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "JIRAUSER107786",
+    "author_name": "Pastorčák Miroslav",
+    "hours": 40.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "ma059279",
+    "author_name": "Glogar Martin",
+    "hours": 39.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "JIRAUSER84781",
+    "author_name": "Bělina Petr",
+    "hours": 36.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "JIRAUSER81900",
+    "author_name": "Filip Petr",
+    "hours": 32.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "x0509629",
+    "author_name": "Jandejsek Filip",
+    "hours": 31.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "ja072454",
+    "author_name": "Kalenská Jana",
+    "hours": 27.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "mi069767",
+    "author_name": "Haincl Miloš",
+    "hours": 26.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "JIRAUSER107333",
+    "author_name": "Kodytek Jakub",
+    "hours": 24.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "JIRAUSER107703",
+    "author_name": "Lvova Alexandra",
+    "hours": 24.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "ma027851",
+    "author_name": "Štefanová Markéta",
+    "hours": 24.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "JIRAUSER101605",
+    "author_name": "Koutecký Oldřich",
+    "hours": 22.5
+  },
+  {
+    "week": "2026-312",
+    "author_key": "ji048361",
+    "author_name": "Krauszová Jitka",
+    "hours": 22.5
+  },
+  {
+    "week": "2026-312",
+    "author_key": "JIRAUSER100789",
+    "author_name": "Kaločai Robert",
+    "hours": 22.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "an070137",
+    "author_name": "Kříž Antonín",
+    "hours": 21.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "ro044185",
+    "author_name": "Štědronský Roman",
+    "hours": 18.75
+  },
+  {
+    "week": "2026-312",
+    "author_key": "lu063198",
+    "author_name": "Paroulek Luboš",
+    "hours": 18.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "x0543734",
+    "author_name": "Jelének Marek",
+    "hours": 16.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "JIRAUSER100836",
+    "author_name": "Dopitová Kateřina",
+    "hours": 16.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "JIRAUSER83519",
+    "author_name": "Olmr Martin",
+    "hours": 15.5
+  },
+  {
+    "week": "2026-312",
+    "author_key": "pe068941",
+    "author_name": "Slezák Petr",
+    "hours": 15.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "vl003418",
+    "author_name": "Bílek Vladimír",
+    "hours": 14.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "JIRAUSER93475",
+    "author_name": "Medvec Miroslav",
+    "hours": 14.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "JIRAUSER100936",
+    "author_name": "Fořt Tomáš",
+    "hours": 13.5
+  },
+  {
+    "week": "2026-312",
+    "author_key": "x0557971",
+    "author_name": "Stryk Lubomír",
+    "hours": 13.5
+  },
+  {
+    "week": "2026-312",
+    "author_key": "zu058886",
+    "author_name": "Loumová Zuzana",
+    "hours": 13.5
+  },
+  {
+    "week": "2026-312",
+    "author_key": "lu077479",
+    "author_name": "Fanta Lukáš",
+    "hours": 13.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "JIRAUSER102863",
+    "author_name": "Štěpán Michal",
+    "hours": 13.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "ja003818",
+    "author_name": "Vrzoňová Jana",
+    "hours": 12.25
+  },
+  {
+    "week": "2026-312",
+    "author_key": "JIRAUSER99959",
+    "author_name": "Kraus Ferdinand",
+    "hours": 12.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "da042769",
+    "author_name": "Ležák Daniel",
+    "hours": 12.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "ju073893",
+    "author_name": "Budúcky Július",
+    "hours": 12.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "ro001307",
+    "author_name": "Nerad Roman",
+    "hours": 12.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "x0556106",
+    "author_name": "Štěpnička Luboš",
+    "hours": 11.25
+  },
+  {
+    "week": "2026-312",
+    "author_key": "JIRAUSER90239",
+    "author_name": "Palivec Tomáš",
+    "hours": 11.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "mi069465",
+    "author_name": "Syrový Michal",
+    "hours": 10.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "pa005180",
+    "author_name": "Barák Pavel",
+    "hours": 10.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "lu068304",
+    "author_name": "Hanusová Lucie",
+    "hours": 9.5
+  },
+  {
+    "week": "2026-312",
+    "author_key": "pe036752",
+    "author_name": "Jiřík Petr",
+    "hours": 8.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "JIRAUSER98282",
+    "author_name": "Jirásek Milan",
+    "hours": 8.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "JIRAUSER90010",
+    "author_name": "Mráček Ladislav",
+    "hours": 8.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "JIRAUSER94083",
+    "author_name": "Bilík Vojtěch",
+    "hours": 8.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "JIRAUSER87419",
+    "author_name": "Zuchnická Kateřina",
+    "hours": 7.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "JIRAUSER102788",
+    "author_name": "Dvořák Dominik",
+    "hours": 6.75
+  },
+  {
+    "week": "2026-312",
+    "author_key": "x0551522",
+    "author_name": "Miltová Petra",
+    "hours": 6.5
+  },
+  {
+    "week": "2026-312",
+    "author_key": "sa037938",
+    "author_name": "Krninská Šárka",
+    "hours": 6.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "lu066632",
+    "author_name": "Hradská Lucie",
+    "hours": 6.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "mi005150",
+    "author_name": "Vondráček Milan",
+    "hours": 6.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "JIRAUSER93950",
+    "author_name": "Blažek David",
+    "hours": 6.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "ma000381",
+    "author_name": "Ječný Martin",
+    "hours": 6.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "JIRAUSER82746",
+    "author_name": "Vondrášek Pavel",
+    "hours": 5.6
+  },
+  {
+    "week": "2026-312",
+    "author_key": "JIRAUSER82166",
+    "author_name": "Najman Tomáš",
+    "hours": 5.25
+  },
+  {
+    "week": "2026-312",
+    "author_key": "JIRAUSER78835",
+    "author_name": "Václavík Libor",
+    "hours": 5.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "JIRAUSER83882",
+    "author_name": "Vrzala Jiří",
+    "hours": 5.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "ja022513",
+    "author_name": "Mrkosová Jana",
+    "hours": 4.5
+  },
+  {
+    "week": "2026-312",
+    "author_key": "JIRAUSER104850",
+    "author_name": "Ballarin Patrik",
+    "hours": 4.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "pe000701",
+    "author_name": "Kolenatý Petr",
+    "hours": 4.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "JIRAUSER88047",
+    "author_name": "Farkaš Eduard",
+    "hours": 4.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "JIRAUSER84359",
+    "author_name": "Slivková Daniela",
+    "hours": 4.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "JIRAUSER86181",
+    "author_name": "Paliukh Kyryl",
+    "hours": 4.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "ma038824",
+    "author_name": "Kojecká Magda",
+    "hours": 3.75
+  },
+  {
+    "week": "2026-312",
+    "author_key": "al036827",
+    "author_name": "Dumek Aleš",
+    "hours": 3.5
+  },
+  {
+    "week": "2026-312",
+    "author_key": "lu069186",
+    "author_name": "Sedláček Luboš",
+    "hours": 3.5
+  },
+  {
+    "week": "2026-312",
+    "author_key": "le065116",
+    "author_name": "Kurková Lenka",
+    "hours": 3.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "pe062817",
+    "author_name": "Lukeš Petr",
+    "hours": 3.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "JIRAUSER99956",
+    "author_name": "Vajanský Pavol",
+    "hours": 3.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "ra059343",
+    "author_name": "Janetka Rastislav",
+    "hours": 3.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "bl004385",
+    "author_name": "Hadravová Blanka",
+    "hours": 3.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "JIRAUSER93702",
+    "author_name": "Nývlt Tomáš",
+    "hours": 2.8333333333333335
+  },
+  {
+    "week": "2026-312",
+    "author_key": "JIRAUSER106751",
+    "author_name": "Vršek David",
+    "hours": 2.5
+  },
+  {
+    "week": "2026-312",
+    "author_key": "si041611",
+    "author_name": "Čejková Simona",
+    "hours": 2.5
+  },
+  {
+    "week": "2026-312",
+    "author_key": "ma007826",
+    "author_name": "Šmatlák Martin",
+    "hours": 2.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "jo058601",
+    "author_name": "Písařík Josef",
+    "hours": 2.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "x0570672",
+    "author_name": "Pastrňák Jan",
+    "hours": 2.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "JIRAUSER104829",
+    "author_name": "Raab Jiří",
+    "hours": 2.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "pe066328",
+    "author_name": "Průša Petr",
+    "hours": 2.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "pa069272",
+    "author_name": "Barbořík Pavel",
+    "hours": 2.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "JIRAUSER84503",
+    "author_name": "Mariňák Přemysl",
+    "hours": 2.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "x0540557",
+    "author_name": "Volf Jan",
+    "hours": 2.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "pa062576",
+    "author_name": "Ševeček Pavel",
+    "hours": 2.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "ji001796",
+    "author_name": "Lachout Jiří",
+    "hours": 1.5
+  },
+  {
+    "week": "2026-312",
+    "author_key": "da061584",
+    "author_name": "Brondičová Daniela",
+    "hours": 1.5
+  },
+  {
+    "week": "2026-312",
+    "author_key": "vl804107",
+    "author_name": "Švadlenka Vladislav",
+    "hours": 1.5
+  },
+  {
+    "week": "2026-312",
+    "author_key": "JIRAUSER92264",
+    "author_name": "Vazhenin Igor",
+    "hours": 1.25
+  },
+  {
+    "week": "2026-312",
+    "author_key": "pa077470",
+    "author_name": "Hubáčková Pavla",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "JIRAUSER88636",
+    "author_name": "Vondráček Martin",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "to068507",
+    "author_name": "Chmelař Tomáš",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "mi071892",
+    "author_name": "Mordovanec Michal",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "ja057023",
+    "author_name": "Brudna Jan",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "JIRAUSER88958",
+    "author_name": "Kalenský Pavel",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "JIRAUSER103150",
+    "author_name": "Varha Vladislav",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "ha071548",
+    "author_name": "Ramešová Hana",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "JIRAUSER100795",
+    "author_name": "Roman Dominik",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "st068101",
+    "author_name": "Šnejdar Stanislav",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "x0558745",
+    "author_name": "Daněk František",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "ma001168",
+    "author_name": "Bučková Martina",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "JIRAUSER100701",
+    "author_name": "Vejvoda Štěpán",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-312",
+    "author_key": "lu804124",
+    "author_name": "Běhavá Lucie",
+    "hours": 0.5
+  },
+  {
+    "week": "2026-312",
+    "author_key": "JIRAUSER83500",
+    "author_name": "Holeček Miroslav",
+    "hours": 0.25
+  },
+  {
+    "week": "2026-312",
+    "author_key": "JIRAUSER78205",
+    "author_name": "Szollos Martin",
+    "hours": 0.25
+  },
+  {
+    "week": "2026-409",
+    "author_key": "pe073544",
+    "author_name": "Papp Peter",
+    "hours": 80.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER100587",
+    "author_name": "Skočdopole Jiří",
+    "hours": 40.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER86895",
+    "author_name": "Stavinoha Jiří",
+    "hours": 40.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER107703",
+    "author_name": "Lvova Alexandra",
+    "hours": 40.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER107786",
+    "author_name": "Pastorčák Miroslav",
+    "hours": 40.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "ev059269",
+    "author_name": "Nováková Eva",
+    "hours": 40.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER90010",
+    "author_name": "Mráček Ladislav",
+    "hours": 40.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "x0562354",
+    "author_name": "Adamec Jiří",
+    "hours": 38.75
+  },
+  {
+    "week": "2026-409",
+    "author_key": "ma059279",
+    "author_name": "Glogar Martin",
+    "hours": 38.5
+  },
+  {
+    "week": "2026-409",
+    "author_key": "hy069637",
+    "author_name": "Linhart Hynek",
+    "hours": 38.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "ja070495",
+    "author_name": "Jerie Jan",
+    "hours": 36.5
+  },
+  {
+    "week": "2026-409",
+    "author_key": "x0509629",
+    "author_name": "Jandejsek Filip",
+    "hours": 36.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER100373",
+    "author_name": "Průšek Jan",
+    "hours": 34.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "pa005180",
+    "author_name": "Barák Pavel",
+    "hours": 34.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER103178",
+    "author_name": "Janda Lukáš",
+    "hours": 33.083333333333336
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER81900",
+    "author_name": "Filip Petr",
+    "hours": 33.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "x0559497",
+    "author_name": "Faust Jiří",
+    "hours": 32.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "pe045436",
+    "author_name": "Mácha Petr",
+    "hours": 32.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "ja069346",
+    "author_name": "Bohuslavický Jan",
+    "hours": 32.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER88047",
+    "author_name": "Farkaš Eduard",
+    "hours": 29.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER100795",
+    "author_name": "Roman Dominik",
+    "hours": 28.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "ja048984",
+    "author_name": "Srnec Jan",
+    "hours": 27.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER81933",
+    "author_name": "Musil Vilém",
+    "hours": 26.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "mi055075",
+    "author_name": "Purš Miroslav",
+    "hours": 25.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "da059646",
+    "author_name": "Deusová Dana",
+    "hours": 24.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER85010",
+    "author_name": "Ubr Roman",
+    "hours": 24.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER98942",
+    "author_name": "Eremiáš Miroslav",
+    "hours": 24.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER100936",
+    "author_name": "Fořt Tomáš",
+    "hours": 22.5
+  },
+  {
+    "week": "2026-409",
+    "author_key": "x0558745",
+    "author_name": "Daněk František",
+    "hours": 22.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "ra059343",
+    "author_name": "Janetka Rastislav",
+    "hours": 22.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "da042769",
+    "author_name": "Ležák Daniel",
+    "hours": 22.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER84351",
+    "author_name": "Straňák Jiří",
+    "hours": 22.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "li033929",
+    "author_name": "Sojka Libor",
+    "hours": 20.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "ma071295",
+    "author_name": "Linhart Marek",
+    "hours": 20.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "ro044185",
+    "author_name": "Štědronský Roman",
+    "hours": 19.5
+  },
+  {
+    "week": "2026-409",
+    "author_key": "lu077479",
+    "author_name": "Fanta Lukáš",
+    "hours": 19.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER100452",
+    "author_name": "Švecová Andrea",
+    "hours": 19.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "x0544934",
+    "author_name": "Procházka Tomáš",
+    "hours": 19.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "pa062576",
+    "author_name": "Ševeček Pavel",
+    "hours": 18.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER78131",
+    "author_name": "Preisler Monika",
+    "hours": 17.5
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER99692",
+    "author_name": "Kačer Tomáš",
+    "hours": 17.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "an070137",
+    "author_name": "Kříž Antonín",
+    "hours": 17.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER103150",
+    "author_name": "Varha Vladislav",
+    "hours": 16.5
+  },
+  {
+    "week": "2026-409",
+    "author_key": "sa037938",
+    "author_name": "Krninská Šárka",
+    "hours": 16.5
+  },
+  {
+    "week": "2026-409",
+    "author_key": "be069344",
+    "author_name": "Turzó Bedřich",
+    "hours": 16.5
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER81139",
+    "author_name": "Hruška Josef",
+    "hours": 16.25
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER107048",
+    "author_name": "Dědek Marek",
+    "hours": 16.083333333333332
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER93950",
+    "author_name": "Blažek David",
+    "hours": 16.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER102863",
+    "author_name": "Štěpán Michal",
+    "hours": 16.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "ma000381",
+    "author_name": "Ječný Martin",
+    "hours": 16.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER107333",
+    "author_name": "Kodytek Jakub",
+    "hours": 16.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER94469",
+    "author_name": "Mlynář Václav",
+    "hours": 16.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER93702",
+    "author_name": "Nývlt Tomáš",
+    "hours": 15.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "lu063198",
+    "author_name": "Paroulek Luboš",
+    "hours": 15.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER105987",
+    "author_name": "Bauer Katerina",
+    "hours": 15.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "ja072454",
+    "author_name": "Kalenská Jana",
+    "hours": 15.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER85375",
+    "author_name": "Rajdlová Blanka",
+    "hours": 15.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER101530",
+    "author_name": "Balová Zuzana",
+    "hours": 13.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "pe068941",
+    "author_name": "Slezák Petr",
+    "hours": 13.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER82772",
+    "author_name": "Šeiner Roman",
+    "hours": 13.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "pa066999",
+    "author_name": "Švejk Pavel",
+    "hours": 13.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "ja003818",
+    "author_name": "Vrzoňová Jana",
+    "hours": 12.666666666666666
+  },
+  {
+    "week": "2026-409",
+    "author_key": "lu071735",
+    "author_name": "Rejl Lukáš",
+    "hours": 12.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "bl004385",
+    "author_name": "Hadravová Blanka",
+    "hours": 12.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "ji048361",
+    "author_name": "Krauszová Jitka",
+    "hours": 10.5
+  },
+  {
+    "week": "2026-409",
+    "author_key": "mi069767",
+    "author_name": "Haincl Miloš",
+    "hours": 10.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "le065116",
+    "author_name": "Kurková Lenka",
+    "hours": 10.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER84359",
+    "author_name": "Slivková Daniela",
+    "hours": 10.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "mi071443",
+    "author_name": "Chlubna Miroslav",
+    "hours": 10.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER90126",
+    "author_name": "Ries Martin",
+    "hours": 10.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER82166",
+    "author_name": "Najman Tomáš",
+    "hours": 10.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "mi005150",
+    "author_name": "Vondráček Milan",
+    "hours": 9.5
+  },
+  {
+    "week": "2026-409",
+    "author_key": "x0559935",
+    "author_name": "Vopařil Lukáš",
+    "hours": 9.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER79744",
+    "author_name": "Popovičová Romana",
+    "hours": 9.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "lu058257",
+    "author_name": "Jedličková Lucie",
+    "hours": 9.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "pe066328",
+    "author_name": "Průša Petr",
+    "hours": 8.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER100836",
+    "author_name": "Dopitová Kateřina",
+    "hours": 8.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "ma027851",
+    "author_name": "Štefanová Markéta",
+    "hours": 8.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "ja063603",
+    "author_name": "Ludvík Jakub",
+    "hours": 8.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "si041611",
+    "author_name": "Čejková Simona",
+    "hours": 8.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "mi035070",
+    "author_name": "Kašpar Milan",
+    "hours": 8.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "ja022513",
+    "author_name": "Mrkosová Jana",
+    "hours": 7.5
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER87419",
+    "author_name": "Zuchnická Kateřina",
+    "hours": 7.5
+  },
+  {
+    "week": "2026-409",
+    "author_key": "lu068304",
+    "author_name": "Hanusová Lucie",
+    "hours": 7.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "pe036856",
+    "author_name": "Vinduška Petr",
+    "hours": 7.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER83882",
+    "author_name": "Vrzala Jiří",
+    "hours": 7.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER104850",
+    "author_name": "Ballarin Patrik",
+    "hours": 7.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "to068507",
+    "author_name": "Chmelař Tomáš",
+    "hours": 6.5
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER79438",
+    "author_name": "Malynovskyi Bohdan",
+    "hours": 6.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "pa066246",
+    "author_name": "Přikryl Pavel",
+    "hours": 6.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "pe053299",
+    "author_name": "Pospíšilová Petra",
+    "hours": 6.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "to069152",
+    "author_name": "Candra Tomáš",
+    "hours": 5.5
+  },
+  {
+    "week": "2026-409",
+    "author_key": "zu058886",
+    "author_name": "Loumová Zuzana",
+    "hours": 5.5
+  },
+  {
+    "week": "2026-409",
+    "author_key": "st004856",
+    "author_name": "Králik Stanislav",
+    "hours": 5.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER90900",
+    "author_name": "Jungman Tomáš",
+    "hours": 5.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER102788",
+    "author_name": "Dvořák Dominik",
+    "hours": 5.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "x0555001",
+    "author_name": "Komárek Petr",
+    "hours": 5.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "ja057113",
+    "author_name": "Bezděk Jan",
+    "hours": 5.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "to072093",
+    "author_name": "Vobořil Tomáš",
+    "hours": 5.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER82746",
+    "author_name": "Vondrášek Pavel",
+    "hours": 5.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER81926",
+    "author_name": "Skřížovský Jakub",
+    "hours": 4.5
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER78835",
+    "author_name": "Václavík Libor",
+    "hours": 4.5
+  },
+  {
+    "week": "2026-409",
+    "author_key": "x0556340",
+    "author_name": "Habrda Lubor",
+    "hours": 4.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER82694",
+    "author_name": "Zadina Václav",
+    "hours": 4.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER99959",
+    "author_name": "Kraus Ferdinand",
+    "hours": 4.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "lu066632",
+    "author_name": "Hradská Lucie",
+    "hours": 4.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER92229",
+    "author_name": "Synák Ondřej",
+    "hours": 3.75
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER90239",
+    "author_name": "Palivec Tomáš",
+    "hours": 3.5
+  },
+  {
+    "week": "2026-409",
+    "author_key": "ma001168",
+    "author_name": "Bučková Martina",
+    "hours": 3.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "pe000701",
+    "author_name": "Kolenatý Petr",
+    "hours": 3.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER93916",
+    "author_name": "Rejduga Michal",
+    "hours": 3.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER93475",
+    "author_name": "Medvec Miroslav",
+    "hours": 3.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "vl003418",
+    "author_name": "Bílek Vladimír",
+    "hours": 3.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "mi070217",
+    "author_name": "Černý Michal",
+    "hours": 2.5
+  },
+  {
+    "week": "2026-409",
+    "author_key": "ma007499",
+    "author_name": "Frýzl Martin",
+    "hours": 2.5
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER104829",
+    "author_name": "Raab Jiří",
+    "hours": 2.5
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER93257",
+    "author_name": "Čenteš Jan",
+    "hours": 2.5
+  },
+  {
+    "week": "2026-409",
+    "author_key": "vi068624",
+    "author_name": "Pospíšil Vít",
+    "hours": 2.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER91205",
+    "author_name": "Kula David",
+    "hours": 2.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "ja058703",
+    "author_name": "Kaulfuss Randáková Jana",
+    "hours": 2.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "da002792",
+    "author_name": "Havránek David",
+    "hours": 2.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER98548",
+    "author_name": "Pokorný Jakub",
+    "hours": 2.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER88170",
+    "author_name": "Prantl Marek",
+    "hours": 2.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER84503",
+    "author_name": "Mariňák Přemysl",
+    "hours": 2.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "st068101",
+    "author_name": "Šnejdar Stanislav",
+    "hours": 2.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER84781",
+    "author_name": "Bělina Petr",
+    "hours": 1.5
+  },
+  {
+    "week": "2026-409",
+    "author_key": "x0559937",
+    "author_name": "Doubek Václav",
+    "hours": 1.5
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER82609",
+    "author_name": "Stuchlík Petr",
+    "hours": 1.5
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER88060",
+    "author_name": "Hofman Barbora",
+    "hours": 1.5
+  },
+  {
+    "week": "2026-409",
+    "author_key": "x0503334",
+    "author_name": "Konopka Lukáš",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "ma077838",
+    "author_name": "Sychrovský Martin",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER99465",
+    "author_name": "Dacer Ondřej",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "pa069272",
+    "author_name": "Barbořík Pavel",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "pe036752",
+    "author_name": "Jiřík Petr",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "al036827",
+    "author_name": "Dumek Aleš",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER89138",
+    "author_name": "Klíma František",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "zb005374",
+    "author_name": "Vlasák Zbyněk",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER89719",
+    "author_name": "Votruba František",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "ja055330",
+    "author_name": "Černý Jan",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "ba072061",
+    "author_name": "Chmelová Barbora",
+    "hours": 1.0
+  },
+  {
+    "week": "2026-409",
+    "author_key": "ma007826",
+    "author_name": "Šmatlák Martin",
+    "hours": 0.5
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER87831",
+    "author_name": "Davidík Daniel",
+    "hours": 0.5
+  },
+  {
+    "week": "2026-409",
+    "author_key": "JIRAUSER94424",
+    "author_name": "Alexandrov Ilja",
+    "hours": 0.5
+  },
+  {
+    "week": "2026-409",
+    "author_key": "ja002115",
+    "author_name": "Rathouský Jan",
+    "hours": 0.5
+  },
+  {
+    "week": "2026-413",
+    "author_key": "pe073544",
+    "author_name": "Papp Peter",
+    "hours": 8.0
+  },
+  {
+    "week": "2026-413",
+    "author_key": "ma027851",
+    "author_name": "Štefanová Markéta",
+    "hours": 5.0
+  }
+]

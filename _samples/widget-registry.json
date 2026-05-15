@@ -1,0 +1,148 @@
+[
+  {
+    "type": "nd-list",
+    "label": "ND Seznam",
+    "icon": "📋",
+    "description": "Přehled ND s filtry a stavem",
+    "default_size": {
+      "w": 6,
+      "h": 4
+    },
+    "min_size": {
+      "w": 4,
+      "h": 3
+    },
+    "data_endpoint": "/api/overview",
+    "config_fields": [
+      "art_filter"
+    ]
+  },
+  {
+    "type": "discovery-signals",
+    "label": "Discovery Signals",
+    "icon": "🔍",
+    "description": "Readiness metriky pro discovery fázi",
+    "default_size": {
+      "w": 4,
+      "h": 3
+    },
+    "min_size": {
+      "w": 3,
+      "h": 2
+    },
+    "data_endpoint": "/api/nd-dod/{nd_key}",
+    "config_fields": [
+      "nd_key"
+    ]
+  },
+  {
+    "type": "deliverables",
+    "label": "Deliverables",
+    "icon": "📦",
+    "description": "Role-by-role progress dodávek",
+    "default_size": {
+      "w": 6,
+      "h": 4
+    },
+    "min_size": {
+      "w": 4,
+      "h": 3
+    },
+    "data_endpoint": "/api/nd-dod/{nd_key}",
+    "config_fields": [
+      "nd_key"
+    ]
+  },
+  {
+    "type": "tempo",
+    "label": "Tempo Hodiny",
+    "icon": "⏱️",
+    "description": "Časové záznamy dle ART/ND",
+    "default_size": {
+      "w": 4,
+      "h": 3
+    },
+    "min_size": {
+      "w": 3,
+      "h": 2
+    },
+    "data_endpoint": "/api/tempo/{art_key}",
+    "config_fields": [
+      "art_key",
+      "days"
+    ]
+  },
+  {
+    "type": "apps",
+    "label": "Impacted Apps",
+    "icon": "🖥️",
+    "description": "Dotčené aplikace a systémy",
+    "default_size": {
+      "w": 4,
+      "h": 3
+    },
+    "min_size": {
+      "w": 3,
+      "h": 2
+    },
+    "data_endpoint": "/api/nd-apps/{nd_key}",
+    "config_fields": [
+      "nd_key"
+    ]
+  },
+  {
+    "type": "activity",
+    "label": "Aktivita / Komentáře",
+    "icon": "💬",
+    "description": "Poslední komentáře a aktivita na ND",
+    "default_size": {
+      "w": 4,
+      "h": 4
+    },
+    "min_size": {
+      "w": 3,
+      "h": 3
+    },
+    "data_endpoint": "/api/nd-activity/{nd_key}",
+    "config_fields": [
+      "nd_key",
+      "limit"
+    ]
+  },
+  {
+    "type": "wiki",
+    "label": "Wiki / Dokumenty",
+    "icon": "📖",
+    "description": "Přílohy, linky a dokumenty ND",
+    "default_size": {
+      "w": 4,
+      "h": 3
+    },
+    "min_size": {
+      "w": 3,
+      "h": 2
+    },
+    "data_endpoint": "/api/nd-wiki/{nd_key}",
+    "config_fields": [
+      "nd_key"
+    ]
+  },
+  {
+    "type": "cross-art",
+    "label": "Cross-ART Matrix",
+    "icon": "🔗",
+    "description": "Heatmapa závislostí mezi ARTy",
+    "default_size": {
+      "w": 6,
+      "h": 4
+    },
+    "min_size": {
+      "w": 4,
+      "h": 3
+    },
+    "data_endpoint": "/api/cross-art",
+    "config_fields": [
+      "source_group"
+    ]
+  }
+]

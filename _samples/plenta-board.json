@@ -1,0 +1,4 @@
+{
+  "_error": "URL can't contain control characters. '/api/plenta-board?art=TYM-152&pi=PI3 2026' (found at least ' ')",
+  "_path": "/api/plenta-board?art=TYM-152&pi=PI3 2026"
+}

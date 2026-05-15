@@ -1,0 +1,1487 @@
+[
+  {
+    "key": "PROJEKT-1001",
+    "summary": "QR kód a návazné pořadavky ",
+    "status": "New",
+    "assignee": "Chorváth Rostislav",
+    "lpm_status": "IMPLEMENTING MVP/IDEA",
+    "wsjf": 12.2,
+    "child_count": 9
+  },
+  {
+    "key": "PROJEKT-1002",
+    "summary": "MVP pro MOA",
+    "status": "New",
+    "assignee": "Deusová Dana",
+    "lpm_status": null,
+    "wsjf": null,
+    "child_count": 8
+  },
+  {
+    "key": "PROJEKT-1009",
+    "summary": "SPLIT BILLING",
+    "status": "In Progress",
+    "assignee": "Ležák Daniel",
+    "lpm_status": "READY",
+    "wsjf": 26.5,
+    "child_count": 20
+  },
+  {
+    "key": "PROJEKT-1020",
+    "summary": "Virtual Assistant Eva 3.0",
+    "status": "New",
+    "assignee": "Mňuk Lukáš",
+    "lpm_status": "IMPLEMENTING PRESERVE/FINAL SCOPE",
+    "wsjf": 1.6,
+    "child_count": 64
+  },
+  {
+    "key": "PROJEKT-1023",
+    "summary": "Smartbox: Internet",
+    "status": "New",
+    "assignee": "Chovanec Marek",
+    "lpm_status": "IMPLEMENTING PRESERVE/FINAL SCOPE",
+    "wsjf": 34.0,
+    "child_count": 5
+  },
+  {
+    "key": "PROJEKT-1039",
+    "summary": "Connect v CORP",
+    "status": "Done",
+    "assignee": "Ležák Daniel",
+    "lpm_status": null,
+    "wsjf": null,
+    "child_count": 7
+  },
+  {
+    "key": "PROJEKT-1043",
+    "summary": "Dokupy balíčků, změny tarifů přimo na OP platformě",
+    "status": "New",
+    "assignee": "Pragerová Jana",
+    "lpm_status": "READY",
+    "wsjf": 6.8,
+    "child_count": 1
+  },
+  {
+    "key": "PROJEKT-1045",
+    "summary": "Diagnostika pro OP zkz (O2 i Nova) triggerovaná přes různá rozhraní",
+    "status": "New",
+    "assignee": "Tomášková Dana",
+    "lpm_status": null,
+    "wsjf": null,
+    "child_count": 0
+  },
+  {
+    "key": "PROJEKT-1046",
+    "summary": "Další rozvoj Oneplay D2C care",
+    "status": "New",
+    "assignee": "Tomášková Dana",
+    "lpm_status": null,
+    "wsjf": null,
+    "child_count": 0
+  },
+  {
+    "key": "PROJEKT-1047",
+    "summary": "Oneplay k Internetu - úprava komerč.podmínek tarifu",
+    "status": "New",
+    "assignee": "Biskup Jaroslav",
+    "lpm_status": "READY",
+    "wsjf": 16.0,
+    "child_count": 3
+  },
+  {
+    "key": "PROJEKT-1048",
+    "summary": "Rozvoj O2 Oneplay - nové promo options (opt-in/opt-out), nové možnosti tarifního dvlp a jeho automatizace",
+    "status": "New",
+    "assignee": "Biskup Jaroslav",
+    "lpm_status": null,
+    "wsjf": null,
+    "child_count": 8
+  },
+  {
+    "key": "PROJEKT-1049",
+    "summary": "[LPM] EVA 2.0",
+    "status": "New",
+    "assignee": "Chovanec Marek",
+    "lpm_status": null,
+    "wsjf": null,
+    "child_count": 6
+  },
+  {
+    "key": "PROJEKT-1053",
+    "summary": "WEB O2.CZ: Instant continuous monitoring",
+    "status": "To Do",
+    "assignee": "Adam Milan",
+    "lpm_status": "READY",
+    "wsjf": 2.23,
+    "child_count": 4
+  },
+  {
+    "key": "PROJEKT-1054",
+    "summary": "WEB O2.CZ: Individuální nabídka ",
+    "status": "To Do",
+    "assignee": "Adam Milan",
+    "lpm_status": "READY",
+    "wsjf": 17.67,
+    "child_count": 6
+  },
+  {
+    "key": "PROJEKT-1055",
+    "summary": "WEB O2.CZ: Spolu modelace s e2e nákupem více služeb najednou",
+    "status": "To Do",
+    "assignee": "Adam Milan",
+    "lpm_status": "ANALYZING",
+    "wsjf": 4.46,
+    "child_count": 0
+  },
+  {
+    "key": "PROJEKT-1057",
+    "summary": "WEB O2.CZ: Prodej internetu pomocí přípojek (QR)",
+    "status": "Canceled",
+    "assignee": "Adam Milan",
+    "lpm_status": null,
+    "wsjf": null,
+    "child_count": 0
+  },
+  {
+    "key": "PROJEKT-1059",
+    "summary": "WEB O2.CZ: iCMS interní obsah",
+    "status": "Canceled",
+    "assignee": "Sláma Ondřej",
+    "lpm_status": "REVIEWING",
+    "wsjf": 1.08,
+    "child_count": 1
+  },
+  {
+    "key": "PROJEKT-1060",
+    "summary": "WEB O2.CZ: Eshop 2026+",
+    "status": "To Do",
+    "assignee": "Čížek Petr",
+    "lpm_status": "REVIEWING",
+    "wsjf": 0.73,
+    "child_count": 0
+  },
+  {
+    "key": "PROJEKT-1063",
+    "summary": "M&A - Factory",
+    "status": "New",
+    "assignee": "Horák Martin",
+    "lpm_status": "ANALYZING",
+    "wsjf": 2.0,
+    "child_count": 3
+  },
+  {
+    "key": "PROJEKT-1069",
+    "summary": "Aplikace pro zákazníky s firemním číslem - monetizace",
+    "status": "New",
+    "assignee": "Miltová Petra",
+    "lpm_status": "READY",
+    "wsjf": 19.0,
+    "child_count": 7
+  },
+  {
+    "key": "PROJEKT-1070",
+    "summary": "Rozvoj DiGI FIX cesty v roce 2026",
+    "status": "New",
+    "assignee": "Kremer Norbert",
+    "lpm_status": "ANALYZING",
+    "wsjf": 4.08,
+    "child_count": 6
+  },
+  {
+    "key": "PROJEKT-1082",
+    "summary": "Roaming event notification",
+    "status": "New",
+    "assignee": "Robenhaupt Filip",
+    "lpm_status": "REVIEWING",
+    "wsjf": 43.0,
+    "child_count": 4
+  },
+  {
+    "key": "PROJEKT-1083",
+    "summary": "Roaming development",
+    "status": "New",
+    "assignee": "Robenhaupt Filip",
+    "lpm_status": null,
+    "wsjf": null,
+    "child_count": 0
+  },
+  {
+    "key": "PROJEKT-11",
+    "summary": "Nová pokladna - Fáze 3: Pokladna",
+    "status": "New",
+    "assignee": "Deusová Dana",
+    "lpm_status": "DONE",
+    "wsjf": 28.33,
+    "child_count": 4
+  },
+  {
+    "key": "PROJEKT-1132",
+    "summary": "Living Room",
+    "status": "To Do",
+    "assignee": "Štefanová Zuzana",
+    "lpm_status": "DONE",
+    "wsjf": null,
+    "child_count": 0
+  },
+  {
+    "key": "PROJEKT-1147",
+    "summary": "Virtual Assistant Eva 4.0",
+    "status": "New",
+    "assignee": "Siran Michal",
+    "lpm_status": null,
+    "wsjf": null,
+    "child_count": 0
+  },
+  {
+    "key": "PROJEKT-1148",
+    "summary": "CIA everywhere",
+    "status": "New",
+    "assignee": "Siran Michal",
+    "lpm_status": "READY",
+    "wsjf": 0.48,
+    "child_count": 14
+  },
+  {
+    "key": "PROJEKT-1149",
+    "summary": "HW AI sekce ",
+    "status": "New",
+    "assignee": "Siran Michal",
+    "lpm_status": null,
+    "wsjf": null,
+    "child_count": 0
+  },
+  {
+    "key": "PROJEKT-1150",
+    "summary": "Spokojenost AI (tNPS)",
+    "status": "New",
+    "assignee": "Siran Michal",
+    "lpm_status": null,
+    "wsjf": null,
+    "child_count": 0
+  },
+  {
+    "key": "PROJEKT-1151",
+    "summary": "AI Terka",
+    "status": "New",
+    "assignee": "Siran Michal",
+    "lpm_status": "READY",
+    "wsjf": 5.0,
+    "child_count": 0
+  },
+  {
+    "key": "PROJEKT-1152",
+    "summary": "AI Compliance",
+    "status": "New",
+    "assignee": "Hirš Petr",
+    "lpm_status": null,
+    "wsjf": null,
+    "child_count": 0
+  },
+  {
+    "key": "PROJEKT-1153",
+    "summary": "AI Agents Platform",
+    "status": "New",
+    "assignee": "Hirš Petr",
+    "lpm_status": null,
+    "wsjf": null,
+    "child_count": 1
+  },
+  {
+    "key": "PROJEKT-1154",
+    "summary": "AI Agents Communication Protocols",
+    "status": "New",
+    "assignee": "Hirš Petr",
+    "lpm_status": "ANALYZING",
+    "wsjf": null,
+    "child_count": 0
+  },
+  {
+    "key": "PROJEKT-1155",
+    "summary": "AI Red Teaming Platform",
+    "status": "New",
+    "assignee": "Hirš Petr",
+    "lpm_status": null,
+    "wsjf": null,
+    "child_count": 0
+  },
+  {
+    "key": "PROJEKT-1156",
+    "summary": "Automatizované inteligentní alarmy (CNOC)",
+    "status": "New",
+    "assignee": "Popelář Jan",
+    "lpm_status": "ANALYZING",
+    "wsjf": null,
+    "child_count": 0
+  },
+  {
+    "key": "PROJEKT-1157",
+    "summary": "AI Sandbox",
+    "status": "New",
+    "assignee": "Hirš Petr",
+    "lpm_status": "IMPLEMENTING PRESERVE/FINAL SCOPE",
+    "wsjf": 23.0,
+    "child_count": 0
+  },
+  {
+    "key": "PROJEKT-1158",
+    "summary": "AI Education",
+    "status": "New",
+    "assignee": "Kouba Ondřej",
+    "lpm_status": "DONE",
+    "wsjf": null,
+    "child_count": 0
+  },
+  {
+    "key": "PROJEKT-1159",
+    "summary": "Personalizace slev dle profilu zákazníka",
+    "status": "New",
+    "assignee": "Vavrla Lukáš",
+    "lpm_status": "READY",
+    "wsjf": 26.67,
+    "child_count": 0
+  },
+  {
+    "key": "PROJEKT-1160",
+    "summary": "SCAMFLAG",
+    "status": "New",
+    "assignee": "Šichtanc Radek",
+    "lpm_status": null,
+    "wsjf": null,
+    "child_count": 0
+  },
+  {
+    "key": "PROJEKT-1161",
+    "summary": "SCAM volání",
+    "status": "New",
+    "assignee": "Šichtanc Radek",
+    "lpm_status": null,
+    "wsjf": null,
+    "child_count": 0
+  },
+  {
+    "key": "PROJEKT-1162",
+    "summary": "SCAM SMS",
+    "status": "New",
+    "assignee": "Šichtanc Radek",
+    "lpm_status": null,
+    "wsjf": null,
+    "child_count": 0
+  },
+  {
+    "key": "PROJEKT-1165",
+    "summary": "Multilanguage",
+    "status": "New",
+    "assignee": "Siran Michal",
+    "lpm_status": null,
+    "wsjf": null,
+    "child_count": 0
+  },
+  {
+    "key": "PROJEKT-1166",
+    "summary": "Hyperpersonalizace all channels ",
+    "status": "New",
+    "assignee": "Siran Michal",
+    "lpm_status": "FUNNEL",
+    "wsjf": null,
+    "child_count": 0
+  },
+  {
+    "key": "PROJEKT-1168",
+    "summary": "Konsolidace datové architektury do Lakehouse (včetně vytvoření zákaznické 360)",
+    "status": "New",
+    "assignee": "Vavrla Lukáš",
+    "lpm_status": "READY",
+    "wsjf": 1.28,
+    "child_count": 4
+  },
+  {
+    "key": "PROJEKT-1169",
+    "summary": "Upgrade modelu Prometheus na NBA",
+    "status": "New",
+    "assignee": "Vavrla Lukáš",
+    "lpm_status": null,
+    "wsjf": null,
+    "child_count": 0
+  },
+  {
+    "key": "PROJEKT-1170",
+    "summary": "Ask Your Data – konverzační analytika",
+    "status": "New",
+    "assignee": "Vavrla Lukáš",
+    "lpm_status": null,
+    "wsjf": null,
+    "child_count": 6
+  },
+  {
+    "key": "PROJEKT-1181",
+    "summary": "WEB O2.CZ: Eshop 2026 - shopify",
+    "status": "Canceled",
+    "assignee": "Čížek Petr",
+    "lpm_status": null,
+    "wsjf": null,
+    "child_count": 0
+  },
+  {
+    "key": "PROJEKT-1208",
+    "summary": "Gap closing aktivity",
+    "status": "New",
+    "assignee": "Štolovská Jitka",
+    "lpm_status": "IMPLEMENTING PRESERVE/FINAL SCOPE",
+    "wsjf": 27.5,
+    "child_count": 27
+  },
+  {
+    "key": "PROJEKT-1214",
+    "summary": "Náhrada splátek pro mobilní HW",
+    "status": "In Progress",
+    "assignee": "Dvořák Dominik",
+    "lpm_status": "READY",
+    "wsjf": 298.0,
+    "child_count": 20
+  },
+  {
+    "key": "PROJEKT-1225",
+    "summary": "K2 - B2B Stream požadavky",
+    "status": "In Progress",
+    "assignee": "Filin Anastázie",
+    "lpm_status": "READY",
+    "wsjf": 4.25,
+    "child_count": 9
+  },
+  {
+    "key": "PROJEKT-1233",
+    "summary": "Náhrada centrální platformy hlasových služeb (IP Multimedia Subsystem - IMS)",
+    "status": "New",
+    "assignee": "Poupě Petr",
+    "lpm_status": null,
+    "wsjf": null,
+    "child_count": 2
+  },
+  {
+    "key": "PROJEKT-1234",
+    "summary": "Implementace systému pro výstražné zprávy státu (cell broadcast)",
+    "status": "New",
+    "assignee": "Zemanová Blanka",
+    "lpm_status": "READY",
+    "wsjf": 40.5,
+    "child_count": 1
+  },
+  {
+    "key": "PROJEKT-1235",
+    "summary": "Uplatnění inflační doložky 2026",
+    "status": "To Do",
+    "assignee": "Holub Ondřej",
+    "lpm_status": "DONE",
+    "wsjf": 61.0,
+    "child_count": 3
+  },
+  {
+    "key": "PROJEKT-1236",
+    "summary": "Náhrada registru mobilních a fixních účastníků SDM",
+    "status": "New",
+    "assignee": "Slavíček Jan",
+    "lpm_status": null,
+    "wsjf": null,
+    "child_count": 1
+  },
+  {
+    "key": "PROJEKT-1237",
+    "summary": "Systém monitoringu signalizace v core síti",
+    "status": "New",
+    "assignee": "Hruška Štěpán",
+    "lpm_status": null,
+    "wsjf": null,
+    "child_count": 1
+  },
+  {
+    "key": "PROJEKT-1238",
+    "summary": "Komplexní monitoring domácí síťě/WiFi",
+    "status": "New",
+    "assignee": "Jahoda Martin",
+    "lpm_status": "READY",
+    "wsjf": 19.0,
+    "child_count": 3
+  },
+  {
+    "key": "PROJEKT-1241",
+    "summary": "Obnova platformy pro hloubkovou inspekci broadband provozu (DPI)",
+    "status": "New",
+    "assignee": "Švorc Jaromír",
+    "lpm_status": null,
+    "wsjf": null,
+    "child_count": 1
+  },
+  {
+    "key": "PROJEKT-1242",
+    "summary": "Konsolidace Network Asset Management nástrojů a procesů",
+    "status": "New",
+    "assignee": "Skoták Radek",
+    "lpm_status": "READY",
+    "wsjf": 43.0,
+    "child_count": 1
+  },
+  {
+    "key": "PROJEKT-1243",
+    "summary": "Oddělená síťová infrastruktura datových center pro neprodukční NTW prostředí",
+    "status": "New",
+    "assignee": "Pšenička Hynek",
+    "lpm_status": null,
+    "wsjf": null,
+    "child_count": 1
+  },
+  {
+    "key": "PROJEKT-1244",
+    "summary": "Rozvoj služby na ochranu datové sítě před internetovými útoky (AntiDDoS)",
+    "status": "New",
+    "assignee": "Švorc Jaromír",
+    "lpm_status": null,
+    "wsjf": null,
+    "child_count": 0
+  },
+  {
+    "key": "PROJEKT-1245",
+    "summary": "OP nákupní cesta",
+    "status": "New",
+    "assignee": "Pragerová Jana",
+    "lpm_status": "READY",
+    "wsjf": 1.05,
+    "child_count": 13
+  },
+  {
+    "key": "PROJEKT-1246",
+    "summary": "OP Onboarding",
+    "status": "New",
+    "assignee": "Pragerová Jana",
+    "lpm_status": null,
+    "wsjf": null,
+    "child_count": 4
+  },
+  {
+    "key": "PROJEKT-1257",
+    "summary": "ND-11598 Reprice OPTICKÝCH tarifů - trading prio | Project board",
+    "status": "New",
+    "assignee": "Řežábek Jakub",
+    "lpm_status": "IMPLEMENTING PRESERVE/FINAL SCOPE",
+    "wsjf": 66.0,
+    "child_count": 2
+  },
+  {
+    "key": "PROJEKT-1260",
+    "summary": "Dashboard - zákaznická cesta O2 internet - PI discovery",
+    "status": "New",
+    "assignee": "Chorváth Rostislav",
+    "lpm_status": "READY",
+    "wsjf": 13.0,
+    "child_count": 1
+  },
+  {
+    "key": "PROJEKT-1261",
+    "summary": "Digitální nákupní cesta pro IČ/SMB mobil",
+    "status": "In Progress",
+    "assignee": "Popovičová Romana",
+    "lpm_status": "IMPLEMENTING MVP/IDEA",
+    "wsjf": 3.69,
+    "child_count": 8
+  },
+  {
+    "key": "PROJEKT-1263",
+    "summary": "Asset Management Fáze 1. - Management IP adres",
+    "status": "New",
+    "assignee": "Utratil Petr",
+    "lpm_status": "READY",
+    "wsjf": 41.0,
+    "child_count": 1
+  },
+  {
+    "key": "PROJEKT-1265",
+    "summary": "xSell- fáze 2 - automatický přenos přes digitální kanál ",
+    "status": "New",
+    "assignee": "Pragerová Jana",
+    "lpm_status": null,
+    "wsjf": null,
+    "child_count": 1
+  },
+  {
+    "key": "PROJEKT-1276",
+    "summary": "Nový produkt O2 Ochrana Identity (IDP) - Security+",
+    "status": "New",
+    "assignee": "Novák Peter",
+    "lpm_status": "READY",
+    "wsjf": 4.25,
+    "child_count": 3
+  },
+  {
+    "key": "PROJEKT-1290",
+    "summary": "Oneplay - nové tarifní portfolio s reklamou",
+    "status": "New",
+    "assignee": "Pragerová Jana",
+    "lpm_status": "READY",
+    "wsjf": 36.0,
+    "child_count": 9
+  },
+  {
+    "key": "PROJEKT-1295",
+    "summary": "Future proof eshop MOA",
+    "status": "New",
+    "assignee": "Toncarová Petra",
+    "lpm_status": "IMPLEMENTING PRESERVE/FINAL SCOPE",
+    "wsjf": 2.33,
+    "child_count": 7
+  },
+  {
+    "key": "PROJEKT-1310",
+    "summary": "Nový obslužný model SMB",
+    "status": "New",
+    "assignee": "Holub Ondřej",
+    "lpm_status": "READY",
+    "wsjf": 12.5,
+    "child_count": 9
+  },
+  {
+    "key": "PROJEKT-1312",
+    "summary": "F2 - Security+ SMS Block/Spam Calls Blocking",
+    "status": "New",
+    "assignee": "Pampel Petr",
+    "lpm_status": "READY",
+    "wsjf": 2.63,
+    "child_count": 5
+  },
+  {
+    "key": "PROJEKT-1326",
+    "summary": "Digitální E2E nákup O2 Spolu ",
+    "status": "New",
+    "assignee": "Urbanová Kristýna",
+    "lpm_status": "READY",
+    "wsjf": null,
+    "child_count": 3
+  },
+  {
+    "key": "PROJEKT-1327",
+    "summary": "Fixní internet via Satelit powered by Amazon ",
+    "status": "New",
+    "assignee": "Chorváth Rostislav",
+    "lpm_status": null,
+    "wsjf": null,
+    "child_count": 0
+  },
+  {
+    "key": "PROJEKT-1330",
+    "summary": "Oddělená síťová infrastruktura pro testovací, vývojové a předprodukční systémy (neprodukční prostředí)",
+    "status": "New",
+    "assignee": "Havránek David",
+    "lpm_status": "IMPLEMENTING MVP/IDEA",
+    "wsjf": 5.0,
+    "child_count": 5
+  },
+  {
+    "key": "PROJEKT-1331",
+    "summary": "Network Major Technology Renewal Projects",
+    "status": "New",
+    "assignee": "Čapek Jiří",
+    "lpm_status": "IMPLEMENTING MVP/IDEA",
+    "wsjf": 5.13,
+    "child_count": 8
+  },
+  {
+    "key": "PROJEKT-1332",
+    "summary": "PROAKTIVNÍ DETEKCE A AUTOMATIZOVANÉ ŘEŠENÍ ZÁKAZNICKÝCH PROBLÉMŮ V SÍTI O2 ",
+    "status": "New",
+    "assignee": "Jahoda Martin",
+    "lpm_status": "IMPLEMENTING MVP/IDEA",
+    "wsjf": 9.13,
+    "child_count": 2
+  },
+  {
+    "key": "PROJEKT-1334",
+    "summary": "Zvýšení realizovatelnost FBB služeb ",
+    "status": "New",
+    "assignee": "Chorváth Rostislav",
+    "lpm_status": "READY",
+    "wsjf": 5.8,
+    "child_count": 3
+  },
+  {
+    "key": "PROJEKT-1345",
+    "summary": "Expirace slev",
+    "status": "New",
+    "assignee": "Shchepetova Anna",
+    "lpm_status": "READY",
+    "wsjf": 18.46,
+    "child_count": 3
+  },
+  {
+    "key": "PROJEKT-1356",
+    "summary": "Karta obce",
+    "status": "New",
+    "assignee": "Řežábek Jakub",
+    "lpm_status": "READY",
+    "wsjf": 53.0,
+    "child_count": 3
+  },
+  {
+    "key": "PROJEKT-1391",
+    "summary": "Rezidentní O2 Cloud",
+    "status": "New",
+    "assignee": "Jiráková Radmila",
+    "lpm_status": "READY",
+    "wsjf": 58.0,
+    "child_count": 3
+  },
+  {
+    "key": "PROJEKT-1395",
+    "summary": "Zabezpečení MOA",
+    "status": "New",
+    "assignee": "Pavel Dušan",
+    "lpm_status": "READY",
+    "wsjf": 5.8,
+    "child_count": 16
+  },
+  {
+    "key": "PROJEKT-1397",
+    "summary": "Digi Revoluce",
+    "status": "New",
+    "assignee": "Adam Milan",
+    "lpm_status": "READY",
+    "wsjf": 6.3,
+    "child_count": 4
+  },
+  {
+    "key": "PROJEKT-1401",
+    "summary": "Odřazování čísel z Family programu",
+    "status": "New",
+    "assignee": "Miltová Petra",
+    "lpm_status": "READY",
+    "wsjf": 5.75,
+    "child_count": 2
+  },
+  {
+    "key": "PROJEKT-1402",
+    "summary": "FBB - Satelitní internet - powered by AMAZON",
+    "status": "To Do",
+    "assignee": "Chorváth Rostislav",
+    "lpm_status": "READY",
+    "wsjf": 4.69,
+    "child_count": 2
+  },
+  {
+    "key": "PROJEKT-1405",
+    "summary": "Propojení HW a služby v O2 Spolu",
+    "status": "New",
+    "assignee": "Štolovská Jitka",
+    "lpm_status": "READY",
+    "wsjf": 3.0,
+    "child_count": 2
+  },
+  {
+    "key": "PROJEKT-1416",
+    "summary": "Unity wallet",
+    "status": "New",
+    "assignee": "Juklová Michaela",
+    "lpm_status": "ANALYZING",
+    "wsjf": null,
+    "child_count": 6
+  },
+  {
+    "key": "PROJEKT-1419",
+    "summary": "Prepaid 2.0 Fáze 2",
+    "status": "New",
+    "assignee": "Hamrlová Kristýna",
+    "lpm_status": "READY",
+    "wsjf": 4.08,
+    "child_count": 7
+  },
+  {
+    "key": "PROJEKT-157",
+    "summary": "Projekt | Vulnerability management",
+    "status": "Done",
+    "assignee": "Fanfulová Naděžda",
+    "lpm_status": "DONE",
+    "wsjf": 10.85,
+    "child_count": 13
+  },
+  {
+    "key": "PROJEKT-158",
+    "summary": "Optimus - Fixní Internet",
+    "status": "In Progress",
+    "assignee": "Řežábek Jakub",
+    "lpm_status": "IMPLEMENTING PRESERVE/FINAL SCOPE",
+    "wsjf": 133.0,
+    "child_count": 120
+  },
+  {
+    "key": "PROJEKT-183",
+    "summary": "AirBank spolupráce - Fáze 4: UNITY",
+    "status": "Done",
+    "assignee": "Turzó Bedřich",
+    "lpm_status": "DONE",
+    "wsjf": 15.33,
+    "child_count": 8
+  },
+  {
+    "key": "PROJEKT-191",
+    "summary": "AMM",
+    "status": "New",
+    "assignee": "Štefanová Zuzana",
+    "lpm_status": "DONE",
+    "wsjf": 21.67,
+    "child_count": 16
+  },
+  {
+    "key": "PROJEKT-21",
+    "summary": "Future CC",
+    "status": "Done",
+    "assignee": "Rezek Martin",
+    "lpm_status": "DONE",
+    "wsjf": 20.0,
+    "child_count": 18
+  },
+  {
+    "key": "PROJEKT-257",
+    "summary": "Digitální nákupní cesta mobil",
+    "status": "In Progress",
+    "assignee": "Popovičová Romana",
+    "lpm_status": "DONE",
+    "wsjf": 16.0,
+    "child_count": 7
+  },
+  {
+    "key": "PROJEKT-283",
+    "summary": "Projekt | eBox",
+    "status": "In Progress",
+    "assignee": "Pampel Petr",
+    "lpm_status": "DONE",
+    "wsjf": 23.08,
+    "child_count": 10
+  },
+  {
+    "key": "PROJEKT-304",
+    "summary": "MAX - FIX",
+    "status": "Done",
+    "assignee": "Štefanová Zuzana",
+    "lpm_status": null,
+    "wsjf": 0.0,
+    "child_count": 18
+  },
+  {
+    "key": "PROJEKT-306",
+    "summary": "Předplacená TV ebox s neidentifikovaným zákazníkem",
+    "status": "In Progress",
+    "assignee": "Popovičová Romana",
+    "lpm_status": "IMPLEMENTING PRESERVE/FINAL SCOPE",
+    "wsjf": 65.0,
+    "child_count": 10
+  },
+  {
+    "key": "PROJEKT-309",
+    "summary": "Reimplementace ERP",
+    "status": "New",
+    "assignee": "Skočdopole Jiří",
+    "lpm_status": "IMPLEMENTING MVP/IDEA",
+    "wsjf": 300.0,
+    "child_count": 12
+  },
+  {
+    "key": "PROJEKT-310",
+    "summary": "Reimplementace SRM",
+    "status": "New",
+    "assignee": "Rajdlová Blanka",
+    "lpm_status": "DONE",
+    "wsjf": 10.05,
+    "child_count": 1
+  },
+  {
+    "key": "PROJEKT-311",
+    "summary": "Reimplementace RMCA",
+    "status": "New",
+    "assignee": "Rajdlová Blanka",
+    "lpm_status": "DONE",
+    "wsjf": 9.38,
+    "child_count": 1
+  },
+  {
+    "key": "PROJEKT-350",
+    "summary": "Uplatnění ID v r. 2024",
+    "status": "Done",
+    "assignee": "Štefanová Zuzana",
+    "lpm_status": null,
+    "wsjf": 0.0,
+    "child_count": 3
+  },
+  {
+    "key": "PROJEKT-387",
+    "summary": "MOA - Nová aplikace ",
+    "status": "New",
+    "assignee": "Máté Nicolas",
+    "lpm_status": "DONE",
+    "wsjf": 10.0,
+    "child_count": 141
+  },
+  {
+    "key": "PROJEKT-388",
+    "summary": "AI driven obsluha na asistovaných kanálech",
+    "status": "In Progress",
+    "assignee": "Popovičová Romana",
+    "lpm_status": "READY",
+    "wsjf": 4.65,
+    "child_count": 11
+  },
+  {
+    "key": "PROJEKT-390",
+    "summary": "APP pro nezákazníky",
+    "status": "Done",
+    "assignee": "Vobořil Tomáš",
+    "lpm_status": "DONE",
+    "wsjf": 11.0,
+    "child_count": 10
+  },
+  {
+    "key": "PROJEKT-412",
+    "summary": "Spolu 3.0",
+    "status": "In Progress",
+    "assignee": "Štolovská Jitka",
+    "lpm_status": "DONE",
+    "wsjf": 23.08,
+    "child_count": 13
+  },
+  {
+    "key": "PROJEKT-427",
+    "summary": "5G SA CORE (CNF) - (NART-25)",
+    "status": "New",
+    "assignee": "Siran Michal",
+    "lpm_status": "IMPLEMENTING PRESERVE/FINAL SCOPE",
+    "wsjf": 5.13,
+    "child_count": 11
+  },
+  {
+    "key": "PROJEKT-428",
+    "summary": "Best network",
+    "status": "New",
+    "assignee": "Siran Michal",
+    "lpm_status": "IMPLEMENTING PRESERVE/FINAL SCOPE",
+    "wsjf": 15.0,
+    "child_count": 6
+  },
+  {
+    "key": "PROJEKT-483",
+    "summary": "O2F2.0 Produkční migrace",
+    "status": "In Progress",
+    "assignee": "Kvasnička Václav",
+    "lpm_status": "DONE",
+    "wsjf": 41.0,
+    "child_count": 0
+  },
+  {
+    "key": "PROJEKT-501",
+    "summary": "Digitální nákupní cesta internet",
+    "status": "In Progress",
+    "assignee": "Štolovská Jitka",
+    "lpm_status": "DONE",
+    "wsjf": 6.8,
+    "child_count": 10
+  },
+  {
+    "key": "PROJEKT-514",
+    "summary": "I. KIP pro Mobilní služby (Konsolidovaný IT provisioning)",
+    "status": "In Progress",
+    "assignee": "Stavinoha Jiří",
+    "lpm_status": "IMPLEMENTING PRESERVE/FINAL SCOPE",
+    "wsjf": 0.61,
+    "child_count": 4
+  },
+  {
+    "key": "PROJEKT-533",
+    "summary": "Zákaznické pokrytí",
+    "status": "To Do",
+    "assignee": "Kvasnička Václav",
+    "lpm_status": "IMPLEMENTING MVP/IDEA",
+    "wsjf": 45.0,
+    "child_count": 2
+  },
+  {
+    "key": "PROJEKT-598",
+    "summary": "Strategie pro online charging předplacených služeb",
+    "status": "Canceled",
+    "assignee": "Lebeda Roman",
+    "lpm_status": null,
+    "wsjf": null,
+    "child_count": 0
+  },
+  {
+    "key": "PROJEKT-599",
+    "summary": "Strategie a prodloužení TCO pro Online Charging System předplacených služeb",
+    "status": "In Progress",
+    "assignee": "Lebeda Roman",
+    "lpm_status": null,
+    "wsjf": null,
+    "child_count": 7
+  },
+  {
+    "key": "PROJEKT-600",
+    "summary": "Náhrada loadbalanceru a aplikačního firewallu F5",
+    "status": "New",
+    "assignee": "Skoták Radek",
+    "lpm_status": null,
+    "wsjf": null,
+    "child_count": 1
+  },
+  {
+    "key": "PROJEKT-601",
+    "summary": "Rozvoj internetové páteřní sítě a podpůrných služeb",
+    "status": "New",
+    "assignee": "Švorc Jaromír",
+    "lpm_status": null,
+    "wsjf": null,
+    "child_count": 2
+  },
+  {
+    "key": "PROJEKT-607",
+    "summary": "Vytvoření jednotného provisioningu do network elementů - NAC",
+    "status": "New",
+    "assignee": "Skoták Radek",
+    "lpm_status": "IMPLEMENTING PRESERVE/FINAL SCOPE",
+    "wsjf": 2.9,
+    "child_count": 3
+  },
+  {
+    "key": "PROJEKT-623",
+    "summary": "Systém řízení bezpečnosti informací",
+    "status": "New",
+    "assignee": "Böhmová Kateřina",
+    "lpm_status": "DONE",
+    "wsjf": null,
+    "child_count": 10
+  },
+  {
+    "key": "PROJEKT-624",
+    "summary": "Řízení aktiv",
+    "status": "New",
+    "assignee": "Böhmová Kateřina",
+    "lpm_status": "REVIEWING",
+    "wsjf": null,
+    "child_count": 2
+  },
+  {
+    "key": "PROJEKT-696",
+    "summary": "Direct Sales Aplikace",
+    "status": "In Progress",
+    "assignee": "Kubík Karel",
+    "lpm_status": null,
+    "wsjf": null,
+    "child_count": 2
+  },
+  {
+    "key": "PROJEKT-703",
+    "summary": "Kritické zabezpečení MO2/MOA (MFA)",
+    "status": "New",
+    "assignee": "Vobořil Tomáš",
+    "lpm_status": "DONE",
+    "wsjf": 41.0,
+    "child_count": 12
+  },
+  {
+    "key": "PROJEKT-721",
+    "summary": "RMCA",
+    "status": "New",
+    "assignee": "Kehar Jiří",
+    "lpm_status": "DONE",
+    "wsjf": null,
+    "child_count": 2
+  },
+  {
+    "key": "PROJEKT-722",
+    "summary": "Vypnutí služeb 2G a 2G technologie",
+    "status": "New",
+    "assignee": "Vacek Radovan",
+    "lpm_status": "IMPLEMENTING MVP/IDEA",
+    "wsjf": 15.0,
+    "child_count": 2
+  },
+  {
+    "key": "PROJEKT-723",
+    "summary": "Spuštění 5G v 700MHz / 4G v 900MHz",
+    "status": "Done",
+    "assignee": "Pezinek Libor",
+    "lpm_status": "DONE",
+    "wsjf": 17.75,
+    "child_count": 0
+  },
+  {
+    "key": "PROJEKT-724",
+    "summary": "Nová retence - digitalizace pomocí tSM a JLM",
+    "status": "In Progress",
+    "assignee": "Hladík Filip",
+    "lpm_status": "IMPLEMENTING MVP/IDEA",
+    "wsjf": 296.0,
+    "child_count": 24
+  },
+  {
+    "key": "PROJEKT-736",
+    "summary": "Digitální nákupní cesta postpaidové TV (ebox)",
+    "status": "New",
+    "assignee": "Štolovská Jitka",
+    "lpm_status": "DONE",
+    "wsjf": 13.67,
+    "child_count": 3
+  },
+  {
+    "key": "PROJEKT-769",
+    "summary": "EAA - Splnění požadavků European Accessibility Act ",
+    "status": "New",
+    "assignee": "Siran Michal",
+    "lpm_status": "DONE",
+    "wsjf": 5.4,
+    "child_count": 4
+  },
+  {
+    "key": "PROJEKT-770",
+    "summary": "Nahravani na prodejnach",
+    "status": "In Progress",
+    "assignee": "Mňuk Lukáš",
+    "lpm_status": "DONE",
+    "wsjf": 24.33,
+    "child_count": 17
+  },
+  {
+    "key": "PROJEKT-771",
+    "summary": "K2 - Spin-off, NTW, IT 2025",
+    "status": "New",
+    "assignee": "Jelínek Jakub",
+    "lpm_status": "DONE",
+    "wsjf": 62.5,
+    "child_count": 11
+  },
+  {
+    "key": "PROJEKT-776",
+    "summary": "K2 - Network stream 2025",
+    "status": "Done",
+    "assignee": "Novotná Hana",
+    "lpm_status": "DONE",
+    "wsjf": 9.0,
+    "child_count": 9
+  },
+  {
+    "key": "PROJEKT-777",
+    "summary": "Zákaznická zkušenost se službami poskytovanými O2CZ Network",
+    "status": "New",
+    "assignee": "Homola Tomáš",
+    "lpm_status": null,
+    "wsjf": null,
+    "child_count": 5
+  },
+  {
+    "key": "PROJEKT-779",
+    "summary": "Digitalizace TSS v ICT",
+    "status": "Canceled",
+    "assignee": "Holancová Kamila",
+    "lpm_status": null,
+    "wsjf": null,
+    "child_count": 0
+  },
+  {
+    "key": "PROJEKT-786",
+    "summary": "Ověřovací metody zákazníka a správa KO",
+    "status": "New",
+    "assignee": "Pavel Dušan",
+    "lpm_status": "IMPLEMENTING MVP/IDEA",
+    "wsjf": 26.5,
+    "child_count": 48
+  },
+  {
+    "key": "PROJEKT-790",
+    "summary": "Unity 2.0 - Rozšíření a změna propozice na 1+0",
+    "status": "Done",
+    "assignee": "Turzó Bedřich",
+    "lpm_status": "DONE",
+    "wsjf": 6.15,
+    "child_count": 14
+  },
+  {
+    "key": "PROJEKT-795",
+    "summary": "LPM: Video CALL na CC",
+    "status": "New",
+    "assignee": "Pampel Petr",
+    "lpm_status": null,
+    "wsjf": null,
+    "child_count": 1
+  },
+  {
+    "key": "PROJEKT-804",
+    "summary": "Zabezpečení Moje O2 (web + new MOA) fáze 2",
+    "status": "To Do",
+    "assignee": "Pavel Dušan",
+    "lpm_status": "IMPLEMENTING MVP/IDEA",
+    "wsjf": 6.05,
+    "child_count": 18
+  },
+  {
+    "key": "PROJEKT-813",
+    "summary": "Digital payments",
+    "status": "In Progress",
+    "assignee": "Dvořák Dominik",
+    "lpm_status": "IMPLEMENTING PRESERVE/FINAL SCOPE",
+    "wsjf": 9.13,
+    "child_count": 16
+  },
+  {
+    "key": "PROJEKT-814",
+    "summary": "CJ Simple payments - Digitalizace vyúčtování \"MOA first\"",
+    "status": "In Progress",
+    "assignee": "Dvořák Dominik",
+    "lpm_status": "IMPLEMENTING MVP/IDEA",
+    "wsjf": 4.88,
+    "child_count": 4
+  },
+  {
+    "key": "PROJEKT-815",
+    "summary": "CJ Simple payments - Self care features",
+    "status": "New",
+    "assignee": "Dvořák Dominik",
+    "lpm_status": "IMPLEMENTING MVP/IDEA",
+    "wsjf": 4.25,
+    "child_count": 6
+  },
+  {
+    "key": "PROJEKT-836",
+    "summary": "Pronájem FIX HW",
+    "status": "In Progress",
+    "assignee": "Dvořák Dominik",
+    "lpm_status": "IMPLEMENTING MVP/IDEA",
+    "wsjf": 299.0,
+    "child_count": 30
+  },
+  {
+    "key": "PROJEKT-855",
+    "summary": "eBOX X-sell a Transfer ",
+    "status": "In Progress",
+    "assignee": "Tomášková Dana",
+    "lpm_status": "DONE",
+    "wsjf": 5.62,
+    "child_count": 7
+  },
+  {
+    "key": "PROJEKT-856",
+    "summary": "Virtual Assistant Eva 2.0",
+    "status": "In Progress",
+    "assignee": "Mňuk Lukáš",
+    "lpm_status": "DONE",
+    "wsjf": 12.31,
+    "child_count": 75
+  },
+  {
+    "key": "PROJEKT-87",
+    "summary": " O2F2.0 Úprava systému OneCRM pro hromadný import dat O2 Family",
+    "status": "In Progress",
+    "assignee": "Přinda Jan",
+    "lpm_status": null,
+    "wsjf": 5.08,
+    "child_count": 4
+  },
+  {
+    "key": "PROJEKT-874",
+    "summary": "Future proof eShop",
+    "status": "New",
+    "assignee": "Siran Michal",
+    "lpm_status": "IMPLEMENTING MVP/IDEA",
+    "wsjf": 9.0,
+    "child_count": 9
+  },
+  {
+    "key": "PROJEKT-88",
+    "summary": "O2F2.0 Decommissioning O2 Family po přechodu do O2",
+    "status": "To Do",
+    "assignee": "Kvasnička Václav",
+    "lpm_status": "DONE",
+    "wsjf": 3.0,
+    "child_count": 4
+  },
+  {
+    "key": "PROJEKT-880",
+    "summary": "K2 - Segment, sales, product development a Migrace",
+    "status": "New",
+    "assignee": "Novotná Hana",
+    "lpm_status": "IMPLEMENTING PRESERVE/FINAL SCOPE",
+    "wsjf": 2.33,
+    "child_count": 13
+  },
+  {
+    "key": "PROJEKT-910",
+    "summary": "SB3 - projekt ",
+    "status": "New",
+    "assignee": "Adamcová Karolína",
+    "lpm_status": "DONE",
+    "wsjf": 100.0,
+    "child_count": 4
+  },
+  {
+    "key": "PROJEKT-914",
+    "summary": "New delivery metody",
+    "status": "New",
+    "assignee": "Deusová Dana",
+    "lpm_status": "DONE",
+    "wsjf": null,
+    "child_count": 0
+  },
+  {
+    "key": "PROJEKT-920",
+    "summary": "Strategie nasazování verzí a kompatibility BFF",
+    "status": "New",
+    "assignee": "Vobořil Tomáš",
+    "lpm_status": "DONE",
+    "wsjf": 2.31,
+    "child_count": 3
+  },
+  {
+    "key": "PROJEKT-921",
+    "summary": "Prepaid 2.0",
+    "status": "In Progress",
+    "assignee": "Pampel Petr",
+    "lpm_status": "IMPLEMENTING MVP/IDEA",
+    "wsjf": 297.0,
+    "child_count": 35
+  },
+  {
+    "key": "PROJEKT-923",
+    "summary": "DigiFIX",
+    "status": "New",
+    "assignee": "Máté Nicolas",
+    "lpm_status": "READY",
+    "wsjf": 33.0,
+    "child_count": 12
+  },
+  {
+    "key": "PROJEKT-937",
+    "summary": "Smallcell Mavenir",
+    "status": "New",
+    "assignee": "Pezinek Libor",
+    "lpm_status": "DONE",
+    "wsjf": 1.15,
+    "child_count": 1
+  },
+  {
+    "key": "PROJEKT-938",
+    "summary": "Network Genius",
+    "status": "New",
+    "assignee": "Votava Jakub",
+    "lpm_status": null,
+    "wsjf": null,
+    "child_count": 2
+  },
+  {
+    "key": "PROJEKT-940",
+    "summary": "Network  Problem & Change Management",
+    "status": "New",
+    "assignee": "Vobořil Tomáš",
+    "lpm_status": null,
+    "wsjf": null,
+    "child_count": 2
+  },
+  {
+    "key": "PROJEKT-941",
+    "summary": "SK Separation",
+    "status": "New",
+    "assignee": "Paur Václav",
+    "lpm_status": "IMPLEMENTING MVP/IDEA",
+    "wsjf": 8.0,
+    "child_count": 0
+  },
+  {
+    "key": "PROJEKT-943",
+    "summary": "RES PoP - nová propozice pro mladé",
+    "status": "In Progress",
+    "assignee": "Štolovská Jitka",
+    "lpm_status": "DONE",
+    "wsjf": 5.23,
+    "child_count": 23
+  },
+  {
+    "key": "PROJEKT-944",
+    "summary": "SMB digitální bundling a value propozice 2026",
+    "status": "In Progress",
+    "assignee": "Popovičová Romana",
+    "lpm_status": "IMPLEMENTING PRESERVE/FINAL SCOPE",
+    "wsjf": 16.0,
+    "child_count": 10
+  },
+  {
+    "key": "PROJEKT-947",
+    "summary": "[LPM]  B2B v Moje O2 APP",
+    "status": "New",
+    "assignee": "Vobořil Tomáš",
+    "lpm_status": "DONE",
+    "wsjf": 5.13,
+    "child_count": 8
+  },
+  {
+    "key": "PROJEKT-948",
+    "summary": "Náhrada systému ZIS",
+    "status": "New",
+    "assignee": "Boháč Zdeněk",
+    "lpm_status": "FUNNEL",
+    "wsjf": null,
+    "child_count": 2
+  },
+  {
+    "key": "PROJEKT-983",
+    "summary": "K2 - příprava migrací + FWA 3,7 na 5G",
+    "status": "New",
+    "assignee": "Jelínek Jakub",
+    "lpm_status": "DONE",
+    "wsjf": 1.55,
+    "child_count": 0
+  },
+  {
+    "key": "PROJEKT-985",
+    "summary": "[LPM] APP pro nezákazníky",
+    "status": "New",
+    "assignee": "Vobořil Tomáš",
+    "lpm_status": "IMPLEMENTING MVP/IDEA",
+    "wsjf": 22.0,
+    "child_count": 14
+  },
+  {
+    "key": "PROJEKT-986",
+    "summary": "[LPM] Objevujte feed",
+    "status": "New",
+    "assignee": "Vobořil Tomáš",
+    "lpm_status": "DONE",
+    "wsjf": 0.9,
+    "child_count": 22
+  },
+  {
+    "key": "PROJEKT-987",
+    "summary": "[LPM] Family link",
+    "status": "New",
+    "assignee": "Kraus Ferdinand",
+    "lpm_status": "DONE",
+    "wsjf": 1.2,
+    "child_count": 1
+  },
+  {
+    "key": "PROJEKT-990",
+    "summary": "Ověření nároku na Family nabídku_nový přístup",
+    "status": "In Progress",
+    "assignee": "Popovičová Romana",
+    "lpm_status": "IMPLEMENTING PRESERVE/FINAL SCOPE",
+    "wsjf": 26.67,
+    "child_count": 10
+  },
+  {
+    "key": "PROJEKT-992",
+    "summary": "Manuální odřazování z Family nabídky",
+    "status": "Canceled",
+    "assignee": "Miltová Petra",
+    "lpm_status": null,
+    "wsjf": null,
+    "child_count": 1
+  },
+  {
+    "key": "PROJEKT-994",
+    "summary": "Unity 2026",
+    "status": "In Progress",
+    "assignee": "Hroník Jiří",
+    "lpm_status": "IMPLEMENTING PRESERVE/FINAL SCOPE",
+    "wsjf": 220.0,
+    "child_count": 51
+  }
+]

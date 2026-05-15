@@ -1,0 +1,44 @@
+{
+  "nd": {
+    "key": "ND-12839",
+    "summary": "Split billing - Historie plateb",
+    "description": "lze využít prp Voice",
+    "status": "Canceled",
+    "assignee": "Kraus Ferdinand",
+    "created": "2026-02-09",
+    "updated": "2026-03-12",
+    "labels": "[\"PI_26_2_Candidate\"]",
+    "parent_key": "PROJEKT-1325",
+    "last_synced": "2026-05-13T23:17:50"
+  },
+  "plans": [
+    {
+      "key": "ROLE-31907",
+      "summary": "ND-12839 Split billing - Historie plateb | ART Implementation Plan | ART - DC",
+      "status": "Canceled",
+      "assignee": "Mňuk Lukáš",
+      "art_key": "TYM-240",
+      "art_name": "[ART - DC] Digital Channels | Rezek Martin",
+      "pi": "PI 2",
+      "funnel_status": null,
+      "wsjf": 0.0,
+      "teams": "ART - DC | U-LINKERS"
+    },
+    {
+      "key": "ROLE-32500",
+      "summary": "ND-12839 Split billing - Historie plateb | ART Implementation Plan | ART - IT",
+      "status": "Canceled",
+      "assignee": "Černý Jan",
+      "art_key": "TYM-152",
+      "art_name": "[ART - IT] IT Platform | Boháč Zdeněk",
+      "pi": null,
+      "funnel_status": null,
+      "wsjf": 0.0,
+      "teams": "ART - IT | R. U. R."
+    }
+  ],
+  "apps": [],
+  "app_statuses": {},
+  "tempo": [],
+  "tempo_total_hours": 0
+}

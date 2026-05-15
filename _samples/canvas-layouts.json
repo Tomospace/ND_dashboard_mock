@@ -1,0 +1,38 @@
+[
+  {
+    "id": 2,
+    "name": "Product Owner Dashboard",
+    "description": null,
+    "role": "po",
+    "grid_cols": 12,
+    "created_at": "2026-04-01 01:05:36.453462+02:00",
+    "updated_at": "2026-04-01 01:05:42.836593+02:00"
+  },
+  {
+    "id": 3,
+    "name": "Scrum Master Dashboard",
+    "description": "Přehled pro Scrum Mastera — tempo, cross-ART, deliverables",
+    "role": "sm",
+    "grid_cols": 12,
+    "created_at": "2026-04-01 01:05:36.453462+02:00",
+    "updated_at": "2026-04-01 01:05:36.453462+02:00"
+  },
+  {
+    "id": 4,
+    "name": "Architect Dashboard",
+    "description": "Přehled pro Architekta — závislosti, apps, discovery, dokumenty",
+    "role": "arch",
+    "grid_cols": 12,
+    "created_at": "2026-04-01 01:05:36.453462+02:00",
+    "updated_at": "2026-04-01 01:05:36.453462+02:00"
+  },
+  {
+    "id": 5,
+    "name": "Management Dashboard",
+    "description": "Přehled pro management — velký ND přehled, tempo, závislosti",
+    "role": "mgmt",
+    "grid_cols": 12,
+    "created_at": "2026-04-01 01:05:36.453462+02:00",
+    "updated_at": "2026-04-01 01:05:36.453462+02:00"
+  }
+]

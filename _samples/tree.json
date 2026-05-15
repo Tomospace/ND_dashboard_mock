@@ -1,0 +1,90 @@
+{
+  "key": "PROJEKT-1001",
+  "summary": "QR kód a návazné pořadavky ",
+  "status": "New",
+  "assignee": "Chorváth Rostislav",
+  "type": "portfolio",
+  "wsjf": 12.2,
+  "children": [
+    {
+      "key": "ND-8850",
+      "summary": "Rozšíření EVIDENCE optických zásuvek o QR kód ",
+      "status": "Canceled",
+      "assignee": "Chorváth Rostislav",
+      "type": "nd",
+      "plan_count": 0,
+      "app_count": 0,
+      "children": []
+    },
+    {
+      "key": "ND-6736",
+      "summary": "Digi cesta FIX: MVP QR kód pro Fiber",
+      "status": "Delivery",
+      "assignee": "Felcman Jana",
+      "type": "nd",
+      "plan_count": 2,
+      "app_count": 5,
+      "children": []
+    },
+    {
+      "key": "ND-9812",
+      "summary": "[BUS] INTERNET: Aktivace pres QR CODE",
+      "status": "Delivery",
+      "assignee": "Krejčí Aleš",
+      "type": "nd",
+      "plan_count": 2,
+      "app_count": 0,
+      "children": []
+    },
+    {
+      "key": "ND-10919",
+      "summary": "MVP - QR kód a samoinstalace - externí_vývoj",
+      "status": "Delivery",
+      "assignee": "Felcman Jana",
+      "type": "nd",
+      "plan_count": 2,
+      "app_count": 13,
+      "children": []
+    },
+    {
+      "key": "ND-11952",
+      "summary": "QR kódy - try&keep",
+      "status": "Discovery",
+      "assignee": "Felcman Jana",
+      "type": "nd",
+      "plan_count": 3,
+      "app_count": 0,
+      "children": []
+    },
+    {
+      "key": "ND-13095",
+      "summary": "Rozšíření prodejního kanálu pro samoinstalace - aplikace MojeO2 (MOA)",
+      "status": "DISCOVERY BACKLOG",
+      "assignee": "Paturová Jana",
+      "type": "nd",
+      "plan_count": 1,
+      "app_count": 0,
+      "children": []
+    },
+    {
+      "key": "ND-10583",
+      "summary": "FIXNÍ TAKEVOER - VE VAZBĚ NA QR KÓD ",
+      "status": "New",
+      "assignee": "Chorváth Rostislav",
+      "type": "nd",
+      "plan_count": 0,
+      "app_count": 0,
+      "children": []
+    },
+    {
+      "key": "ND-12193",
+      "summary": "Samoinstalace QR kód - OMNI, CRM, BE ostatní ",
+      "status": "Discovery",
+      "assignee": "Felcman Jana",
+      "type": "nd",
+      "plan_count": 3,
+      "app_count": 0,
+      "children": []
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+[
+  {
+    "art_key": "TYM-152",
+    "art_name": "[ART - IT] IT Platform | Boháč Zdeněk",
+    "short_name": "IT",
+    "plan_count": 594,
+    "nd_count": 586,
+    "team_count": 17,
+    "done_count": 0,
+    "in_progress_count": 0,
+    "tempo_hours": 47543.1
+  },
+  {
+    "art_key": "TYM-240",
+    "art_name": "[ART - DC] Digital Channels | Rezek Martin",
+    "short_name": "DC",
+    "plan_count": 535,
+    "nd_count": 535,
+    "team_count": 10,
+    "done_count": 0,
+    "in_progress_count": 0,
+    "tempo_hours": 16006.24
+  },
+  {
+    "art_key": "TYM-151",
+    "art_name": "[ART - MM Art] Mass Market Art | Štolovská Jitka",
+    "short_name": "MM Art",
+    "plan_count": 292,
+    "nd_count": 291,
+    "team_count": 10,
+    "done_count": 0,
+    "in_progress_count": 0,
+    "tempo_hours": 13944.133333333333
+  },
+  {
+    "art_key": "TYM-115",
+    "art_name": "[ART - CS] Customer service | Křivka Roman",
+    "short_name": "CS",
+    "plan_count": 106,
+    "nd_count": 106,
+    "team_count": 5,
+    "done_count": 0,
+    "in_progress_count": 0,
+    "tempo_hours": 1312.3333333333333
+  },
+  {
+    "art_key": "TYM-239",
+    "art_name": "[ART - B2B] B2B | Bacík Roman",
+    "short_name": "B2B",
+    "plan_count": 51,
+    "nd_count": 51,
+    "team_count": 2,
+    "done_count": 0,
+    "in_progress_count": 0,
+    "tempo_hours": 2939.4166666666665
+  },
+  {
+    "art_key": "TYM-241",
+    "art_name": "[ART - nonDCA] NON-ART týmy pro DCA | Křivka Roman",
+    "short_name": "nonDCA",
+    "plan_count": 43,
+    "nd_count": 43,
+    "team_count": 5,
+    "done_count": 0,
+    "in_progress_count": 0,
+    "tempo_hours": 512.34
+  },
+  {
+    "art_key": "TYM-154",
+    "art_name": "[ART - NTW] NETWORK | Homola Tomáš",
+    "short_name": "NTW",
+    "plan_count": 15,
+    "nd_count": 15,
+    "team_count": 1,
+    "done_count": 0,
+    "in_progress_count": 0,
+    "tempo_hours": 581.5
+  },
+  {
+    "art_key": "TYM-153",
+    "art_name": "[ART - MO2] Moje O2 | Uhrin Lukáš",
+    "short_name": "MO2",
+    "plan_count": 10,
+    "nd_count": 10,
+    "team_count": 6,
+    "done_count": 0,
+    "in_progress_count": 0,
+    "tempo_hours": 1231.2
+  },
+  {
+    "art_key": "TYM-252",
+    "art_name": "[ART - MM] MM PRODUCTS ART  | Kružic Andrej",
+    "short_name": "MM",
+    "plan_count": 0,
+    "nd_count": 0,
+    "team_count": 0,
+    "done_count": 0,
+    "in_progress_count": 0,
+    "tempo_hours": 0.0
+  },
+  {
+    "art_key": "TYM-155",
+    "art_name": "[ART - FIX] FIX  | Rybín Štěpán",
+    "short_name": "FIX",
+    "plan_count": 0,
+    "nd_count": 0,
+    "team_count": 0,
+    "done_count": 0,
+    "in_progress_count": 0,
+    "tempo_hours": 0.0
+  },
+  {
+    "art_key": "TYM-189",
+    "art_name": "NON-ART týmy | Vobořil Tomáš",
+    "short_name": "NON-ART týmy | Vobořil Tomáš",
+    "plan_count": 0,
+    "nd_count": 0,
+    "team_count": 0,
+    "done_count": 0,
+    "in_progress_count": 0,
+    "tempo_hours": 0.0
+  },
+  {
+    "art_key": "TYM-198",
+    "art_name": "SWF dodavatelé - lidské zdroje | Boháč Zdeněk",
+    "short_name": "SWF dodavatelé - lidské zdroje | Boháč Zdeněk",
+    "plan_count": 0,
+    "nd_count": 0,
+    "team_count": 0,
+    "done_count": 0,
+    "in_progress_count": 0,
+    "tempo_hours": 0.0
+  }
+]

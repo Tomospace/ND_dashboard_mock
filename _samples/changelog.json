@@ -1,0 +1,197 @@
+{
+  "entries": [
+    {
+      "id": 82,
+      "date": "2026-04-01",
+      "category": "ui",
+      "area": "nd_dashboard",
+      "description": "Canvas Dashboard Builder — 14. tab",
+      "detail": "Nový tab 🎨 Canvas s kompletním dashboard builderem: 12-column CSS grid engine, widget palette (8 typů), drag & drop, edit/view mode, skeleton loading, undo (Ctrl+Z), keyboard shortcuts (Ctrl+S save, Escape exit edit). 4 template layouty per role.",
+      "status": "done",
+      "created_at": "2026-04-01 07:47:27.949548+02:00"
+    },
+    {
+      "id": 81,
+      "date": "2026-04-01",
+      "category": "api",
+      "area": "nd_dashboard",
+      "description": "Canvas CRUD API (save/list/load/delete)",
+      "detail": "Kompletní CRUD pro canvas layouty: GET /api/canvas-layouts (list+filter by role), GET /api/canvas-layout/{id} (detail s JSONB widgets), POST /api/canvas-layout (create/update), DELETE /api/canvas-layout/{id}. Podporuje update existujícího layoutu přes id v body.",
+      "status": "done",
+      "created_at": "2026-04-01 07:47:27.947399+02:00"
+    },
+    {
+      "id": 80,
+      "date": "2026-04-01",
+      "category": "api",
+      "area": "nd_dashboard",
+      "description": "Widget Registry + Widget Data API",
+      "detail": "GET /api/widget-registry vrací 8 typů widgetů s metadaty (icon, default/min size, config fields). POST /api/widget-data je generický endpoint který vrátí data pro libovolný widget typ na základě type+config.",
+      "status": "done",
+      "created_at": "2026-04-01 07:47:27.945456+02:00"
+    },
+    {
+      "id": 79,
+      "date": "2026-04-01",
+      "category": "db",
+      "area": "nd_dashboard",
+      "description": "Canvas layouts PG tabulka (JSONB widgety)",
+      "detail": "Nová tabulka canvas_layouts v PostgreSQL s JSONB sloupcem widgets pro persistenci uživatelských dashboard layoutů. Podporuje role-based filtrování (po, sm, arch, mgmt, custom) a 12-column grid konfiguraci.",
+      "status": "done",
+      "created_at": "2026-04-01 07:46:52.061072+02:00"
+    },
+    {
+      "id": 77,
+      "date": "2026-04-01",
+      "category": "ui",
+      "area": "nd_dashboard",
+      "description": "Changelog sekce pod Wiki tab — timeline, filtry, kategorie",
+      "detail": "Pátá stránka v Wiki tabu zobrazující historii změn systému. Timeline karty s barevnými badge podle kategorie (UI=indigo, API=emerald, DB=purple, Tool=amber, Arch=red, Data=cyan). Filtr pro výběr kategorií, stránkování po 50 záznamech. Každý záznam má krátký nadpis a rozšířený business popis vysvětlující co bylo dodáno a proč.",
+      "status": "done",
+      "created_at": "2026-04-01 00:47:02.998031+02:00"
+    },
+    {
+      "id": 76,
+      "date": "2026-04-01",
+      "category": "api",
+      "area": "nd_dashboard",
+      "description": "GET/POST /api/changelog — Changelog API endpointy",
+      "detail": "GET endpoint s podporou filtrování podle kategorie, stránkování (limit/offset) a řazením od nejnovějšího. POST endpoint pro přidání nového záznamu s validací kategorií a povinných polí. API je designované pro automatické plnění Copilotem po dokončení feature — minimální overhead (~5s na zápis).",
+      "status": "done",
+      "created_at": "2026-04-01 00:47:02.998031+02:00"
+    },
+    {
+      "id": 75,
+      "date": "2026-04-01",
+      "category": "db",
+      "area": "nd_dashboard",
+      "description": "Tabulka changelog_entries — Changelog System Phase 0",
+      "detail": "Nová PG tabulka pro centrální evidenci změn systému. Každý záznam má datum, kategorii (UI/API/DB/Tool/Arch/Data), oblast (nd_dashboard/crossart_deps), krátký nadpis a rozšířený business popis. Slouží jako audit trail a komunikační kanál — stakeholder otevře Wiki tab a vidí, co se změnilo, bez nutnosti ptát se vývojáře.",
+      "status": "done",
+      "created_at": "2026-04-01 00:47:02.998031+02:00"
+    },
+    {
+      "id": 74,
+      "date": "2026-03-30",
+      "category": "ui",
+      "area": "nd_dashboard",
+      "description": "Discovery Readiness vylepšení — scoring model, signály",
+      "detail": "Vylepšený Discovery Readiness model: automatický scoring (0-100%) na základě 8 signálů — má ND přiřazeného architekta? Existuje BA analýza? Jsou specifikovány impacted apps? Je vyplněný WSJF? Jsou Confluence/Figma linky? Barevné indikátory (zelená/žlutá/červená) na přehledové stránce umožňují PO a managementu rychle identifikovat ND, které nejsou připravené pro Delivery.",
+      "status": "done",
+      "created_at": "2026-04-01 00:47:02.998031+02:00"
+    },
+    {
+      "id": 73,
+      "date": "2026-03-28",
+      "category": "ui",
+      "area": "nd_dashboard",
+      "description": "Deliverables widget v DoD — role-by-role progress tracking",
+      "detail": "Widget zobrazující stav dodávek podle rolí: Architekt, Business analytik, Systémový analytik, UX/WF, Vývojář, Tester. Pro každou roli ukazuje počet hotových vs. celkových deliverables, odpracované Tempo hodiny, přiřazené osoby a poslední aktivitu. Product Owner vidí na jednom řádku, zda je role kompletní nebo kde chybí kapacita.",
+      "status": "done",
+      "created_at": "2026-04-01 00:47:02.998031+02:00"
+    },
+    {
+      "id": 72,
+      "date": "2026-03-25",
+      "category": "api",
+      "area": "nd_dashboard",
+      "description": "GET /api/nd-apps/{nd_key} — endpoint pro impacted apps",
+      "detail": "API endpoint vracející strukturovaný seznam impacted aplikací pro konkrétní ND. Agreguje data z tabulky impacted_apps s joinem na plan metadata. Vrací: app_key, summary, team, phase_dates, status, plan_key. Podporuje filtrování podle fáze a statusu přes query parametry.",
+      "status": "done",
+      "created_at": "2026-04-01 00:47:02.998031+02:00"
+    },
+    {
+      "id": 71,
+      "date": "2026-03-25",
+      "category": "ui",
+      "area": "nd_dashboard",
+      "description": "Apps Widget — impacted apps tabulka s fázovými daty",
+      "detail": "Widget v DoD detail view ukazující všechny impacted aplikace pro daný ND: název systému, zodpovědný tým, fázová data (Analysis, Development, Testing, Deploy), aktuální status. Architekt a Solution Analyst vidí na jednom místě, které systémy jsou dotčené a v jaké fázi implementace se nacházejí.",
+      "status": "done",
+      "created_at": "2026-04-01 00:47:02.998031+02:00"
+    },
+    {
+      "id": 70,
+      "date": "2026-03-22",
+      "category": "ui",
+      "area": "nd_dashboard",
+      "description": "Sprint Navigator tab — přehled sprintů a týmů",
+      "detail": "Nový tab (13.) zobrazující sprint-level pohled na práci týmů: který tým pracuje na kterém ND v aktuálním sprintu, kolik story pointů je naplánováno vs. hotovo, jaký je burndown trend. Filtrovatelné podle ART a PI. Scrum Master vidí na jednom místě stav všech týmů bez nutnosti otevírat Jira board každého týmu zvlášť.",
+      "status": "done",
+      "created_at": "2026-04-01 00:47:02.998031+02:00"
+    },
+    {
+      "id": 69,
+      "date": "2026-03-20",
+      "category": "ui",
+      "area": "nd_dashboard",
+      "description": "Discovery Timeline widget — vizualizace klíčových milníků",
+      "detail": "Timeline widget v DoD zobrazuje chronologický průběh Discovery fáze: kdy byl ND vytvořen, kdy proběhly klíčové statusové změny (Open → In Progress → Arch Review → BA Complete), kdo a kdy přidal deliverables. Vizuální indikátory ukazují délku jednotlivých fází a bottlenecky. Stakeholder vidí, kde se ND zdrželo a jak dlouho trvaly jednotlivé kroky.",
+      "status": "done",
+      "created_at": "2026-04-01 00:47:02.998031+02:00"
+    },
+    {
+      "id": 68,
+      "date": "2026-03-18",
+      "category": "ui",
+      "area": "nd_dashboard",
+      "description": "Wiki & Documents widget v DoD detail view",
+      "detail": "Nový widget v Definition of Done detail view zobrazující dokumentovou stopu ND: přílohy s ikonou podle typu (PDF/DOC/XLS/IMG), issue linky kategorizované podle typu vazby, remote linky s favicon cílového systému. Umožňuje stakeholderovi na první pohled vidět, zda má ND kompletní dokumentaci pro danou fázi.",
+      "status": "done",
+      "created_at": "2026-04-01 00:47:02.998031+02:00"
+    },
+    {
+      "id": 67,
+      "date": "2026-03-18",
+      "category": "api",
+      "area": "nd_dashboard",
+      "description": "GET /api/nd-wiki, /api/wiki-stats, /api/nd-activity — Wiki endpointy",
+      "detail": "Tři nové API endpointy pro Wiki & Documents sekci: nd-wiki vrací strukturovaný přehled příloh, issue linků a remote linků pro konkrétní ND. wiki-stats agreguje statistiky dokumentace napříč všemi ND (kolik má přílohy, kolik má Confluence linky). nd-activity vrací chronologický feed posledních aktivit (komentáře, změny statusu, nové přílohy).",
+      "status": "done",
+      "created_at": "2026-04-01 00:47:02.998031+02:00"
+    },
+    {
+      "id": 66,
+      "date": "2026-03-15",
+      "category": "tool",
+      "area": "crossart_deps",
+      "description": "_fetch_nd_extras.py — resilient chunking pro attachments, links",
+      "detail": "Fetch skript pro stahování příloh, issue linků a remote linků z Jira REST API. Zpracovává per-ND GET requesty s retry logikou a chunk strategií (po 50 ND najednou). Resilient: při HTTP 500 retry 3×, při timeout pokračuje na další chunk. Stahuje ~740 ND × 3 typy dat = ~2200 API volání za cca 8 minut.",
+      "status": "done",
+      "created_at": "2026-04-01 00:47:02.998031+02:00"
+    },
+    {
+      "id": 65,
+      "date": "2026-03-15",
+      "category": "db",
+      "area": "crossart_deps",
+      "description": "Nové tabulky: nd_attachments, nd_issue_links, nd_remote_links",
+      "detail": "Rozšíření datového modelu o metadata příloh (dokumenty, wireframy, diagramy), vazby mezi issues (Blocks, Dependency, OSD_OBA) a vzdálené linky (Confluence, Figma, Miro, Excalidraw). Umožňuje Wiki widget zobrazit kompletní dokumentovou stopu ND — co kde je přiloženo, jaké systémy jsou propojené, a jaké závislosti existují mezi ND navzájem.",
+      "status": "done",
+      "created_at": "2026-04-01 00:47:02.998031+02:00"
+    },
+    {
+      "id": 64,
+      "date": "2026-03-12",
+      "category": "db",
+      "area": "crossart_deps",
+      "description": "Schema v14 — 28 tabulek, 4 materializované views, 50+ indexů",
+      "detail": "Kompletní datové schéma pro sledování ND pipeline: arts, art_teams, plans, nd_epics, nd_children, nd_comments, impacted_apps, tempo_worklogs, issue_changelog, portfolio_epics a další. Materializovaný view mv_nd_impact pre-computuje cross-ART závislosti pro rychlé dotazy. 50+ indexů optimalizuje nejčastější query patterny (filtr po ART, PI, status, nd_key).",
+      "status": "done",
+      "created_at": "2026-04-01 00:47:02.998031+02:00"
+    },
+    {
+      "id": 63,
+      "date": "2026-03-09",
+      "category": "arch",
+      "area": "crossart_deps",
+      "description": "PostgreSQL migrace — přechod ze SQLite na PG 16",
+      "detail": "Celý datový backend přesunut z SQLite na PostgreSQL 16. Důvod: potřeba souběžného přístupu z CLI, dashboard serveru a sync skriptů. SQLite nezvládal concurrent writes při syncu 136k tempo záznamů. PG umožňuje MVCC, connection pooling a JSONB pro budoucí canvas layouts. Migrace zahrnovala přepis db_backend.py (21 funkcí), SQL adaptér pro překlad ? → %s a GROUP_CONCAT → STRING_AGG.",
+      "status": "done",
+      "created_at": "2026-04-01 00:47:02.998031+02:00"
+    }
+  ],
+  "total": 19,
+  "limit": 20,
+  "offset": 0
+}

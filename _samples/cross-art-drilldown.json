@@ -1,0 +1,45 @@
+{
+  "nd": {
+    "key": "ND-12839",
+    "summary": "Split billing - Historie plateb",
+    "status": "Canceled",
+    "assignee": "Kraus Ferdinand",
+    "parent_key": "PROJEKT-1325"
+  },
+  "art_filter": null,
+  "plans": [
+    {
+      "key": "ROLE-31907",
+      "summary": "ND-12839 Split billing - Historie plateb | ART Implementation Plan | ART - DC",
+      "status": "Canceled",
+      "assignee": "Mňuk Lukáš",
+      "pi": "PI 2",
+      "funnel_status": null,
+      "wsjf": 0.0,
+      "wsjf_bv": null,
+      "wsjf_tc": null,
+      "wsjf_rr": null,
+      "wsjf_js": null,
+      "art": "DC",
+      "art_group": "DC",
+      "updated": "2026-03-12"
+    },
+    {
+      "key": "ROLE-32500",
+      "summary": "ND-12839 Split billing - Historie plateb | ART Implementation Plan | ART - IT",
+      "status": "Canceled",
+      "assignee": "Černý Jan",
+      "pi": null,
+      "funnel_status": null,
+      "wsjf": 0.0,
+      "wsjf_bv": null,
+      "wsjf_tc": null,
+      "wsjf_rr": null,
+      "wsjf_js": null,
+      "art": "IT",
+      "art_group": "IT",
+      "updated": "2026-03-12"
+    }
+  ],
+  "count": 2
+}
