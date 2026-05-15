@@ -24,6 +24,7 @@
         header.glass.sticky { top: 22px !important; }
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/web/design.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -3013,38 +3014,293 @@ function getDodPhaseIndex(status) {
     return idx >= 0 ? idx : 0;
 }
 
+// ── ART DoD picker (REDESIGN v3 — namespace .nd-) ──
+
+// Per-ART icons (SVG, currentColor — inherits .nd-picker__icon color)
+const _ND_ART_ICONS = {
+    IT:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="7" rx="2"/><rect x="3" y="14" width="18" height="7" rx="2"/><circle cx="7" cy="6.5" r=".9" fill="currentColor"/><circle cx="7" cy="17.5" r=".9" fill="currentColor"/></svg>',
+    DC:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.6 3 4 6 4 9s-1.4 6-4 9c-2.6-3-4-6-4-9s1.4-6 4-9z"/></svg>',
+    MM:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><circle cx="17.5" cy="10" r="2.4"/><path d="M2.5 20c.5-3.2 3.4-5 6.5-5s5.7 1.8 6.5 5"/><path d="M15 20c0-2.2 1.4-3.7 4-3.7s2.5 1.5 2.5 3.7"/></svg>',
+    CS:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><path d="M4 14h2.5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-5a1 1 0 0 1 1-1z"/><path d="M20 14h-2.5a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1H20a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1z"/></svg>',
+    B2B: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="7" width="19" height="13" rx="2"/><path d="M8 7V5.2A2.2 2.2 0 0 1 10.2 3h3.6A2.2 2.2 0 0 1 16 5.2V7"/><path d="M2.5 13h19"/><path d="M11 12.5v2"/></svg>',
+    NTW: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a15 15 0 0 1 20 0"/><path d="M5 13a10 10 0 0 1 14 0"/><path d="M9 17a4 4 0 0 1 6 0"/><circle cx="12" cy="20" r="1.3" fill="currentColor" stroke="none"/></svg>',
+    FIX: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0 5.4 5.4l-9.3 9.3a3 3 0 0 1-4.2-4.2l8.1-10.5z"/><path d="M9.5 14.5l3 3"/></svg>',
+};
+const _ND_ART_ICON_DEFAULT = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/><path d="M3 18l9 5 9-5"/></svg>';
+
+function _ndIconFor(code) {
+    const key = (code || '').replace(/[^A-Za-z0-9]/g, '').toUpperCase();
+    return _ND_ART_ICONS[key]
+        || _ND_ART_ICONS[key.slice(0, 3)]
+        || _ND_ART_ICONS[key.slice(0, 2)]
+        || _ND_ART_ICON_DEFAULT;
+}
+
+// At-a-glance ND health classification
+function _ndClassify(nd) {
+    const s = (nd.nd_status || '').toLowerCase();
+    if (s.includes('hold') || s.includes('block')) return 'risk';
+    if (s.includes('cancel')) return 'canceled';
+    const phaseIdx = getDodPhaseIndex(nd.nd_status);
+    const wsjf = Number(nd.wsjf) || 0;
+    if (wsjf >= 10 && phaseIdx <= 1) return 'delayed';   // High priority, not started → delay signal
+    if (phaseIdx >= 7) return 'done';                     // Done
+    if (phaseIdx >= 5) return 'active';                   // Delivery / Postimpl
+    if (phaseIdx >= 3) return 'active';                   // Discovery / del-backlog
+    return 'idle';                                        // New / Exploration
+}
+
+function _ndAssessArt(detail) {
+    const nds = detail.nds || [];
+    const teams = detail.teams || [];
+    let risk = 0, delayed = 0;
+    nds.forEach(n => {
+        const k = _ndClassify(n);
+        if (k === 'risk') risk++;
+        else if (k === 'delayed') delayed++;
+    });
+    const teamStatus = teams.map(t => {
+        const tNds = nds.filter(n => (n.team_keys || []).includes(t.team_key));
+        let kind = 'empty';
+        if (tNds.length) {
+            const cls = tNds.map(_ndClassify);
+            if (cls.includes('risk')) kind = 'risk';
+            else if (cls.includes('delayed')) kind = 'warn';
+            else if (cls.includes('active')) kind = 'active';
+            else if (cls.every(c => c === 'done')) kind = 'done';
+            else kind = 'idle';
+        }
+        const tRisks = tNds.filter(n => ['risk','delayed'].includes(_ndClassify(n))).length;
+        return { key: t.team_key, name: t.team_name || t.team_key, kind, ndCount: tNds.length, riskCount: tRisks };
+    });
+    let badge;
+    const issues = risk + delayed;
+    if (issues === 0) badge = { kind: 'good', label: 'Vše OK' };
+    else if (issues <= 2) badge = { kind: 'mid', label: `Pozor · ${issues}` };
+    else badge = { kind: 'risk', label: `Rizika · ${issues}` };
+    return { risk, delayed, teamStatus, badge };
+}
+
 async function loadArtDodPicker() {
     const container = document.getElementById('artDodContent');
-    container.innerHTML = '<div class="flex justify-center py-12"><div class="spinner"></div></div>';
+    container.innerHTML = '<div class="nd-shell"><div class="nd-loading"><div class="nd-spinner"></div></div></div>';
     try {
         const overview = await fetchJSON('/api/overview');
+
+        // Initial render with placeholder team dots (skeleton)
+        const cards = overview.map(art => {
+            const short = (art.short_name || art.art_key || '?').toString();
+            const code = short.replace(/[^A-Za-z0-9]/g,'').toUpperCase() || '?';
+            const rawName = art.art_name || short;
+            // Parse "[ART - IT] IT Platform | Novák Jan" → title="IT Platform", owner="Novák Jan"
+            const pipeParts = rawName.split('|').map(s => s.trim());
+            const owner = pipeParts.length > 1 ? pipeParts[pipeParts.length - 1] : '';
+            const title = pipeParts[0].replace(/^\[[^\]]*\]\s*/, '').trim() || short;
+
+            const nd = art.nd_count || 0;
+            const done = art.done_count || 0;
+            const active = art.in_progress_count || 0;
+            const newCount = Math.max(0, nd - done - active);
+            const donePct = nd > 0 ? (done / nd * 100) : 0;
+            const activePct = nd > 0 ? (active / nd * 100) : 0;
+            const newPct = Math.max(0, 100 - donePct - activePct);
+
+            const tempo = art.tempo_hours || 0;
+            const tempoFmt = tempo >= 1000 ? `${(tempo/1000).toFixed(1)}k` : Math.round(tempo).toString();
+            const teams = art.team_count || 0;
+            const plans = art.plan_count || 0;
+
+            // Skeleton team dots — replaced post-fetch
+            const skelDots = Array.from({length: teams}).map(() => '<span class="nd-team-dot is-loading" title="načítání…"></span>').join('');
+
+            return `
+            <div class="nd-picker__card" data-art="${art.art_key}" onclick="showArtDod('${art.art_key}')">
+                <div class="nd-picker__hero">
+                    <div class="nd-picker__icon">${_ndIconFor(code)}</div>
+                    <div class="nd-picker__heading">
+                        <div class="nd-picker__eyebrow">${code} · ART</div>
+                        <div class="nd-picker__title" title="${title}">${title}</div>
+                        ${owner ? `<div class="nd-picker__owner">${owner}</div>` : ''}
+                    </div>
+                    <span class="nd-picker__health-badge nd-picker__health-badge--quiet" data-role="health-badge">…</span>
+                </div>
+
+                <div class="nd-picker__health-block">
+                    <div class="nd-picker__health-label"><span>Plnění ND</span><b>${nd} celkem</b></div>
+                    <div class="nd-picker__health-bar">
+                        <span class="seg-done"   style="width:${donePct.toFixed(1)}%"></span>
+                        <span class="seg-active" style="width:${activePct.toFixed(1)}%"></span>
+                        <span class="seg-new"    style="width:${newPct.toFixed(1)}%"></span>
+                    </div>
+                    <div class="nd-picker__health-legend">
+                        <span class="led-done"><i></i><b>${done}</b> Hotovo</span>
+                        <span class="led-active"><i></i><b>${active}</b> Aktivní</span>
+                        <span class="led-new"><i></i><b>${newCount}</b> Backlog</span>
+                    </div>
+                </div>
+
+                <div class="nd-picker__teams">
+                    <div class="nd-picker__teams-row">
+                        <span class="nd-picker__teams-label">Týmy · ${teams}</span>
+                        <span data-role="alert" class="nd-picker__alert">…</span>
+                    </div>
+                    <div class="nd-picker__teams-dots" data-role="team-dots">${skelDots}</div>
+                </div>
+
+                <div class="nd-picker__metrics">
+                    <div class="nd-picker__metric"><div class="nd-picker__metric-val">${nd}</div><div class="nd-picker__metric-lbl">ND</div></div>
+                    <div class="nd-picker__metric"><div class="nd-picker__metric-val">${teams}</div><div class="nd-picker__metric-lbl">Týmů</div></div>
+                    <div class="nd-picker__metric"><div class="nd-picker__metric-val">${tempoFmt}<span>h</span></div><div class="nd-picker__metric-lbl">Tempo</div></div>
+                    <div class="nd-picker__metric"><div class="nd-picker__metric-val">${plans}</div><div class="nd-picker__metric-lbl">Plánů</div></div>
+                </div>
+
+                <div class="nd-picker__cta">
+                    <span>Otevřít ART DoD detail</span>
+                    <span class="nd-picker__cta-arrow">→</span>
+                </div>
+            </div>`;
+        }).join('');
+
+        // Aggregated KPIs across all ARTs
+        const tArts   = overview.length;
+        const tNDs    = overview.reduce((s,a) => s + (a.nd_count || 0), 0);
+        const tActive = overview.reduce((s,a) => s + (a.in_progress_count || 0), 0);
+        const tDone   = overview.reduce((s,a) => s + (a.done_count || 0), 0);
+        const tTempo  = overview.reduce((s,a) => s + (a.tempo_hours || 0), 0);
+        const tTempoFmt = tTempo >= 1000 ? `${(tTempo/1000).toFixed(1)}k` : Math.round(tTempo).toString();
+
         container.innerHTML = `
-        <div class="mb-4">
-            <h2 class="text-xl font-semibold mb-2">ART DoD Board</h2>
-            <p class="text-sm text-slate-400">Vyber ART pro zobrazení Definition of Done stavu jednotlivých ND</p>
-        </div>
-        <div id="artDodCards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"></div>`;
-        document.getElementById('artDodCards').innerHTML = overview.map(art => `
-            <div class="glass glass-hover rounded-xl p-4 cursor-pointer transition-all" onclick="showArtDod('${art.art_key}')">
-                <div class="font-semibold text-sm">${art.short_name || art.art_key}</div>
-                <div class="text-xs text-slate-400 mt-1">${art.art_name}</div>
-                <div class="text-xs text-slate-500 mt-2">${art.nd_count || 0} NDs · ${art.team_count || 0} teams</div>
+        <div class="nd-shell">
+            <div class="nd-page-hero">
+                <div class="nd-page-hero__left">
+                    <div class="nd-page-hero__eyebrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg>
+                        ART DoD Board
+                    </div>
+                    <h2 class="nd-page-hero__title">Vyber ART pro DoD detail</h2>
+                    <p class="nd-page-hero__desc">Každá karta je jeden Agile Release Train. Klikni a uvidíš stav Definition of Done všech ND uvnitř. <b>Barevné tečky</b> u týmů ti dají okamžitě vědět, jestli někde něco vázne — bez nutnosti rozkliknout.</p>
+                    <div class="nd-legend">
+                        <span class="nd-legend__item"><span class="nd-legend__dot nd-legend__dot--idle"></span>Klidný</span>
+                        <span class="nd-legend__item"><span class="nd-legend__dot nd-legend__dot--active"></span>Aktivní</span>
+                        <span class="nd-legend__item"><span class="nd-legend__dot nd-legend__dot--done"></span>Hotovo</span>
+                        <span class="nd-legend__item"><span class="nd-legend__dot nd-legend__dot--warn"></span>Warning</span>
+                        <span class="nd-legend__item"><span class="nd-legend__dot nd-legend__dot--risk"></span>Riziko</span>
+                    </div>
+                </div>
+                <div class="nd-page-hero__right">
+                    <div class="nd-page-hero__stats">
+                        <div class="nd-page-hero__stat">
+                            <div class="nd-page-hero__stat-val">${tArts}</div>
+                            <div class="nd-page-hero__stat-lbl">ARTs</div>
+                        </div>
+                        <div class="nd-page-hero__stat">
+                            <div class="nd-page-hero__stat-val">${tNDs}</div>
+                            <div class="nd-page-hero__stat-lbl">ND celkem</div>
+                        </div>
+                        <div class="nd-page-hero__stat nd-page-hero__stat--accent">
+                            <div class="nd-page-hero__stat-val">${tActive}</div>
+                            <div class="nd-page-hero__stat-lbl">Aktivní</div>
+                        </div>
+                        <div class="nd-page-hero__stat nd-page-hero__stat--risk">
+                            <div class="nd-page-hero__stat-val" id="ndGlobalRisks">…</div>
+                            <div class="nd-page-hero__stat-lbl">Rizika</div>
+                        </div>
+                        <div class="nd-page-hero__stat">
+                            <div class="nd-page-hero__stat-val">${tTempoFmt}<span>h</span></div>
+                            <div class="nd-page-hero__stat-lbl">Tempo (Q)</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        `).join('');
+            <div class="nd-picker">${cards}</div>
+        </div>`;
         window._artDodLoaded = true;
+        window._ndGlobalRisks = 0;
+        window._ndEnrichesPending = overview.length;
+
+        // Enrich each card in parallel with assess data
+        overview.forEach(async art => {
+            try {
+                const detail = await fetchJSON(`/api/art/${art.art_key}`);
+                const assess = _ndAssessArt(detail);
+                // Aggregate into global counter
+                window._ndGlobalRisks = (window._ndGlobalRisks || 0) + assess.risk + assess.delayed;
+                window._ndEnrichesPending = Math.max(0, (window._ndEnrichesPending || 1) - 1);
+                const gEl = document.getElementById('ndGlobalRisks');
+                if (gEl) gEl.textContent = String(window._ndGlobalRisks);
+
+                const cardEl = document.querySelector(`.nd-picker__card[data-art="${art.art_key}"]`);
+                if (!cardEl) return;
+
+                const badge = cardEl.querySelector('[data-role="health-badge"]');
+                if (badge) {
+                    badge.classList.remove('nd-picker__health-badge--quiet');
+                    badge.classList.add(`nd-picker__health-badge--${assess.badge.kind === 'good' ? 'good' : assess.badge.kind === 'mid' ? 'mid' : 'quiet'}`);
+                    if (assess.badge.kind === 'risk') {
+                        badge.classList.remove('nd-picker__health-badge--quiet');
+                        badge.style.background = 'rgba(239,68,68,0.12)';
+                        badge.style.color = '#fca5a5';
+                        badge.style.borderColor = 'rgba(239,68,68,0.32)';
+                    }
+                    badge.textContent = assess.badge.label;
+                }
+
+                const dotsEl = cardEl.querySelector('[data-role="team-dots"]');
+                if (dotsEl) {
+                    dotsEl.innerHTML = assess.teamStatus.map(t => {
+                        const tip = `${t.name} · ${t.ndCount} ND${t.riskCount ? ` · ⚠ ${t.riskCount}` : ''}`;
+                        return `<span class="nd-team-dot is-${t.kind}" title="${tip.replace(/"/g,'&quot;')}"></span>`;
+                    }).join('') || '<span style="font-size:11px;color:var(--nd-text-faint)">Žádné týmy</span>';
+                }
+
+                const alertEl = cardEl.querySelector('[data-role="alert"]');
+                if (alertEl) {
+                    const issues = assess.risk + assess.delayed;
+                    if (issues === 0) {
+                        alertEl.className = 'nd-picker__alert nd-picker__alert--ok';
+                        alertEl.innerHTML = '✓ vše plyne';
+                    } else if (issues <= 2) {
+                        alertEl.className = 'nd-picker__alert nd-picker__alert--warn';
+                        alertEl.innerHTML = `⚠ ${issues} ND chce pozornost`;
+                    } else {
+                        alertEl.className = 'nd-picker__alert nd-picker__alert--risk';
+                        alertEl.innerHTML = `⚠ ${issues} ND v riziku`;
+                    }
+                }
+            } catch (e) {
+                // Silent — keep skeleton; card is still clickable
+                window._ndEnrichesPending = Math.max(0, (window._ndEnrichesPending || 1) - 1);
+                if (window._ndEnrichesPending === 0) {
+                    const gEl = document.getElementById('ndGlobalRisks');
+                    if (gEl && gEl.textContent === '…') gEl.textContent = String(window._ndGlobalRisks || 0);
+                }
+                const cardEl = document.querySelector(`.nd-picker__card[data-art="${art.art_key}"]`);
+                if (cardEl) {
+                    const dotsEl = cardEl.querySelector('[data-role="team-dots"]');
+                    if (dotsEl) dotsEl.querySelectorAll('.is-loading').forEach(d => { d.classList.remove('is-loading'); d.classList.add('is-empty'); });
+                    const badge = cardEl.querySelector('[data-role="health-badge"]');
+                    if (badge) badge.textContent = '—';
+                    const alertEl = cardEl.querySelector('[data-role="alert"]');
+                    if (alertEl) alertEl.textContent = '';
+                }
+            }
+        });
+
     } catch(e) {
-        container.innerHTML = `<div class="text-red-400 py-8 text-center">${e.message}</div>`;
+        container.innerHTML = `<div class="nd-shell"><div class="nd-empty" style="color:var(--nd-s-danger)">${e.message}</div></div>`;
     }
 }
 
+// ── ART detail (REDESIGN v3) — Hero + Funnel + Team chips + ND cards grid ──
 async function showArtDod(artKey, filterTeam) {
     showTab('artdod');
     navTo({tab: 'artdod', artKey, filterTeam});
     const container = document.getElementById('artDodContent');
-    container.innerHTML = '<div class="flex justify-center py-12"><div class="spinner"></div></div>';
+    container.innerHTML = '<div class="nd-shell"><div class="nd-loading"><div class="nd-spinner"></div></div></div>';
 
     try {
         const data = await fetchJSON(`/api/art/${artKey}`);
+        const tempoData = await fetchJSON(`/api/tempo/${artKey}`).catch(() => null);
         const art = data.art;
         const activeTeam = filterTeam || null;
 
@@ -3052,138 +3308,770 @@ async function showArtDod(artKey, filterTeam) {
             ? data.nds.filter(nd => (nd.team_keys || []).includes(activeTeam))
             : data.nds;
 
-        const activeTeamName = activeTeam
-            ? (data.teams.find(t => t.team_key === activeTeam) || {}).team_name || activeTeam
-            : null;
-
-        // Count NDs per phase
+        // Phase counts (all NDs, ignoring team filter — funnel shows ART-wide context)
         const phaseCounts = {};
         DOD_PHASES.forEach(p => phaseCounts[p.key] = 0);
-        filteredNDs.forEach(nd => {
+        data.nds.forEach(nd => {
             const p = getDodPhase(nd.nd_status);
             phaseCounts[p.key] = (phaseCounts[p.key] || 0) + 1;
         });
+        const maxStage = Math.max(1, ...Object.values(phaseCounts));
+
+        // KPIs
+        const ndsTotal = data.nds.length;
+        const activeCount = data.nds.filter(n => {
+            const ph = getDodPhase(n.nd_status).key;
+            return ['discovery','disc_backlog','delivery','del_backlog'].includes(ph);
+        }).length;
+        const doneCount = data.nds.filter(n => getDodPhase(n.nd_status).key === 'done' ||
+                                                getDodPhase(n.nd_status).key === 'postimpl').length;
+        const wsjfAvg = ndsTotal
+            ? (data.nds.reduce((s,n) => s + (Number(n.wsjf) || 0), 0) / ndsTotal).toFixed(1)
+            : '—';
+        const tempoH = tempoData ? Math.round(tempoData.total_hours || 0) : 0;
+
+        const short = (art.short_name || art.key || '').toString();
+        const heroBadge = short.replace(/[^A-Za-z0-9]/g,'').substring(0,3).toUpperCase() || 'ART';
+
+        // View mode persistence (cards | list)
+        if (!window._dodViewMode) {
+            window._dodViewMode = localStorage.getItem('ndDodViewMode') || 'cards';
+        }
 
         container.innerHTML = `
-        <div class="mb-4">
-            <button onclick="loadArtDodPicker(); window._artDodLoaded = true;"
-                class="text-xs text-slate-500 hover:text-blue-400 mb-2 inline-block">← Zpět na výběr ARTu</button>
-            <h2 class="text-xl font-semibold">${art.name} <span class="text-base text-slate-400 font-normal">· DoD Board</span></h2>
-            <p class="text-sm text-slate-400 mt-1">${art.short_name || ''} · ${data.teams.length} teams · ${filteredNDs.length} NDs</p>
-        </div>
+        <div class="nd-shell">
+            <button class="nd-crumb" onclick="loadArtDodPicker(); window._artDodLoaded = true;">
+                <span class="nd-crumb__arrow">←</span> Zpět na výběr ARTu
+            </button>
 
-        <!-- Teams -->
-        <div class="glass rounded-xl p-4 mb-4">
-            <h3 class="text-sm font-medium text-slate-400 mb-2">Týmy ${activeTeam ? `<a href="#" onclick="event.preventDefault(); showArtDod('${artKey}')" class="ml-2 text-xs text-red-400 hover:text-red-300">× Zrušit filtr</a>` : '<span class="text-xs text-slate-600 ml-2">(klikni pro filtr)</span>'}</h3>
-            <div class="flex flex-wrap gap-2">
-                ${data.teams.map(t => {
-                    const isActive = activeTeam === t.team_key;
-                    const cls = isActive ? 'bg-blue-600 text-white' : 'bg-slate-700 hover:bg-slate-600 cursor-pointer';
-                    return `<span class="px-2 py-1 rounded text-xs ${cls}" onclick="showArtDod('${artKey}', '${t.team_key}')">${t.team_name || t.team_key}</span>`;
-                }).join('')}
+            <!-- HERO -->
+            <div class="nd-hero">
+                <div class="nd-hero__top">
+                    <div class="nd-hero__badge">${heroBadge}</div>
+                    <div class="nd-hero__title-row">
+                        <div class="nd-hero__eyebrow">ART · Definition of Done</div>
+                        <div class="nd-hero__title">${art.name || short}</div>
+                        <div class="nd-hero__sub"><b>${short}</b> · ${data.teams.length} týmů · ${filteredNDs.length} z ${ndsTotal} ND${activeTeam ? ` · filtr týmu aktivní` : ''}</div>
+                    </div>
+                    <div class="nd-hero__actions">
+                        <button class="nd-btn" onclick="alert('Mock: Export PDF / Excel')">⤴ Export</button>
+                        <button class="nd-btn nd-btn--primary" onclick="alert('Mock: nový ND')">＋ Nový ND</button>
+                    </div>
+                </div>
+                <div class="nd-hero__divider"></div>
+                <div class="nd-kpis">
+                    <div class="nd-kpi">
+                        <div class="nd-kpi__label">Celkem ND</div>
+                        <div class="nd-kpi__value">${ndsTotal}</div>
+                    </div>
+                    <div class="nd-kpi nd-kpi__accent">
+                        <div class="nd-kpi__label">V realizaci</div>
+                        <div class="nd-kpi__value">${activeCount}</div>
+                        <div class="nd-kpi__hint">Discovery + Delivery</div>
+                    </div>
+                    <div class="nd-kpi">
+                        <div class="nd-kpi__label">Hotovo</div>
+                        <div class="nd-kpi__value">${doneCount}<span class="nd-kpi__unit">/ ${ndsTotal}</span></div>
+                    </div>
+                    <div class="nd-kpi">
+                        <div class="nd-kpi__label">Avg WSJF</div>
+                        <div class="nd-kpi__value">${wsjfAvg}</div>
+                    </div>
+                    <div class="nd-kpi">
+                        <div class="nd-kpi__label">Tempo (Q)</div>
+                        <div class="nd-kpi__value">${tempoH}<span class="nd-kpi__unit">h</span></div>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <!-- Phase summary bar -->
-        <div class="glass rounded-xl p-4 mb-4">
-            <div class="flex gap-2 flex-wrap" id="dodPhaseBar">
-                ${DOD_PHASES.map(p => {
-                    const cnt = phaseCounts[p.key] || 0;
-                    const bg = p.key === 'done' ? 'bg-emerald-900/40 text-emerald-400 border-emerald-800' :
-                               p.key === 'delivery' || p.key === 'del_backlog' ? 'bg-sky-900/40 text-sky-400 border-sky-800' :
-                               p.key === 'discovery' || p.key === 'disc_backlog' ? 'bg-amber-900/40 text-amber-400 border-amber-800' :
-                               'bg-slate-800 text-slate-400 border-slate-700';
-                    return `<div class="px-3 py-2 rounded-lg border text-xs cursor-pointer hover:ring-1 hover:ring-slate-500 transition-all ${bg}" data-dod-phase="${p.key}"><div class="font-medium">${p.label}</div><div class="text-lg font-bold mt-0.5">${cnt}</div></div>`;
-                }).join('')}
+            <!-- FUNNEL / PIPELINE -->
+            <div class="nd-funnel">
+                <div class="nd-funnel__head">
+                    <span>Pipeline · ${ndsTotal} ND · klikni na fázi pro filtr</span>
+                    <span id="ndFunnelHint">${filteredNDs.length} ND vidíš</span>
+                </div>
+                <div class="nd-funnel__track" id="ndFunnelTrack">
+                    ${DOD_PHASES.map(p => {
+                        const cnt = phaseCounts[p.key] || 0;
+                        const pct = Math.max(4, Math.round(cnt / maxStage * 100));
+                        return `<div class="nd-funnel__stage" data-key="${p.key}">
+                            <div class="nd-funnel__label">${p.label}</div>
+                            <div class="nd-funnel__count">${cnt}</div>
+                            <div class="nd-funnel__bar"><span style="width:${cnt ? pct : 0}%"></span></div>
+                        </div>`;
+                    }).join('')}
+                </div>
             </div>
-        </div>
 
-        <!-- ND DoD table -->
-        <div class="glass rounded-xl overflow-hidden" id="artDodTable">
-            <div class="px-4 py-2.5 border-b border-slate-700 text-sm font-medium text-slate-400">
-                ${activeTeam ? `Filtr: <span class="text-blue-400">${activeTeamName}</span> · ${filteredNDs.length} NDs` : `Všechna ND · ${filteredNDs.length}`}
+            <!-- TEAMS -->
+            <div class="nd-toolbar">
+                <span class="nd-toolbar__label">Týmy</span>
+                <div class="nd-chips">
+                    ${data.teams.map(t => {
+                        const on = activeTeam === t.team_key;
+                        return `<span class="nd-chip ${on ? 'is-active' : ''}" onclick="showArtDod('${artKey}', ${on ? 'null' : `'${t.team_key}'`})">${t.team_name || t.team_key}</span>`;
+                    }).join('')}
+                    ${activeTeam ? `<span class="nd-chip is-active" onclick="showArtDod('${artKey}')" title="Zrušit filtr"><span class="nd-chip__x">× zrušit filtr</span></span>` : ''}
+                </div>
             </div>
-            <table class="w-full">
-                <thead><tr class="border-b border-slate-700">
-                    <th class="px-4 py-3 w-8"></th>
-                    <th class="px-4 py-3 cursor-pointer hover:text-blue-400" data-dod-col="nd_key">ND <span class="dod-sort-arrow"></span></th>
-                    <th class="px-4 py-3 cursor-pointer hover:text-blue-400" data-dod-col="nd_summary">Summary <span class="dod-sort-arrow"></span></th>
-                    <th class="px-4 py-3 cursor-pointer hover:text-blue-400" data-dod-col="nd_status">Status <span class="dod-sort-arrow"></span></th>
-                    <th class="px-4 py-3 cursor-pointer hover:text-blue-400" data-dod-col="wsjf">WSJF <span class="dod-sort-arrow"></span></th>
-                    <th class="px-4 py-3">Fáze</th>
-                    ${DOD_PHASES.slice(0, -1).map(p => `<th class="px-1 py-3 text-center text-xs" title="${p.label}">${p.label.substring(0, 4)}</th>`).join('')}
-                </tr></thead>
-                <tbody id="artDodBody"></tbody>
-            </table>
+
+            <!-- SORT + VIEW BAR -->
+            <div class="nd-toolbar" style="justify-content:space-between">
+                <div>
+                    <span style="font-size:14px;font-weight:700;color:var(--nd-text-bright)">Všechna ND</span>
+                    <span style="font-size:13px;color:var(--nd-text-muted);margin-left:6px">${filteredNDs.length}</span>
+                </div>
+                <div class="nd-sort__group">
+                    <div class="nd-sort" id="ndViewBar" title="Režim zobrazení">
+                        <button class="nd-sort__btn ${window._dodViewMode === 'list' ? 'is-active' : ''}" data-view="list" title="Seznam">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="9" y1="6" x2="21" y2="6"/><line x1="9" y1="12" x2="21" y2="12"/><line x1="9" y1="18" x2="21" y2="18"/><circle cx="5" cy="6" r="1.2" fill="currentColor"/><circle cx="5" cy="12" r="1.2" fill="currentColor"/><circle cx="5" cy="18" r="1.2" fill="currentColor"/></svg>
+                            Seznam
+                        </button>
+                        <button class="nd-sort__btn ${window._dodViewMode === 'list' ? '' : 'is-active'}" data-view="cards" title="Karty">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                            Karty
+                        </button>
+                    </div>
+                    <div class="nd-sort" id="ndSortBar" title="Řazení">
+                        <button class="nd-sort__btn is-active" data-sort="wsjf">WSJF ↓</button>
+                        <button class="nd-sort__btn" data-sort="nd_status">Status</button>
+                        <button class="nd-sort__btn" data-sort="nd_key">Key</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARDS / ROWS CONTAINER (toggle .nd-grid / .nd-rows) -->
+            <div class="${window._dodViewMode === 'list' ? 'nd-rows' : 'nd-grid'}" id="ndCardsGrid"></div>
         </div>`;
 
-        // Sort by WSJF desc by default
+        // State
         window._dodNDs = filteredNDs;
         window._dodSortCol = 'wsjf';
         window._dodSortAsc = false;
-        const sorted = [...filteredNDs].sort((a, b) => (Number(b.wsjf) || 0) - (Number(a.wsjf) || 0));
-        renderDodRows(sorted);
-        setTimeout(() => {
-            const wsjfTh = document.querySelector('#artDodTable th[data-dod-col="wsjf"]');
-            if (wsjfTh) wsjfTh.querySelector('.dod-sort-arrow').textContent = ' ▼';
-        }, 0);
+        window._dodPhaseFilter = null;
+        window._dodArtKey = artKey;
+        window._dodArtTeams = data.teams;
 
-        // Sortable
-        document.querySelectorAll('#artDodTable th[data-dod-col]').forEach(th => {
-            th.onclick = () => {
-                const col = th.dataset.dodCol;
-                if (window._dodSortCol === col) window._dodSortAsc = !window._dodSortAsc;
-                else { window._dodSortCol = col; window._dodSortAsc = true; }
-                const s = [...window._dodNDs].sort((a, b) => {
-                    let va = a[col], vb = b[col];
-                    if (va == null) va = '';
-                    if (vb == null) vb = '';
-                    if (typeof va === 'number' || typeof vb === 'number') {
-                        va = Number(va) || 0; vb = Number(vb) || 0;
-                        return window._dodSortAsc ? va - vb : vb - va;
-                    }
-                    va = String(va).toLowerCase(); vb = String(vb).toLowerCase();
-                    return window._dodSortAsc ? va.localeCompare(vb) : vb.localeCompare(va);
-                });
-                renderDodRows(s);
-                document.querySelectorAll('#artDodTable .dod-sort-arrow').forEach(s => s.textContent = '');
-                th.querySelector('.dod-sort-arrow').textContent = window._dodSortAsc ? ' ▲' : ' ▼';
+        _ndRenderCards();
+
+        // View-mode interactions (cards / list)
+        document.querySelectorAll('#ndViewBar .nd-sort__btn').forEach(btn => {
+            btn.onclick = () => {
+                const mode = btn.dataset.view;
+                if (window._dodViewMode === mode) return;
+                window._dodViewMode = mode;
+                try { localStorage.setItem('ndDodViewMode', mode); } catch(_) {}
+                document.querySelectorAll('#ndViewBar .nd-sort__btn').forEach(b => b.classList.remove('is-active'));
+                btn.classList.add('is-active');
+                const cont = document.getElementById('ndCardsGrid');
+                if (cont) {
+                    cont.classList.remove('nd-grid', 'nd-rows');
+                    cont.classList.add(mode === 'list' ? 'nd-rows' : 'nd-grid');
+                }
+                // Close any open detail before re-rendering
+                const openDetail = document.querySelector('.nd-detail[data-for]');
+                if (openDetail) openDetail.remove();
+                document.querySelectorAll('.nd-card.is-open, .nd-row.is-open').forEach(el => el.classList.remove('is-open'));
+                _ndRenderCards();
             };
         });
 
-        // Phase bar click → filter
-        window._dodPhaseFilter = null;
-        document.querySelectorAll('#dodPhaseBar [data-dod-phase]').forEach(el => {
+        // Sort interactions
+        document.querySelectorAll('#ndSortBar .nd-sort__btn').forEach(btn => {
+            btn.onclick = () => {
+                const col = btn.dataset.sort;
+                if (window._dodSortCol === col) window._dodSortAsc = !window._dodSortAsc;
+                else { window._dodSortCol = col; window._dodSortAsc = col === 'wsjf' ? false : true; }
+                document.querySelectorAll('#ndSortBar .nd-sort__btn').forEach(b => b.classList.remove('is-active'));
+                btn.classList.add('is-active');
+                btn.textContent = btn.dataset.sort === 'wsjf'
+                    ? `WSJF ${window._dodSortAsc ? '↑' : '↓'}`
+                    : btn.dataset.sort === 'nd_key' ? `Key ${window._dodSortAsc ? '↑' : '↓'}`
+                    : `Status ${window._dodSortAsc ? '↑' : '↓'}`;
+                _ndRenderCards();
+            };
+        });
+
+        // Funnel-stage click → filter
+        document.querySelectorAll('#ndFunnelTrack .nd-funnel__stage').forEach(el => {
             el.onclick = () => {
-                const phase = el.dataset.dodPhase;
+                const phase = el.dataset.key;
                 if (window._dodPhaseFilter === phase) {
                     window._dodPhaseFilter = null;
-                    document.querySelectorAll('#dodPhaseBar [data-dod-phase]').forEach(e => e.style.opacity = '');
+                    document.querySelectorAll('#ndFunnelTrack .nd-funnel__stage').forEach(e => { e.classList.remove('is-active', 'is-muted'); });
                 } else {
                     window._dodPhaseFilter = phase;
-                    document.querySelectorAll('#dodPhaseBar [data-dod-phase]').forEach(e => e.style.opacity = e.dataset.dodPhase === phase ? '1' : '0.35');
+                    document.querySelectorAll('#ndFunnelTrack .nd-funnel__stage').forEach(e => {
+                        if (e.dataset.key === phase) { e.classList.add('is-active'); e.classList.remove('is-muted'); }
+                        else { e.classList.add('is-muted'); e.classList.remove('is-active'); }
+                    });
                 }
-                const filtered = window._dodPhaseFilter
-                    ? window._dodNDs.filter(nd => getDodPhase(nd.nd_status).key === window._dodPhaseFilter)
-                    : window._dodNDs;
-                const col = window._dodSortCol || 'wsjf';
-                const asc = window._dodSortAsc;
-                const s = [...filtered].sort((a, b) => {
-                    let va = a[col], vb = b[col];
-                    if (va == null) va = ''; if (vb == null) vb = '';
-                    if (typeof va === 'number' || typeof vb === 'number') {
-                        va = Number(va) || 0; vb = Number(vb) || 0;
-                        return asc ? va - vb : vb - va;
-                    }
-                    va = String(va).toLowerCase(); vb = String(vb).toLowerCase();
-                    return asc ? va.localeCompare(vb) : vb.localeCompare(va);
-                });
-                renderDodRows(s);
+                _ndRenderCards();
             };
         });
     } catch(e) {
-        container.innerHTML = `<div class="text-red-400 py-8 text-center">${e.message}</div>`;
+        container.innerHTML = `<div class="nd-shell"><div class="nd-empty" style="color:var(--nd-s-danger)">${e.message}</div></div>`;
     }
+}
+
+// ── Favorites (pin ND to top of list) ─────────────────────────────────
+const _ND_FAV_KEY = 'ndDodFavorites';
+const _ND_HEART_SVG = '<svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a4.5 4.5 0 0 1 8.2-2.6A4.5 4.5 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg>';
+const _ND_PIN_SVG   = '<svg viewBox="0 0 24 24"><path d="M16 3l5 5-3.5 1.2L12 14.7l1.2 5L8 14.5 3.3 16l5-5L11 5.2 14 4z"/></svg>';
+
+function _ndGetFavs() {
+    try { return JSON.parse(localStorage.getItem(_ND_FAV_KEY) || '[]'); }
+    catch(_) { return []; }
+}
+function _ndIsFav(key) { return _ndGetFavs().indexOf(key) >= 0; }
+function _ndToggleFav(ndKey, btnEl) {
+    // Animate the click target before re-render
+    if (btnEl) {
+        btnEl.classList.add('is-popping');
+        setTimeout(() => btnEl.classList.remove('is-popping'), 400);
+    }
+    const favs = _ndGetFavs();
+    const idx = favs.indexOf(ndKey);
+    if (idx >= 0) favs.splice(idx, 1);
+    else favs.unshift(ndKey);   // newest pin → topmost
+    try { localStorage.setItem(_ND_FAV_KEY, JSON.stringify(favs)); } catch(_) {}
+    // Toggle the icon immediately so it doesn't flash before re-render
+    if (btnEl) btnEl.classList.toggle('is-on');
+    // Re-render with a slight delay so the pop animation is visible
+    setTimeout(() => {
+        const openKey = document.querySelector('.nd-detail[data-for]')?.dataset.for;
+        _ndRenderCards();
+        // Re-open previously-open detail if its ND still visible
+        if (openKey) {
+            const reopened = document.querySelector(`[data-nd="${openKey}"]`);
+            if (reopened && !reopened.classList.contains('is-open')) {
+                toggleNdCard(reopened, openKey);
+            }
+        }
+    }, 220);
+}
+
+// ── Card render + interactions for redesigned ART DoD ─────────────────
+function _ndStatusKind(status) {
+    const s = (status || '').toLowerCase();
+    if (['done','closed','hotovo','qs done','postimplementation','resolved'].some(x => s.includes(x))) return 'success';
+    if (['cancel'].some(x => s.includes(x))) return 'neutral';
+    if (['delivery','realizace','in progress','reviewing','implementing','preqs','qs'].some(x => s.includes(x))) return 'active';
+    if (['discovery','exploration','lean','čeká','potvrzení'].some(x => s.includes(x))) return 'warning';
+    if (['on hold','blocked'].some(x => s.includes(x))) return 'danger';
+    return 'neutral';
+}
+
+function _ndRenderCards() {
+    const grid = document.getElementById('ndCardsGrid');
+    if (!grid) return;
+    let nds = [...(window._dodNDs || [])];
+    // Filter by funnel phase
+    if (window._dodPhaseFilter) {
+        nds = nds.filter(nd => getDodPhase(nd.nd_status).key === window._dodPhaseFilter);
+    }
+    // Sort by current column
+    const col = window._dodSortCol || 'wsjf';
+    const asc = !!window._dodSortAsc;
+    nds.sort((a, b) => {
+        let va = a[col], vb = b[col];
+        if (va == null) va = ''; if (vb == null) vb = '';
+        if (typeof va === 'number' || typeof vb === 'number') {
+            va = Number(va) || 0; vb = Number(vb) || 0;
+            return asc ? va - vb : vb - va;
+        }
+        va = String(va).toLowerCase(); vb = String(vb).toLowerCase();
+        return asc ? va.localeCompare(vb) : vb.localeCompare(va);
+    });
+
+    // Hoist favorites to top, preserving the order in which they were pinned
+    const favs = _ndGetFavs();
+    if (favs.length) {
+        const favIdx = new Map(favs.map((k, i) => [k, i]));
+        const pinned = [], rest = [];
+        nds.forEach(n => (favIdx.has(n.nd_key) ? pinned : rest).push(n));
+        pinned.sort((a, b) => favIdx.get(a.nd_key) - favIdx.get(b.nd_key));
+        nds = [...pinned, ...rest];
+    }
+
+    if (!nds.length) {
+        grid.innerHTML = `<div class="nd-empty" style="grid-column:1/-1">Žádná ND neodpovídá zvoleným filtrům.</div>`;
+        return;
+    }
+
+    const teamLookup = {};
+    (window._dodArtTeams || []).forEach(t => { teamLookup[t.team_key] = t.team_name || t.team_key; });
+
+    const viewMode = window._dodViewMode || 'cards';
+    const favSet = new Set(favs);
+
+    grid.innerHTML = nds.map(nd => {
+        const phaseIdx = getDodPhaseIndex(nd.nd_status);
+        const phase = DOD_PHASES[phaseIdx];
+        const kind = _ndStatusKind(nd.nd_status);
+
+        // Pipeline segments shared between views
+        const segs = DOD_PHASES.map((p, i) => {
+            const cls = i < phaseIdx ? 'is-done' : i === phaseIdx ? 'is-active' : 'is-empty';
+            return `<div class="nd-pipe__seg ${cls}" title="${p.label}"></div>`;
+        }).join('');
+
+        const teamLabels = (nd.team_keys || []).slice(0, 2).map(k => teamLookup[k] || k);
+        const teamExtra = (nd.team_keys || []).length > 2 ? ` +${(nd.team_keys.length - 2)}` : '';
+        const wsjfFmt = nd.wsjf != null ? Number(nd.wsjf).toFixed(1) : '—';
+        const isFav = favSet.has(nd.nd_key);
+        const favTip = isFav ? 'Odepnout z oblíbených' : 'Připnout nahoru';
+        const heartBtn = `<button class="nd-fav ${isFav ? 'is-on' : ''}" title="${favTip}"
+            onclick="event.stopPropagation(); _ndToggleFav('${nd.nd_key}', this); return false;">${_ND_HEART_SVG}</button>`;
+        const pinBadge = isFav ? `<span class="nd-pin-badge">${_ND_PIN_SVG}Připnuto</span>` : '';
+
+        // ─── LIST mode (compact row) ───────────────────────────
+        if (viewMode === 'list') {
+            return `
+            <div class="nd-row ${isFav ? 'is-pinned' : ''}" data-phase="${phase.key}" data-nd="${nd.nd_key}"
+                 onclick="toggleNdCard(this, '${nd.nd_key}')">
+                <span class="nd-row__stripe"></span>
+                ${pinBadge}
+                <a class="nd-row__key" href="https://jira.cz.o2/browse/${nd.nd_key}" target="_blank"
+                   rel="noopener" onclick="event.stopPropagation()">${nd.nd_key}</a>
+                <span class="nd-pill nd-pill--${kind}" style="font-size:10px"><span class="nd-pill__dot"></span>${nd.nd_status || '—'}</span>
+                <span class="nd-row__title">${nd.nd_summary || '—'}</span>
+                <span class="nd-row__wsjf">${wsjfFmt}</span>
+                ${nd.pi ? `<span class="nd-row__pi">🏷 ${nd.pi}</span>` : ''}
+                ${teamLabels.length ? `<span class="nd-row__teams">👥 ${teamLabels.join(', ')}${teamExtra}</span>` : ''}
+                <div class="nd-row__pipe">${segs}</div>
+                <span class="nd-row__phase">${phase.label}</span>
+                ${heartBtn}
+                <span class="nd-row__chev">→</span>
+            </div>`;
+        }
+
+        // ─── CARDS mode (default) ──────────────────────────────
+        const plansLbl = nd.total_plans
+            ? `<div class="nd-meta__item">📋 <b>${nd.active_plans ?? 0}/${nd.total_plans}</b> plánů</div>`
+            : '';
+        return `
+        <div class="nd-card ${isFav ? 'is-pinned' : ''}" data-phase="${phase.key}" data-nd="${nd.nd_key}"
+             onclick="toggleNdCard(this, '${nd.nd_key}')">
+            <span class="nd-card__stripe"></span>
+            ${pinBadge}
+            <div class="nd-card__head">
+                <div style="flex:1;min-width:0">
+                    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+                        <a class="nd-card__key" href="https://jira.cz.o2/browse/${nd.nd_key}" target="_blank"
+                           rel="noopener" onclick="event.stopPropagation()">${nd.nd_key}</a>
+                        <span class="nd-pill nd-pill--${kind}">
+                            <span class="nd-pill__dot"></span>${nd.nd_status || '—'}
+                        </span>
+                    </div>
+                    <div class="nd-card__title">${nd.nd_summary || '—'}</div>
+                </div>
+                <div style="display:flex;align-items:center;gap:8px;flex-shrink:0">
+                    <div class="nd-card__wsjf">WSJF <b>${wsjfFmt}</b></div>
+                    ${heartBtn}
+                </div>
+            </div>
+
+            <div>
+                <div class="nd-pipe">${segs}</div>
+                <div style="display:flex;justify-content:space-between;margin-top:6px;font-size:10px;color:var(--nd-text-muted);">
+                    <span style="text-transform:uppercase;letter-spacing:0.08em;">Fáze pipeline</span>
+                    <span style="color:var(--nd-accent-light);font-weight:600">${phase.label}</span>
+                </div>
+            </div>
+
+            <div class="nd-meta">
+                ${nd.pi ? `<div class="nd-meta__item">🏷 <b>${nd.pi}</b></div>` : ''}
+                ${teamLabels.length ? `<div class="nd-meta__item">👥 ${teamLabels.join(', ')}${teamExtra}</div>` : ''}
+                ${plansLbl}
+                <div class="nd-meta__item" style="margin-left:auto;color:var(--nd-text-faint)">
+                    klikni pro DoD detail →
+                </div>
+            </div>
+        </div>`;
+    }).join('');
+}
+
+// Replacement for toggleDodDetail — opens an in-flow detail panel below the card/row
+function toggleNdCard(cardEl, ndKey) {
+    const existingDetail = document.querySelector('.nd-detail[data-for]');
+    const sameAsOpen = existingDetail && existingDetail.dataset.for === ndKey;
+    if (existingDetail) existingDetail.remove();
+    document.querySelectorAll('.nd-card.is-open, .nd-row.is-open').forEach(c => c.classList.remove('is-open'));
+    if (sameAsOpen) return;
+
+    cardEl.classList.add('is-open');
+    const detail = document.createElement('div');
+    detail.className = 'nd-detail';
+    detail.dataset.for = ndKey;
+    detail.id = `nd-detail-${ndKey}`;
+    detail.innerHTML = '<div class="nd-loading"><div class="nd-spinner"></div></div>';
+    cardEl.insertAdjacentElement('afterend', detail);
+
+    // Lazy-load like before — now using v3 redesigned detail renderer
+    fetch('/api/nd-dod/' + ndKey)
+        .then(r => r.json())
+        .then(data => {
+            if (data.error) { detail.innerHTML = `<div style="color:var(--nd-s-danger)">${data.error}</div>`; return; }
+            detail.innerHTML = renderNdDetailV3(data);
+            if (typeof fetchDodCommentCount === 'function') fetchDodCommentCount(ndKey);
+            if (typeof _loadNdWiki === 'function') _loadNdWiki(ndKey);
+        })
+        .catch(e => { detail.innerHTML = `<div style="color:var(--nd-s-danger)">${e.message}</div>`; });
+
+    // Scroll into view smoothly
+    setTimeout(() => detail.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
+}
+
+// ── ND detail renderer (REDESIGN v3) — card-based layout ────────────
+const _ND_ROLE_ORDER = ['BAN', 'ARCH', 'QS', 'DEV', 'TST', 'RL'];
+const _ND_ROLE_DISPLAY = { BAN: 'BAN', ARCH: 'ARCH', QS: 'QS', DEV: 'DEV', TST: 'TST', RL: 'REL' };
+const _ND_ROLE_PHASE = { BAN: 'DISC', ARCH: 'DISC', QS: 'DISC', DEV: 'DEL', TST: 'DEL', RL: 'DEL' };
+
+const _ND_ICONS = {
+    check:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>',
+    cube:    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 7.5l-9 4.5-9-4.5"/><path d="M3 7.5v9l9 4.5 9-4.5v-9L12 3z"/><path d="M12 12v9"/></svg>',
+    grid:    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>',
+    clock:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>',
+    list:    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>',
+    doc:     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>',
+    chat:    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>',
+};
+
+function _ndItemStatusKind(status) {
+    const s = (status || '').toLowerCase();
+    if (['done','closed','hotovo','resolved'].some(x => s === x)) return 'done';
+    if (s.includes('cancel')) return 'cancel';
+    return '';
+}
+
+function renderNdDetailV3(data) {
+    const nd = data;
+    const ndKey = nd.nd_key;
+    const J = 'https://jira.cz.o2/browse/';
+    const signals = nd.discovery_signals || {};
+    const discScore = Math.round(signals.score || 0);
+    const tempo = nd.tempo || {};
+    const deliverables = nd.deliverables || [];
+    const delivTeams = nd.delivery_teams || [];
+    const plans = nd.plans || [];
+    const apps = nd.apps || [];
+
+    const totalH = tempo.total_hours || 0;
+    const discH = tempo.discovery_hours || 0;
+    const delivH = tempo.delivery_hours || 0;
+    const otherH = Math.max(0, totalH - discH - delivH);
+
+    const ringR = 38, ringSW = 7, ringC = 2 * Math.PI * ringR;
+    const ringOff = ringC * (1 - discScore / 100);
+    const ringKind = discScore >= 70 ? 'high' : discScore >= 30 ? 'mid' : 'low';
+    const ringMeta = discScore >= 70 ? 'var(--nd-accent-light)' : discScore >= 30 ? 'var(--nd-s-warning)' : '#fca5a5';
+
+    const kind = _ndStatusKind(nd.status);
+    const childrenTotal = nd.children_total || 0;
+    const childrenDone = deliverables.reduce((s, d) => s + d.done, 0);
+
+    const delivByRole = {};
+    deliverables.forEach(d => { delivByRole[d.role] = d; });
+
+    // ═══ HERO ═══════════════════════════════════════════════
+    let html = `
+    <div class="nd-detail-hero">
+        <div class="nd-ring nd-ring--${ringKind}">
+            <svg viewBox="0 0 88 88">
+                <circle class="nd-ring__track" cx="44" cy="44" r="${ringR}" fill="none" stroke-width="${ringSW}"/>
+                <circle class="nd-ring__fill" cx="44" cy="44" r="${ringR}" fill="none" stroke-width="${ringSW}"
+                        stroke-dasharray="${ringC}" stroke-dashoffset="${ringOff}"/>
+            </svg>
+            <div class="nd-ring__label">${discScore}%<span>Discovery</span></div>
+        </div>
+        <div class="nd-detail-hero__title">
+            <div class="nd-detail-hero__meta">
+                <a class="nd-detail-hero__key" href="${J}${ndKey}" target="_blank" rel="noopener">${ndKey}</a>
+                <span class="nd-pill nd-pill--${kind}"><span class="nd-pill__dot"></span>${nd.status || '—'}</span>
+                <span class="nd-detail-hero__kids">${childrenTotal} children · ${childrenDone} done</span>
+            </div>
+            <div class="nd-detail-hero__summary">${nd.summary || '—'}</div>
+        </div>
+        <div class="nd-detail-kpis">
+            <div class="nd-detail-kpi">
+                <div class="nd-detail-kpi__val">${childrenTotal}</div>
+                <div class="nd-detail-kpi__lbl">Children</div>
+            </div>
+            <div class="nd-detail-kpi">
+                <div class="nd-detail-kpi__val">${Math.round(totalH)}<span>h</span></div>
+                <div class="nd-detail-kpi__lbl">Tempo</div>
+            </div>
+            <div class="nd-detail-kpi">
+                <div class="nd-detail-kpi__val">${plans.length}</div>
+                <div class="nd-detail-kpi__lbl">Plánů</div>
+            </div>
+            <div class="nd-detail-kpi">
+                <div class="nd-detail-kpi__val">${apps.length}</div>
+                <div class="nd-detail-kpi__lbl">Apps</div>
+            </div>
+        </div>
+    </div>`;
+
+    // ═══ ROLE CHIPS ═════════════════════════════════════════
+    html += `<div class="nd-detail-roles">`;
+    for (const role of _ND_ROLE_ORDER) {
+        const d = delivByRole[role];
+        const disp = _ND_ROLE_DISPLAY[role];
+        const phase = _ND_ROLE_PHASE[role];
+        if (!d) {
+            html += `<span class="nd-role-chip is-pending"><b>${disp}</b><span>—</span><span class="nd-role-chip__phase">${phase}</span></span>`;
+        } else {
+            const isDone = d.done === d.total && d.total > 0;
+            const isActive = d.done > 0 && !isDone;
+            const cls = isDone ? 'is-done' : isActive ? 'is-progress' : 'is-pending';
+            html += `<span class="nd-role-chip ${cls}"><b>${disp}</b><span>${d.done}/${d.total}</span><span class="nd-role-chip__phase">${phase}</span></span>`;
+        }
+    }
+    html += `</div>`;
+
+    // ═══ ROW 1: Discovery Readiness | Deliverables ══════════
+    html += `<div class="nd-detail-grid">`;
+
+    // -- Discovery Readiness --
+    html += `
+    <div class="nd-section">
+        <div class="nd-section__head">
+            <span class="nd-section__icon">${_ND_ICONS.check}</span>
+            <div class="nd-section__title">Discovery Readiness</div>
+            <span class="nd-section__meta" style="color:${ringMeta}">${discScore}%</span>
+        </div>
+        <div class="nd-section__body">
+            <div class="nd-checks">`;
+    const sigItems = [
+        { label: 'Description',   ok: signals.description_filled,   role: null },
+        { label: 'Excalidraw',    ok: signals.has_excalidraw,        role: null },
+        { label: 'Figma',         ok: signals.has_figma,             role: null },
+        { label: 'Impacted Apps', ok: signals.impacted_apps_exist,   role: null },
+        { label: 'Arch QS',       ok: signals.arch_qs_exist,         role: 'ARCH' },
+        { label: 'BAN / RM',      ok: signals.ban_rm_exist,          role: 'BAN' },
+    ];
+    for (const s of sigItems) {
+        const deliv = s.role ? delivByRole[s.role] : null;
+        const person = deliv?.assignees?.[0] || deliv?.responsible?.[0] || null;
+        const count = deliv && deliv.total > 0 ? `${deliv.done}/${deliv.total}` : null;
+        const metaBits = [];
+        if (count) metaBits.push(`<b>${count}</b>`);
+        if (person) metaBits.push(`<span>${person}</span>`);
+        const meta = metaBits.length ? `<span class="nd-check__meta">${metaBits.join(' · ')}</span>` : '';
+        html += `<div class="nd-check ${s.ok ? 'is-on' : ''}">
+            <span class="nd-check__mark"></span>
+            <span class="nd-check__label">${s.label}</span>
+            ${meta}
+        </div>`;
+    }
+    html += `</div>`;
+    // Discovery tempo summary
+    const discTempoH = signals.discovery_tempo_hours || 0;
+    if (discTempoH > 0) {
+        const tempoRoles = tempo.roles || [];
+        const discRoles = tempoRoles.filter(r => ['Architekt','Business analytik','UX/WF'].includes(r.role));
+        const rolesStr = discRoles.map(r => `${r.role} ${r.hours.toFixed(0)}h`).join(', ');
+        html += `<div class="nd-disc-tempo">
+            <b>⏱ Discovery ${discTempoH.toFixed(1)}h</b>
+            ${rolesStr ? `<span>${rolesStr}</span>` : ''}
+        </div>`;
+    }
+    html += `</div></div>`;
+
+    // -- Deliverables --
+    html += `
+    <div class="nd-section">
+        <div class="nd-section__head">
+            <span class="nd-section__icon">${_ND_ICONS.cube}</span>
+            <div class="nd-section__title">Deliverables</div>
+            <span class="nd-section__meta">${childrenDone}/${childrenTotal} done</span>
+        </div>
+        <div class="nd-section__body">`;
+    if (!deliverables.length) {
+        html += `<div class="nd-section__empty">Žádné deliverables</div>`;
+    } else {
+        html += `<div class="nd-deliv">`;
+        for (const d of deliverables) {
+            const pct = d.total > 0 ? (d.done / d.total * 100) : 0;
+            const isDone = d.done === d.total && d.total > 0;
+            const isActive = d.done > 0 && !isDone;
+            const cls = isDone ? 'is-done' : isActive ? 'is-active' : '';
+            const person = d.assignees?.[0] || d.responsible?.[0] || '';
+            const delId = `deliv-${ndKey.replace(/[^a-zA-Z0-9]/g,'')}-${d.role}`;
+            html += `<div class="nd-deliv-row ${cls}" data-deliv="${delId}" onclick="(function(r){var el=document.getElementById('${delId}');if(!el)return;el.classList.toggle('hidden');r.classList.toggle('is-open');})(this)">
+                <span class="nd-deliv-row__role">${_ND_ROLE_DISPLAY[d.role] || d.role}</span>
+                <span class="nd-deliv-row__phase">${d.phase === 'discovery' ? 'DISC' : 'DEL'}</span>
+                <span class="nd-deliv-row__label">${d.label || ''}</span>
+                <span class="nd-deliv-row__bar"><span style="width:${Math.max(pct, 4)}%"></span></span>
+                <span class="nd-deliv-row__count">${d.done}/${d.total}</span>
+                ${person ? `<span class="nd-deliv-row__person">${person}</span>` : ''}
+                ${d.items?.length ? `<span class="nd-deliv-row__chev">▸</span>` : ''}
+            </div>`;
+            if (d.items?.length) {
+                html += `<div id="${delId}" class="nd-deliv-items hidden">`;
+                for (const item of d.items) {
+                    const itKind = _ndItemStatusKind(item.status);
+                    const itCls = itKind === 'done' ? 'is-done' : itKind === 'cancel' ? 'is-cancel' : '';
+                    html += `<div class="nd-deliv-item ${itCls}">
+                        <a href="${J}${item.key}" target="_blank" rel="noopener">${item.key}</a>
+                        <span class="nd-deliv-item__summary">${item.summary || ''}</span>
+                        <span class="nd-deliv-item__status">${item.status || ''}</span>
+                    </div>`;
+                }
+                html += `</div>`;
+            }
+        }
+        html += `</div>`;
+    }
+    html += `</div></div>`;
+    html += `</div>`; // close row 1 grid
+
+    // ═══ DELIVERY PLANNING (full width) ═════════════════════
+    if (delivTeams.length) {
+        const reds    = delivTeams.filter(t => t.risk_level === 'red').length;
+        const yellows = delivTeams.filter(t => t.risk_level === 'yellow').length;
+        const greens  = delivTeams.filter(t => t.risk_level === 'green').length;
+        const riskBits = [];
+        if (reds)    riskBits.push(`<span style="color:#fca5a5">🔴 ${reds}</span>`);
+        if (yellows) riskBits.push(`<span style="color:#fcd9a0">🟡 ${yellows}</span>`);
+        if (greens)  riskBits.push(`<span style="color:var(--nd-accent-light)">🟢 ${greens}</span>`);
+
+        html += `
+        <div class="nd-section" style="margin-top:16px">
+            <div class="nd-section__head">
+                <span class="nd-section__icon">${_ND_ICONS.grid}</span>
+                <div class="nd-section__title">Delivery Planning</div>
+                <span class="nd-section__meta">${delivTeams.length} teams · ${riskBits.join(' ')}</span>
+            </div>
+            <div class="nd-section__body nd-section__body--flush">
+                <table class="nd-deliv-plan">
+                    <thead><tr>
+                        <th>App / Tým</th>
+                        <th>MIRO Sprint</th>
+                        <th>Tasks</th>
+                        <th class="t-right">Tempo</th>
+                        <th class="t-center">Risk</th>
+                    </tr></thead>
+                    <tbody>`;
+        for (const dt of delivTeams) {
+            const miroCell = dt.miro_planned
+                ? `<span class="nd-deliv-plan__miro--ok">${dt.miro_sprint || '✓'}</span>${dt.miro_commitment === 'committed' ? '<span class="nd-deliv-plan__miro-c">C</span>' : ''}`
+                : `<span class="nd-deliv-plan__miro--no">není</span>`;
+            const taskCell = dt.tasks_created?.length
+                ? dt.tasks_created.slice(0, 2).map(t => `<a class="nd-deliv-plan__task" href="${J}${t.key}" target="_blank" rel="noopener">${t.key}</a>`).join('')
+                : `<span class="nd-deliv-plan__dim">—</span>`;
+            const tempoCell = dt.tempo_hours > 0
+                ? `<span class="nd-deliv-plan__tempo">${dt.tempo_hours.toFixed(0)}h</span>`
+                : `<span class="nd-deliv-plan__dim">0</span>`;
+            const tip = dt.risk_reason ? ` title="${dt.risk_reason.replace(/"/g,'&quot;')}"` : '';
+            html += `<tr${tip}>
+                <td>
+                    <div class="nd-deliv-plan__app">${dt.app_name || '—'}</div>
+                    <div class="nd-deliv-plan__team">${dt.team_name || '—'}</div>
+                </td>
+                <td>${miroCell}</td>
+                <td>${taskCell}</td>
+                <td class="t-right">${tempoCell}</td>
+                <td style="text-align:center"><span class="nd-deliv-plan__risk nd-deliv-plan__risk--${dt.risk_level}"></span></td>
+            </tr>`;
+        }
+        html += `</tbody></table></div></div>`;
+    }
+
+    // ═══ ROW 2: Capacity | Plans ════════════════════════════
+    const hasCapacity = totalH > 0;
+    const hasPlans = plans.length > 0;
+    if (hasCapacity || hasPlans) {
+        html += `<div class="nd-detail-grid" style="margin-top:16px">`;
+
+        if (hasCapacity) {
+            const dPct = (discH / totalH * 100);
+            const ePct = (delivH / totalH * 100);
+            const oPct = (otherH / totalH * 100);
+            html += `
+            <div class="nd-section">
+                <div class="nd-section__head">
+                    <span class="nd-section__icon">${_ND_ICONS.clock}</span>
+                    <div class="nd-section__title">Kapacita</div>
+                    <span class="nd-section__meta">${Math.round(totalH)}h celkem</span>
+                </div>
+                <div class="nd-section__body">
+                    <div class="nd-cap">
+                        <div class="nd-cap__bar">
+                            ${dPct > 0 ? `<span class="seg-disc"  style="width:${dPct.toFixed(1)}%"></span>` : ''}
+                            ${ePct > 0 ? `<span class="seg-deliv" style="width:${ePct.toFixed(1)}%"></span>` : ''}
+                            ${oPct > 0 ? `<span class="seg-other" style="width:${oPct.toFixed(1)}%"></span>` : ''}
+                        </div>
+                        <div class="nd-cap__legend">
+                            <span><i style="background:#f59e0b"></i>Discovery <b>${Math.round(discH)}h</b></span>
+                            <span><i style="background:#38bdf8"></i>Delivery <b>${Math.round(delivH)}h</b></span>
+                            ${otherH > 0 ? `<span><i style="background:rgba(100,116,139,0.6)"></i>Ostatní <b>${Math.round(otherH)}h</b></span>` : ''}
+                        </div>`;
+            const tempoRoles = tempo.roles || [];
+            if (tempoRoles.length) {
+                html += `<div class="nd-cap__roles">`;
+                for (const r of tempoRoles.slice(0, 6)) {
+                    html += `<div class="nd-cap__role-row"><span>${r.role}</span><b>${r.hours.toFixed(0)}h</b></div>`;
+                }
+                html += `</div>`;
+            }
+            html += `</div></div></div>`;
+        }
+
+        if (hasPlans) {
+            html += `
+            <div class="nd-section">
+                <div class="nd-section__head">
+                    <span class="nd-section__icon">${_ND_ICONS.list}</span>
+                    <div class="nd-section__title">ART Plans</div>
+                    <span class="nd-section__meta">${plans.length}</span>
+                </div>
+                <div class="nd-section__body">
+                    <div class="nd-plans">`;
+            for (const p of plans) {
+                const artLabel = ((p.art_name || '').match(/\[ART - ([^\]]+)\]/) || [])[1] || p.art_key || '';
+                const pKind = _ndStatusKind(p.status);
+                html += `<div class="nd-plan-row">
+                    <a class="nd-plan-row__key" href="${J}${p.key}" target="_blank" rel="noopener">${p.key}</a>
+                    <span class="nd-plan-row__art">${artLabel}</span>
+                    <span class="nd-pill nd-pill--${pKind}" style="font-size:10px"><span class="nd-pill__dot"></span>${p.status || '—'}</span>
+                    ${p.pi ? `<span class="nd-plan-row__pi">${p.pi}</span>` : ''}
+                    ${p.wsjf ? `<span class="nd-plan-row__wsjf">${Number(p.wsjf).toFixed(1)}</span>` : ''}
+                </div>`;
+            }
+            html += `</div></div></div>`;
+        }
+
+        html += `</div>`; // close grid
+    }
+
+    // ═══ WIKI & DOKUMENTY (full width, async) ═══════════════
+    html += `
+    <div class="nd-section" style="margin-top:16px" id="dod-wiki-${ndKey}">
+        <div class="nd-section__head">
+            <span class="nd-section__icon">${_ND_ICONS.doc}</span>
+            <div class="nd-section__title">Wiki & Dokumenty</div>
+            <button class="nd-section__action" onclick="_loadNdWiki('${ndKey}')">↻ Reload</button>
+        </div>
+        <div class="nd-section__body" id="dod-wiki-body-${ndKey}">
+            <div style="font-size:11px;color:var(--nd-text-faint);font-style:italic">Loading wiki data…</div>
+        </div>
+    </div>`;
+
+    // ═══ COMMENTS (full width, expandable) ══════════════════
+    const cmtId = ndKey.replace(/[^a-zA-Z0-9]/g, '');
+    html += `
+    <div class="nd-section" style="margin-top:16px">
+        <div class="nd-section__head" style="cursor:pointer" onclick="toggleDodComments('${ndKey}')">
+            <span class="nd-section__icon">${_ND_ICONS.chat}</span>
+            <div class="nd-section__title">Komentáře <span id="dodCmtBadge${cmtId}" style="margin-left:8px;padding:2px 8px;border-radius:999px;background:var(--nd-bg-elevated);border:1px solid var(--nd-border);font-size:10px;color:var(--nd-text-muted);font-weight:600;text-transform:none;letter-spacing:0">…</span></div>
+            <span id="dodCmtArrow${cmtId}" style="color:var(--nd-text-muted);font-size:11px">▸</span>
+        </div>
+        <div id="dodCmtBody${cmtId}" class="hidden"></div>
+    </div>`;
+
+    return html;
 }
 
 function renderDodRows(nds) {

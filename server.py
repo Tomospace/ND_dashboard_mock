@@ -1123,7 +1123,20 @@ class MockHandler(BaseHTTPRequestHandler):
             self.end_headers()
             return ("raw",)
         if path.startswith("/web/"):
-            self._send_file(os.path.join(ROOT, path.lstrip("/")), "application/octet-stream")
+            ext = os.path.splitext(path)[1].lower()
+            ct = {
+                ".css":  "text/css; charset=utf-8",
+                ".js":   "application/javascript; charset=utf-8",
+                ".html": "text/html; charset=utf-8",
+                ".svg":  "image/svg+xml",
+                ".png":  "image/png",
+                ".jpg":  "image/jpeg",
+                ".jpeg": "image/jpeg",
+                ".woff": "font/woff",
+                ".woff2": "font/woff2",
+                ".json": "application/json; charset=utf-8",
+            }.get(ext, "application/octet-stream")
+            self._send_file(os.path.join(ROOT, path.lstrip("/")), ct)
             return ("raw",)
 
         # API
